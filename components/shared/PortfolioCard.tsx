@@ -8,7 +8,6 @@ import { APP_NAME } from "@/constants/app.constants"
 import { ArrowUpRight } from "lucide-react"
 import { getPreviewImageUrl } from "@/lib/transformed-img-urls"
 import CardTopBadge from "./CardsTopBadge"
-import { urlFor } from "@/sanity/lib/image"
 
 type Props = {
     project: IPortfolioOverview

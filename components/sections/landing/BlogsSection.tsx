@@ -33,7 +33,7 @@ const BlogSection = () => {
                 />
 
                 <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
-                    {blogPosts.map((post) => <BlogCard post={post} />)}
+                    {blogPosts.map((post) => <BlogCard key={post.slug} post={post} />)}
                 </StaggerChildren>
             </ContainerLayout>
         </section>

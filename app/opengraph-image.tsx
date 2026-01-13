@@ -2,7 +2,6 @@ import { ImageResponse } from "next/og";
 import fs from "fs";
 import path from "path";
 import { APP_NAME } from "@/constants/app.constants";
-import Image from "next/image";
 
 export const size = {
   width: 1200,
