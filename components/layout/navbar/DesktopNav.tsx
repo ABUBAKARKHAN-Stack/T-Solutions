@@ -35,7 +35,10 @@ const DesktopNav = ({ setOpen, open }: Props) => {
     useEffect(() => {
         setOpen(false);
         setShowServices(false);
-    }, [pathname]);
+    }, [
+        pathname,
+        setOpen
+    ]);
 
     return (
         <motion.header

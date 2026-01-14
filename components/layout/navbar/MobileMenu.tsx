@@ -1,5 +1,3 @@
-"use client"
-
 import Logo from '@/components/shared/Logo'
 import { Button } from '@/components/ui/button'
 import { navLinks } from '@/constants/navigation.constants'
@@ -30,12 +28,10 @@ const MobileMenu = ({
     const [mobileServices, setMobileServices] = useState(false)
     const { servicesOverview } = useServices()
 
-    useEffect(() => {
-        if (mounted) return;
-        setMounted(true)
-    }, [])
+    useEffect(() => setMounted(true), [])
 
     if (!mounted) return;
+
     return (
         createPortal(
             <AnimatePresence>
