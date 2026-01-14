@@ -33,7 +33,7 @@ export default async function OpengraphImage() {
           justifyContent: "center",
         }}
       >
-        <Image
+        <img
           src={base64Image}
           alt={`${APP_NAME} - Cover`}
           width={1200}
