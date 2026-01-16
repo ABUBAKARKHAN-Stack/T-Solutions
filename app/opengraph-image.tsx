@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import fs from "fs";
 import path from "path";
 import { APP_NAME } from "@/constants/app.constants";
+import Image from "next/image";
 
 export const size = {
   width: 1200,
@@ -32,7 +33,7 @@ export default async function OpengraphImage() {
           justifyContent: "center",
         }}
       >
-        <img
+        <Image
           src={base64Image}
           alt={`${APP_NAME} - Cover`}
           width={1200}
