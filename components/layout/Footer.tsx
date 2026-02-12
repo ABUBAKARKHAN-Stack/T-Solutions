@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { footerLinks, footerServices } from "@/constants";
+import Link from "next/link";
 
 const Footer = () => {
   return (
     <footer className="bg-background text-foreground">
       <div className="container mx-auto px-4 lg:px-8 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
           {/* Brand */}
           <div className="lg:col-span-4">
             <span className="text-3xl font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -24,7 +25,7 @@ const Footer = () => {
               {footerLinks.map((link) => (
                 <li key={link.to}>
                   <Link
-                    to={link.to}
+                    href={link.to}
                     className="text-sm text-foreground/60 hover:text-accent transition-colors duration-300 flex items-center gap-1 group"
                   >
                     {link.label}
@@ -78,10 +79,10 @@ const Footer = () => {
         <div className="border-t border-foreground/10 mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-xs text-foreground/30">© {new Date().getFullYear()} T-Solutions. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link to="/privacy" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors">
+            <Link href="/privacy" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors">
               Privacy
             </Link>
-            <Link to="/terms" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors">
+            <Link href="/terms" className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors">
               Terms
             </Link>
           </div>

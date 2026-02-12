@@ -61,7 +61,7 @@ const BeforeAfterSlider = ({
 
       {/* Slider line */}
       <div
-        className="absolute top-0 bottom-0 w-[2px] bg-background/80 backdrop-blur-sm z-10 transition-[left] duration-100 ease-out"
+        className="absolute top-0 bottom-0 w-0.5 bg-background/80 backdrop-blur-sm z-10 transition-[left] duration-100 ease-out"
         style={{ left: `${position}%`, transform: "translateX(-50%)" }}
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/90 backdrop-blur-md border-2 border-accent shadow-lg flex items-center justify-center">

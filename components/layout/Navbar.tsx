@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
-import ThemeToggle from "./ThemeToggle";
-import ContactDrawer from "./ContactDrawer"; 
+import ThemeToggle from "../ThemeToggle";
+import ContactDrawer from "../ContactDrawer";
 import { navLinks, serviceItems } from "@/constants";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import ContainerLayout from "./ContainerLayout";
+import MagneticButton from "../MagneticButton";
 
 const dropdownVariants = {
   hidden: { opacity: 0, y: 8, scale: 0.96 },
@@ -44,15 +46,17 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Desktop Navbar */}
+
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "glass shadow-lg" : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "glass shadow-lg" : "bg-transparent"
+          }`}
         initial={{ y: -80 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
+        <ContainerLayout className="flex h-20 items-center justify-between ">
+
           <Link href="/" className="flex items-center gap-2 group">
             <span
               className="text-2xl font-bold tracking-tight text-foreground"
@@ -63,7 +67,8 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1">
+
             {navLinks.map((link) => (
               <div
                 key={link.to}
@@ -73,11 +78,10 @@ const Navbar = () => {
               >
                 <Link
                   href={link.to}
-                  className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full flex items-center gap-1 ${
-                    pathname === link.to
-                      ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
+                  className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full flex items-center gap-1 ${pathname === link.to
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                    }`}
                 >
                   {pathname === link.to && (
                     <motion.div
@@ -102,7 +106,7 @@ const Navbar = () => {
                 {link.hasDropdown && (
                   <AnimatePresence>
                     {showServices && (
-                       <motion.div
+                      <motion.div
                         className="absolute top-full right-0 pt-3 w-105"
                         variants={dropdownVariants}
                         initial="hidden"
@@ -137,11 +141,12 @@ const Navbar = () => {
                 )}
               </div>
             ))}
+
             <div className="w-px h-6 bg-border mx-2" />
             <ThemeToggle />
             <ContactDrawer>
               <Button
-                size="sm"
+                size="default"
                 className="ml-2 rounded-full bg-foreground text-background hover:bg-foreground/90 px-6 font-medium"
               >
                 Get in Touch
@@ -150,7 +155,7 @@ const Navbar = () => {
           </nav>
 
           {/* Mobile toggle */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <ThemeToggle />
             <button
               onClick={() => setOpen(!open)}
@@ -159,14 +164,15 @@ const Navbar = () => {
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
-        </div>
+
+        </ContainerLayout>
       </motion.header>
 
       {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
-            className="fixed inset-0 z-40 md:hidden"
+            className="fixed inset-0 z-40 lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -189,11 +195,10 @@ const Navbar = () => {
                   <Link
                     href={link.to}
                     onClick={() => setOpen(false)}
-                    className={`text-3xl font-semibold transition-colors ${
-                      pathname === link.to
-                        ? "text-accent"
-                        : "text-foreground/60 hover:text-foreground"
-                    }`}
+                    className={`text-3xl font-semibold transition-colors ${pathname === link.to
+                      ? "text-accent"
+                      : "text-foreground/60 hover:text-foreground"
+                      }`}
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
                     {link.label}

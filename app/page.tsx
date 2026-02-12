@@ -1,9 +1,18 @@
-import Navbar from "@/components/Navbar";
+import { PageTransition } from "@/components/layout/";
+import { HeroSection } from "@/components/sections/landing";
+import FeaturesSection from "@/components/sections/landing/FeaturesSection";
 
-export default function Home() {
+const Index = () => {
+
   return (
-   <>
-   <Navbar />
-   </>
+    <PageTransition>
+      {/* Hero Section */}
+      <HeroSection />
+
+      <FeaturesSection />
+
+    </PageTransition>
   );
-}
+};
+
+export default Index;

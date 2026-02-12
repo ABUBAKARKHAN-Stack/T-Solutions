@@ -1,5 +1,5 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "./layout/Navbar";
+import Footer from "./layout/Footer";
 import ScrollToTop from "./ScrollToTop";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
