@@ -13,7 +13,7 @@ import GrainNoiseOverlay from "./GrainNoiseOverlay";
 import { BorderBeam } from "@/components/ui/border-beam";
 import AnimatedGradientMesh from "./AnimatedGradientMesh";
 import DecorativeVerticalLine from "./DecorativeVerticalLine";
-import { heroContent } from "@/constants/hero.constants";
+import { heroContent } from "@/constants/landing.constants";
 
 const HeroSection = () => {
 

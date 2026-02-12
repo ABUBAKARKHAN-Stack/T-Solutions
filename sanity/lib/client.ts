@@ -8,3 +8,12 @@ export const client = createClient({
   apiVersion,
   useCdn: true, // Set to false if statically generating pages, using ISR or tag-based revalidation
 })
+
+
+// export const adminClient = createClient({
+//   projectId,
+//   dataset,
+//   token: process.env.NEXT_SANITY_API_TOKEN,
+//   apiVersion,
+//   useCdn: false, // Set to false if statically generating pages, using ISR or tag-based revalidation
+// })

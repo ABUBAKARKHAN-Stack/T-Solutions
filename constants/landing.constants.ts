@@ -1,4 +1,4 @@
-import { Rocket, Zap, ShieldCheck, Code, Layers } from "lucide-react";
+import { Rocket, ShieldCheck, Code, Layers } from "lucide-react";
 
 export const heroContent = {
     eyebrow: "Strategy · Innovation · Growth",

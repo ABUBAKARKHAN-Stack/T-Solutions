@@ -5,11 +5,10 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
 import ThemeToggle from "../ThemeToggle";
 import ContactDrawer from "../ContactDrawer";
-import { navLinks, serviceItems } from "@/constants";
+import { navLinks, serviceItems } from "@/constants/navigation.constants";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import ContainerLayout from "./ContainerLayout";
-import MagneticButton from "../MagneticButton";
 
 const dropdownVariants = {
   hidden: { opacity: 0, y: 8, scale: 0.96 },

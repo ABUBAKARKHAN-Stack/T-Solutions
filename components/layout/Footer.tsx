@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
-import { footerLinks, footerServices } from "@/constants";
+import { footerLinks, footerServices } from "@/constants/navigation.constants";
 import Link from "next/link";
 
 const Footer = () => {

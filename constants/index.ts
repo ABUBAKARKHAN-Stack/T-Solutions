@@ -1,36 +1,14 @@
 import {
-   Code2, Smartphone, Cloud, Container, Brain,  Shield, Users, Zap, Lightbulb, Globe, Target, Eye, Heart, Award, Clock, HeartHandshake, Sparkles, Search, Rocket } from "lucide-react";
+  Code2, Smartphone, Cloud, Container, Brain, Shield, Users, Zap, Lightbulb, Globe, Target, Eye, Heart, Award, Clock, HeartHandshake, Sparkles, Search, Rocket
+} from "lucide-react";
 
 
-// ── Navigation ──────────────────────────────────────────────
-export const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Services", to: "/services", hasDropdown: true },
-  { label: "Portfolio", to: "/portfolio" },
-  { label: "Contact", to: "/contact" },
-];
 
-export const footerLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Portfolio", to: "/portfolio" },
-  { label: "Contact", to: "/contact" },
-];
-
-// ── Services ────────────────────────────────────────────────
-export const serviceItems = [
-  { icon: Code2, label: "Full Stack Development", description: "End-to-end web applications" },
-  { icon: Smartphone, label: "App Development", description: "iOS, Android & cross-platform" },
-  { icon: Cloud, label: "Cloud Solutions", description: "Scalable cloud infrastructure" },
-  { icon: Container, label: "DevOps & Automation", description: "CI/CD & infrastructure as code" },
-  { icon: Brain, label: "AI & Machine Learning", description: "Intelligent automation & insights" },
-];
 
 export const services = [
   {
-    icon: Code2, title: "Full Stack Development", slug: "full-stack-development", num: "01", image:"assets/service-fullstack.jpg", featured: true,
+    icon: "Code2",
+    title: "Full Stack Development", slug: "full-stack-development", num: "01", image: "assets/service-fullstack.jpg", featured: true,
     description: "Build robust, scalable web applications from frontend to backend with modern technology stacks.",
     longDescription: "We deliver end-to-end web applications using cutting-edge technologies like React, Node.js, TypeScript, and PostgreSQL. From responsive UI design to robust API architecture and database optimization, our full stack team handles every layer of your application. We follow best practices in code quality, testing, and security to ensure your product is production-ready and maintainable.",
     tags: ["React", "Node.js", "TypeScript", "APIs"],
@@ -69,7 +47,7 @@ export const services = [
     ],
   },
   {
-    icon: Smartphone, title: "App Development", slug: "app-development", num: "02", image: "assets/service-appdev.jpg", featured: false,
+    icon: "Smartphone", title: "App Development", slug: "app-development", num: "02", image: "assets/service-appdev.jpg", featured: false,
     description: "Create stunning mobile experiences for iOS, Android, and cross-platform with native performance.",
     longDescription: "We build high-performance mobile applications that users love. Whether you need a native iOS/Android app or a cross-platform solution with React Native or Flutter, our team delivers pixel-perfect UI, smooth animations, and seamless backend integration. We handle everything from prototyping and design to App Store deployment and post-launch support.",
     tags: ["React Native", "Flutter", "iOS", "Android"],
@@ -106,7 +84,7 @@ export const services = [
     ],
   },
   {
-    icon: Cloud, title: "Cloud Solutions", slug: "cloud-solutions", num: "03", image: "assets/service-cloud.jpg", featured: true,
+    icon: "Cloud", title: "Cloud Solutions", slug: "cloud-solutions", num: "03", image: "assets/service-cloud.jpg", featured: true,
     description: "Design and deploy scalable cloud infrastructure that grows with your business.",
     longDescription: "We architect cloud solutions on AWS, Azure, and GCP that are secure, cost-efficient, and infinitely scalable. From initial migration strategies to serverless architectures and microservices, we help you leverage the full power of the cloud. Our team ensures high availability, disaster recovery, and optimized performance across all your workloads.",
     tags: ["AWS", "Azure", "GCP", "Serverless"],
@@ -143,7 +121,7 @@ export const services = [
     ],
   },
   {
-    icon: Container, title: "DevOps & Automation", slug: "devops-automation", num: "04", image: "assets/service-devops.jpg", featured: false,
+    icon: "Container", title: "DevOps & Automation", slug: "devops-automation", num: "04", image: "assets/service-devops.jpg", featured: false,
     description: "Streamline your development workflow with CI/CD pipelines, containerization, and infrastructure as code.",
     longDescription: "We implement DevOps practices that accelerate your development lifecycle and improve reliability. From setting up CI/CD pipelines with GitHub Actions or Jenkins to containerizing applications with Docker and Kubernetes, we automate everything from testing to deployment. Our infrastructure-as-code approach using Terraform and Ansible ensures reproducible, version-controlled environments.",
     tags: ["Docker", "Kubernetes", "CI/CD", "Terraform"],
@@ -180,7 +158,7 @@ export const services = [
     ],
   },
   {
-    icon: Brain, title: "AI & Machine Learning", slug: "ai-machine-learning", num: "05", image: "assets/service-ai.jpg", featured: true,
+    icon: "Brain", title: "AI & Machine Learning", slug: "ai-machine-learning", num: "05", image: "assets/service-ai.jpg", featured: true,
     description: "Integrate intelligent automation, predictive analytics, and AI-powered features into your products.",
     longDescription: "We bring the power of AI and machine learning to your business. From building custom ML models and NLP pipelines to integrating GPT-powered features and computer vision, we help you unlock insights from your data and automate complex workflows. Our solutions are production-grade, scalable, and designed to deliver measurable business impact.",
     tags: ["LLMs", "Computer Vision", "NLP", "Predictive Analytics"],
@@ -226,7 +204,6 @@ export const homeServices = [
   { icon: Brain, title: "AI & Machine Learning", slug: "ai-machine-learning", description: "Intelligent automation, predictive analytics & AI-powered features.", num: "05", image: "assets/service-ai.jpg", tags: ["LLMs", "ML Models"], featured: true },
 ];
 
-export const footerServices = ["Full Stack Development", "App Development", "Cloud Solutions", "DevOps & Automation", "AI & Machine Learning"];
 
 // ── Features (Home) ─────────────────────────────────────────
 export const features = [
