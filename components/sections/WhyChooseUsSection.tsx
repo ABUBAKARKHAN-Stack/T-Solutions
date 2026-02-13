@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import SectionHeader from "@/components/SectionHeader";
-import { StaggerChildren, itemVariants } from "@/components/StaggerChildren";
-import ParallaxSection from "@/components/ParallaxSection";
+import SectionHeader from "@/components/shared/SectionHeader";
+import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
+import ParallaxSection from "@/components/shared/ParallaxSection";
 import { whyChooseUsReasons } from "@/constants";
 
 const WhyChooseUsSection = () => {

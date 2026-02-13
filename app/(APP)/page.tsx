@@ -8,6 +8,7 @@ const Index = async () => {
       {/* Hero Section */}
       <HeroSection />
 
+      {/* Features Section */}
       <FeaturesSection />
 
     </PageTransition>

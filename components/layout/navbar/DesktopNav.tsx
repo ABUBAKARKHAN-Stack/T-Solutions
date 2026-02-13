@@ -1,14 +1,16 @@
 import { navLinks } from '@/constants/navigation.constants'
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu} from 'lucide-react';
 import Link from 'next/link';
 import ServicesDropdown from './ServicesDropdown';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import ContainerLayout from '../ContainerLayout';
-import ThemeToggle from '@/components/ThemeToggle';
-import ContactDrawer from '@/components/ContactDrawer';
+import {
+    ContactDrawer,
+    ThemeToggle
+} from '@/components/shared';
 import { Button } from '@/components/ui/button';
 
 type Props = {

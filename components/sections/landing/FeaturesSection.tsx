@@ -1,23 +1,29 @@
 "use client"
-import ParallaxSection from '@/components/ParallaxSection'
-import SectionHeader from '@/components/SectionHeader'
-import { StaggerChildren, itemVariants } from '@/components/StaggerChildren'
-import { features } from '@/constants'
+import { ContainerLayout } from '@/components/layout'
+import {
+    ParallaxSection,
+    SectionHeader,
+    StaggerChildren,
+    itemVariants
+} from '@/components/shared/'
+import { featuresContent } from '@/data/landing.data'
 import { motion } from 'motion/react'
 
 const FeaturesSection = () => {
     return (
         <ParallaxSection speed={0.15}>
             <section className="section-padding bg-background relative">
-                <div className="container mx-auto px-4 lg:px-8">
+
+                <ContainerLayout>
+
                     <SectionHeader
                         eyebrow="What We Offer"
                         title="Solutions built for the future"
-                        className="mb-20"
+                        className="mb-16"
                     />
 
                     <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {features.map((feature) => (
+                        {featuresContent.map((feature) => (
                             <motion.div key={feature.title} variants={itemVariants}>
                                 <div className="group glass-card rounded-2xl p-8 h-full cursor-default">
                                     <div className="flex items-start justify-between mb-6">
@@ -34,7 +40,7 @@ const FeaturesSection = () => {
                             </motion.div>
                         ))}
                     </StaggerChildren>
-                </div>
+                </ContainerLayout>
             </section>
         </ParallaxSection>
     )

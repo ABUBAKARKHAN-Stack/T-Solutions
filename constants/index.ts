@@ -206,14 +206,7 @@ export const homeServices = [
 
 
 // ── Features (Home) ─────────────────────────────────────────
-export const features = [
-  { icon: Code2, title: "Full Stack Apps", description: "End-to-end web applications built with modern frameworks and scalable architecture.", num: "01" },
-  { icon: Smartphone, title: "Mobile First", description: "Cross-platform mobile apps with native performance and beautiful user experiences.", num: "02" },
-  { icon: Cloud, title: "Cloud Native", description: "Scalable cloud infrastructure on AWS, Azure, and GCP designed for growth.", num: "03" },
-  { icon: Container, title: "DevOps Pipeline", description: "Automated CI/CD, containerization, and infrastructure as code for rapid delivery.", num: "04" },
-  { icon: Brain, title: "AI Integration", description: "Smart automation, predictive analytics, and LLM-powered features for your products.", num: "05" },
-  { icon: Globe, title: "Global Scale", description: "Distributed systems and edge computing to serve users worldwide with low latency.", num: "06" },
-];
+
 
 // ── Partners ────────────────────────────────────────────────
 export const partners = ["TechVault", "Horizon Inc", "NovaBridge", "EcoSphere", "PeakPoint"];

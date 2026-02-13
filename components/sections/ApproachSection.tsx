@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import SectionHeader from "@/components/SectionHeader";
-import { StaggerChildren, itemVariants } from "@/components/StaggerChildren";
+import SectionHeader from "@/components/shared/SectionHeader";
+import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
 import { approachSteps } from "@/constants";
 
 const ApproachSection = () => {

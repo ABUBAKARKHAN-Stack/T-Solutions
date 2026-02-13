@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import SectionHeader from "@/components/SectionHeader";
+import SectionHeader from "@/components/shared/SectionHeader";
 import { testimonials } from "@/constants";
 
 const TestimonialsSection = () => {

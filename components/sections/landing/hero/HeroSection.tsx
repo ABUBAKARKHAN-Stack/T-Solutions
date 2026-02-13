@@ -3,17 +3,22 @@
 import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
 import { ContainerLayout } from "@/components/layout/";
-import MagneticButton from "@/components/MagneticButton";
+import MagneticButton from "@/components/shared/MagneticButton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import ContactDrawer from "@/components/ContactDrawer";
-import { heroMissionServices } from "@/constants";
 import GrainNoiseOverlay from "./GrainNoiseOverlay";
-import { BorderBeam } from "@/components/ui/border-beam";
 import AnimatedGradientMesh from "./AnimatedGradientMesh";
 import DecorativeVerticalLine from "./DecorativeVerticalLine";
-import { heroContent } from "@/constants/landing.constants";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { heroContent } from "@/data/landing.data";
+import {
+    HighlightedBrandName,
+    ContactDrawer
+
+} from "@/components/shared/";
+import { useServices } from "@/context/ServiceContext";
+import { getIconByName } from "@/lib/icon-mapper";
 
 const HeroSection = () => {
 
@@ -24,6 +29,9 @@ const HeroSection = () => {
     });
     const heroY = useTransform(heroScroll, [0, 1], [0, 150]);
     const heroOpacity = useTransform(heroScroll, [0, 0.8], [1, 0]);
+    const {
+        servicesOverview
+    } = useServices()
 
     return (
         <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
@@ -64,9 +72,9 @@ const HeroSection = () => {
                             </motion.div>
 
                             {/* Headline */}
-                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-foreground leading-[0.92] tracking-[-0.03em] mb-8">
+                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-foreground leading-[0.92] tracking-[-0.01em] mb-8">
                                 {heroContent.headline.map((word, i) => (
-                                    <span key={word} className="block overflow-hidden">
+                                    <span key={word} className="block">
                                         <motion.span
                                             className="block"
                                             initial={{ y: "110%" }}
@@ -94,7 +102,28 @@ const HeroSection = () => {
                                 ))}
                             </h1>
 
-                            {/* Subtext */}
+                            {/* Subtext Paragraphs */}
+                            <motion.p
+                                className="text-base md:text-lg text-muted-foreground max-w-lg leading-[1.8] font-light mb-4"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.5 }}
+                            >
+                                {heroContent.subtext}
+                            </motion.p>
+
+                            <motion.p
+                                className="text-base md:text-lg text-muted-foreground max-w-lg leading-[1.8] font-light mb-4"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.6 }}
+                            >
+                                <HighlightedBrandName
+                                    animate
+                                    once
+                                /> is a digital solutions studio focused on building reliable and scalable technology.
+                            </motion.p>
+
                             <motion.p
                                 className="text-base md:text-lg text-muted-foreground max-w-lg leading-[1.8] font-light mb-10"
                                 initial={{ opacity: 0, y: 20 }}
@@ -106,7 +135,7 @@ const HeroSection = () => {
 
                             {/* CTAs */}
                             <motion.div
-                                className="flex flex-wrap items-center gap-4"
+                                className="flex flex-wrap items-center gap-4 pb-8 border-b"
                                 initial={{ opacity: 0, y: 15 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.6 }}
@@ -127,20 +156,6 @@ const HeroSection = () => {
                                 </MagneticButton>
                             </motion.div>
 
-                            {/* Trust badges */}
-                            <motion.div
-                                className="flex items-center gap-6 mt-14 pt-8 border-t border-border/30"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.6, delay: 0.8 }}
-                            >
-                                {heroContent.badges.map((badge) => (
-                                    <div key={badge.label} className="flex items-center gap-2">
-                                        <badge.icon className="h-3.5 w-3.5 text-accent" />
-                                        <span className="text-[11px] font-medium text-muted-foreground">{badge.label}</span>
-                                    </div>
-                                ))}
-                            </motion.div>
                         </div>
 
                         {/* Right column — services preview + mission */}
@@ -165,24 +180,27 @@ const HeroSection = () => {
                                     </p>
 
                                     <div className="space-y-4 relative z-10">
-                                        {heroMissionServices.map((service, i) => (
-                                            <motion.div
-                                                key={service.label}
-                                                className="flex items-center gap-4 p-3 rounded-xl hover:bg-accent/5 transition-colors duration-300 cursor-default"
-                                                initial={{ opacity: 0, x: -15 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                transition={{ duration: 0.5, delay: 0.9 + i * 0.1 }}
-                                            >
-                                                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                                                    <service.icon className="h-4 w-4 text-accent" />
-                                                </div>
-                                                <div>
-                                                    <p className="text-sm font-medium text-foreground">{service.label}</p>
-                                                    <p className="text-xs text-muted-foreground">{service.desc}</p>
-                                                </div>
-                                                <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground/40 ml-auto" />
-                                            </motion.div>
-                                        ))}
+                                        {servicesOverview.map((service, i) => {
+                                            const Icon = getIconByName(service.icon)
+                                            return (
+                                                <motion.div
+                                                    key={service._id}
+                                                    className="flex items-center gap-4 p-3 rounded-xl hover:bg-accent/5 transition-colors duration-300 cursor-default"
+                                                    initial={{ opacity: 0, x: -15 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    transition={{ duration: 0.5, delay: 0.9 + i * 0.1 }}
+                                                >
+                                                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                                                        <Icon className="h-4 w-4 text-accent" />
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-sm font-medium text-foreground">{service.title}</p>
+                                                        <p className="text-xs text-muted-foreground">{service.description}</p>
+                                                    </div>
+                                                    <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground/40 ml-auto" />
+                                                </motion.div>
+                                            )
+                                        })}
                                     </div>
                                 </div>
 
@@ -206,7 +224,7 @@ const HeroSection = () => {
                                 </div>
                             </div>
                         </motion.div>
-                        
+
                     </div>
                 </motion.div>
             </ContainerLayout>

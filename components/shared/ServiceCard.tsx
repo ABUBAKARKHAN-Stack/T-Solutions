@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import { ArrowUpRight, Star } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
+import Link from "next/link";
 
 interface ServiceCardProps {
   icon: LucideIcon;
@@ -16,17 +16,16 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ icon: Icon, title, description, num, image, slug, tags, wide, featured }: ServiceCardProps) => {
   return (
-    <Link to={slug ? `/services/${slug}` : "/services"} className="group block h-full">
+    <Link href={slug ? `/services/${slug}` : "/services"} className="group block h-full">
       <div
-        className={`relative rounded-2xl overflow-hidden h-full bg-card dark:bg-foreground/[0.03] border border-border/60 dark:border-border/50 hover:border-accent/50 transition-all duration-500 shadow-sm dark:shadow-none flex ${
-          wide ? "flex-col lg:flex-row" : "flex-col"
-        }`}
+        className={`relative rounded-2xl overflow-hidden h-full bg-card dark:bg-foreground/3 border border-border/60 dark:border-border/50 hover:border-accent/50 transition-all duration-500 shadow-sm dark:shadow-none flex ${wide ? "flex-col lg:flex-row" : "flex-col"
+          }`}
       >
         {/* Accent border lines on hover */}
-        <div className="absolute top-0 left-0 w-0 h-[2px] bg-accent transition-all duration-500 group-hover:w-full z-20" />
-        <div className="absolute bottom-0 right-0 w-0 h-[2px] bg-accent transition-all duration-500 group-hover:w-full z-20" />
-        <div className="absolute top-0 left-0 h-0 w-[2px] bg-accent transition-all duration-500 delay-100 group-hover:h-full z-20" />
-        <div className="absolute bottom-0 right-0 h-0 w-[2px] bg-accent transition-all duration-500 delay-100 group-hover:h-full z-20" />
+        <div className="absolute top-0 left-0 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full z-20" />
+        <div className="absolute bottom-0 right-0 w-0 h-0.5 bg-accent transition-all duration-500 group-hover:w-full z-20" />
+        <div className="absolute top-0 left-0 h-0 w-0.5 bg-accent transition-all duration-500 delay-100 group-hover:h-full z-20" />
+        <div className="absolute bottom-0 right-0 h-0 w-0.5 bg-accent transition-all duration-500 delay-100 group-hover:h-full z-20" />
 
         {wide ? (
           /* Wide card: visible image on the left */
@@ -38,8 +37,8 @@ const ServiceCard = ({ icon: Icon, title, description, num, image, slug, tags, w
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-card hidden lg:block" />
-              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent lg:hidden" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-transparent to-card hidden lg:block" />
+              <div className="absolute inset-0 bg-linear-to-t from-card via-card/40 to-transparent lg:hidden" />
             </div>
 
             <div className="relative z-10 p-7 flex flex-col flex-1 justify-between">
@@ -89,7 +88,7 @@ const ServiceCard = ({ icon: Icon, title, description, num, image, slug, tags, w
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent" />
             </div>
 
             <div className="relative z-10 p-7 flex flex-col flex-1">

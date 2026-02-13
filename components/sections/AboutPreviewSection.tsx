@@ -3,7 +3,7 @@ import { ArrowRight, Target, Users, Globe } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import AnimatedSection from "@/components/AnimatedSection";
-import MagneticButton from "@/components/MagneticButton";
+import MagneticButton from "@/components/shared/MagneticButton";
 import { Button } from "@/components/ui/button";
 import aboutPreviewImg from "@/assets/about-preview.jpg";
 import { stats, aboutHighlights } from "@/constants";

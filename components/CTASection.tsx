@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnimatedSection from "@/components/AnimatedSection";
-import MagneticButton from "@/components/MagneticButton";
-import ContactDrawer from "@/components/ContactDrawer";
+import MagneticButton from "@/components/shared/MagneticButton";
+import ContactDrawer from "@/components/shared/ContactDrawer";
 
 interface CTASectionProps {
   title: ReactNode;

@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import SectionHeader from "@/components/SectionHeader";
+import SectionHeader from "@/components/shared/SectionHeader";
 import AnimatedSection from "@/components/AnimatedSection";
 import { faqs } from "@/constants";
 

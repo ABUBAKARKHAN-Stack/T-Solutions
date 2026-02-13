@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import SectionHeader from "@/components/SectionHeader";
-import { StaggerChildren, itemVariants } from "@/components/StaggerChildren";
+import SectionHeader from "@/components/shared/SectionHeader";
+import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import { caseStudies } from "@/constants";
 

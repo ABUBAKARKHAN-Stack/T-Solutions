@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 interface BreadcrumbItem {
   label: string;
@@ -45,7 +45,7 @@ const PageHero = ({ eyebrow, title, description, backgroundImage, breadcrumbs, c
                   <li key={i} className="inline-flex items-center gap-1.5">
                     {i > 0 && <ChevronRight className="h-3.5 w-3.5 text-muted-foreground/50" />}
                     {crumb.href ? (
-                      <Link to={crumb.href} className="text-muted-foreground hover:text-foreground transition-colors">
+                      <Link href={crumb.href} className="text-muted-foreground hover:text-foreground transition-colors">
                         {crumb.label}
                       </Link>
                     ) : (

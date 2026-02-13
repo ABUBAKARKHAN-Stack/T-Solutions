@@ -2,7 +2,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "motion/react";
 import { VariantProps } from "class-variance-authority";
-import { Button, buttonVariants } from "./ui/button";
+import { Button, buttonVariants } from "../ui/button";
 
 type Props = {
   variant?: VariantProps<typeof buttonVariants>["variant"];
