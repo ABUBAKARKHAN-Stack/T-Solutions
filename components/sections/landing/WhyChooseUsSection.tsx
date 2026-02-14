@@ -1,20 +1,21 @@
-import { motion } from "framer-motion";
-import SectionHeader from "@/components/shared/SectionHeader";
+"use client"
+import { motion } from "motion/react";
+import { SectionHeader } from "@/components/shared";
 import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
 import ParallaxSection from "@/components/shared/ParallaxSection";
 import { whyChooseUsReasons } from "@/constants";
+import { ContainerLayout } from "@/components/layout";
 
 const WhyChooseUsSection = () => {
   return (
     <ParallaxSection speed={0.1}>
       <section className="section-padding bg-card/30 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[180px]" />
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="absolute top-0 right-0 w-150 h-150 bg-accent/5 rounded-full blur-[180px]" />
+        <ContainerLayout className="relative z-10">
           <SectionHeader
             eyebrow="Why Choose Us"
             title={<>Built on <span className="text-accent italic">trust</span> & expertise</>}
             description="We don't just consult — we become an extension of your team, committed to delivering excellence at every step."
-            className="mb-20"
           />
 
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
@@ -30,7 +31,7 @@ const WhyChooseUsSection = () => {
               </motion.div>
             ))}
           </StaggerChildren>
-        </div>
+        </ContainerLayout>
       </section>
     </ParallaxSection>
   );

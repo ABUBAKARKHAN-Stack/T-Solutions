@@ -1,10 +1,17 @@
 import { PageTransition } from "@/components/layout/";
-import { 
+import {
   HeroSection,
   FeaturesSection,
   ServicesSection,
-  AboutPreviewSection
- } from "@/components/sections/landing";
+  AboutPreviewSection,
+  ApproachSection,
+  CTASection,
+  FAQSection,
+  PartnersSection,
+  PortfolioSection,
+  TestimonialsSection,
+  WhyChooseUsSection,
+} from "@/components/sections/landing";
 
 const HomePage = async () => {
   return (
@@ -18,8 +25,29 @@ const HomePage = async () => {
       {/* Services Section */}
       <ServicesSection />
 
+      {/* Partners Section  */}
+      <PartnersSection />
+
       {/* About Preview Section */}
       <AboutPreviewSection />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
+
+      {/* Portfolio / Case Studies */}
+      <PortfolioSection />
+
+      {/* Our Approach */}
+      <ApproachSection />
+
+      {/* Why Choose Us */}
+      <WhyChooseUsSection />
+
+      {/* FAQ */}
+      <FAQSection />
+
+      {/* CTA Section  */}
+      <CTASection />
 
     </PageTransition>
   );

@@ -1,8 +1,11 @@
+"use client"
+
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
-import SectionHeader from "@/components/shared/SectionHeader";
+import { SectionHeader } from "@/components/shared";
 import { testimonials } from "@/constants";
+import { ContainerLayout } from "@/components/layout";
 
 const TestimonialsSection = () => {
   const [active, setActive] = useState(2);
@@ -19,7 +22,8 @@ const TestimonialsSection = () => {
 
   return (
     <section className="section-padding bg-background overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
+      <ContainerLayout>
+
         <SectionHeader
           eyebrow="Testimonials"
           title={<>What our clients <span className="text-accent italic">say</span></>}
@@ -28,7 +32,7 @@ const TestimonialsSection = () => {
 
         {/* Coverflow carousel */}
         <motion.div
-          className="relative flex items-center justify-center h-[380px] md:h-[340px] cursor-grab active:cursor-grabbing"
+          className="relative flex items-center justify-center h-95 md:h-85 cursor-grab active:cursor-grabbing"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.1}
@@ -67,9 +71,8 @@ const TestimonialsSection = () => {
                 }}
               >
                 <div
-                  className={`bg-card/50 backdrop-blur-sm border border-border/30 rounded-3xl p-8 md:p-10 flex flex-col transition-shadow duration-500 ${
-                    isActive ? "shadow-2xl border-accent/30" : ""
-                  }`}
+                  className={`bg-card/50 backdrop-blur-sm border border-border/30 rounded-3xl p-8 md:p-10 flex flex-col transition-shadow duration-500 ${isActive ? "shadow-2xl border-accent/30" : ""
+                    }`}
                   style={{ willChange: "backdrop-filter" }}
                 >
                   <Quote className="h-6 w-6 text-accent/30 mb-4" />
@@ -111,9 +114,8 @@ const TestimonialsSection = () => {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  i === active ? "w-6 bg-accent" : "w-1.5 bg-border/60 hover:bg-accent/40"
-                }`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? "w-6 bg-accent" : "w-1.5 bg-border/60 hover:bg-accent/40"
+                  }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
             ))}
@@ -127,7 +129,7 @@ const TestimonialsSection = () => {
             <ChevronRight className="h-4 w-4 text-foreground" />
           </button>
         </div>
-      </div>
+      </ContainerLayout>
     </section>
   );
 };

@@ -1,16 +1,19 @@
-import { motion } from "framer-motion";
+"use client"
+
+import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import SectionHeader from "@/components/shared/SectionHeader";
-import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import { StaggerChildren, itemVariants, SectionHeader } from "@/components/shared/";
+import BeforeAfterSlider from "@/components/sections/landing/BeforeAfterSlider";
 import { caseStudies } from "@/constants";
+import { ContainerLayout } from "@/components/layout";
+import Link from "next/link";
 
 const PortfolioSection = () => {
   return (
     <section className="section-padding bg-card/30 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px]" />
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="absolute top-0 left-0 w-125 h-125 bg-accent/5 rounded-full blur-[150px]" />
+      <ContainerLayout className="relative z-10">
+
         <SectionHeader
           eyebrow="Case Studies"
           title={<>Real impact, <span className="text-accent italic">real results</span></>}
@@ -40,7 +43,7 @@ const PortfolioSection = () => {
                       <p className="text-base font-bold text-accent">{study.result}</p>
                     </div>
                     <Link
-                      to={`/portfolio/${study.slug}`}
+                      href={`/portfolio/${study.slug}`}
                       className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                     >
                       <ArrowUpRight className="h-4 w-4" />
@@ -51,7 +54,7 @@ const PortfolioSection = () => {
             </motion.div>
           ))}
         </StaggerChildren>
-      </div>
+      </ContainerLayout>
     </section>
   );
 };

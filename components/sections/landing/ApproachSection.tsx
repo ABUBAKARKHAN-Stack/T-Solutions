@@ -1,18 +1,21 @@
+"use client"
+
 import { motion } from "framer-motion";
-import SectionHeader from "@/components/shared/SectionHeader";
+import {SectionHeader} from "@/components/shared";
 import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
 import { approachSteps } from "@/constants";
+import { ContainerLayout } from "@/components/layout";
 
 const ApproachSection = () => {
   return (
     <section className="section-padding bg-background relative overflow-hidden">
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[150px]" />
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-accent/5 rounded-full blur-[150px]" />
+      <ContainerLayout className="relative z-10">
+
           <SectionHeader
             eyebrow="Our Approach"
             title={<>A proven path to <span className="text-accent italic">results</span></>}
             centered
-            className="mb-20"
           />
 
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
@@ -34,7 +37,7 @@ const ApproachSection = () => {
             </motion.div>
           ))}
         </StaggerChildren>
-      </div>
+      </ContainerLayout>
     </section>
   );
 };

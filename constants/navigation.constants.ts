@@ -18,13 +18,14 @@ export const serviceItems = [
 ];
 export const contactInfo = [
   {
-    label: "Email",
+    label: "info@t-solutionz.com",
     link: "mailto:info@t-solutionz.com",
     icon: Mail
   },
    {
-    label: "Phone",
-    link: "+92-3257030523",
+    label: "+92-3257030523",
+    link: "tel:+923257030523",
     icon: Phone
   },
 ]
+

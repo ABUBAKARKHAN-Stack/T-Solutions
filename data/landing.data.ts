@@ -61,3 +61,5 @@ export const featuresContent = [
   { icon: Brain, title: "AI Integration", description: "Smart automation, predictive analytics, and LLM-powered features for your products.", num: "05" },
   { icon: Globe, title: "Global Scale", description: "Distributed systems and edge computing to serve users worldwide with low latency.", num: "06" },
 ];
+
+export const partners = ["TechVault", "Horizon Inc", "NovaBridge", "EcoSphere", "PeakPoint"];
