@@ -1,5 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SectionHeader, AnimatedSection, MagneticButton } from "@/components/shared";
+import { SectionHeader, AnimatedSection, MagneticButton, ContactDrawer } from "@/components/shared";
 import { faqs } from "@/constants";
 import { ContainerLayout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
@@ -15,19 +15,19 @@ const FAQSection = () => {
 
       <ContainerLayout className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-    <div>
-                
-          <SectionHeader
-            eyebrow="FAQs"
-            title={<>Questions? <br /><span className="text-accent italic">We've got answers</span></>}
-            description="Everything you need to know about working with us. Can't find what you're looking for? Feel free to reach out."
-          />
-          <MagneticButton strength={0.1}>
-            <Link href={'/contact'} className="bg-transparent flex items-center hover:bg-transparent text-accent" >
-              Contact us for more <ArrowRight className="ml-2 size-4" />
-            </Link>
-          </MagneticButton>
-    </div>
+          <div>
+
+            <SectionHeader
+              eyebrow="FAQs"
+              title={<>Questions? <br /><span className="text-accent italic">We've got answers</span></>}
+              description="Everything you need to know about working with us. Can't find what you're looking for? Feel free to reach out."
+            />
+            <ContactDrawer>
+              <MagneticButton strength={0.1} className="hover:cursor-pointer bg-transparent flex items-center hover:bg-transparent text-accent">
+                Start a Conversation <ArrowRight className="ml-2 size-4" />
+              </MagneticButton>
+            </ContactDrawer>
+          </div>
 
           <AnimatedSection delay={0.2}>
             <Accordion type="single" collapsible className="space-y-3">

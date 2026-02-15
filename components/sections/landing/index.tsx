@@ -9,6 +9,7 @@ import WhyChooseUsSection from "./WhyChooseUsSection";
 import ApproachSection from "./ApproachSection";
 import FAQSection from "./FAQSection";
 import CTASection from "./CTASection";
+import BlogSection from "./BlogsSection";
 
 export {
     HeroSection,
@@ -22,5 +23,6 @@ export {
     PortfolioSection,
     TestimonialsSection,
     WhyChooseUsSection,
+    BlogSection
 
 }

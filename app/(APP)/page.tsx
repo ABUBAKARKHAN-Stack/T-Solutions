@@ -11,6 +11,7 @@ import {
   PortfolioSection,
   TestimonialsSection,
   WhyChooseUsSection,
+  BlogSection,
 } from "@/components/sections/landing";
 
 const HomePage = async () => {
@@ -33,6 +34,9 @@ const HomePage = async () => {
 
       {/* Testimonials Section */}
       <TestimonialsSection />
+
+      {/* Blogs Section  */}
+      <BlogSection />
 
       {/* Portfolio / Case Studies */}
       <PortfolioSection />

@@ -63,3 +63,33 @@ export const featuresContent = [
 ];
 
 export const partners = ["TechVault", "Horizon Inc", "NovaBridge", "EcoSphere", "PeakPoint"];
+
+export const blogPosts = [
+  {
+    title: "The Future of AI in Enterprise Software",
+    excerpt: "How artificial intelligence is reshaping the way businesses build, deploy, and maintain software at scale.",
+    category: "AI & Innovation",
+    date: "Feb 10, 2026",
+    readTime: "5 min read",
+    slug: "future-of-ai-enterprise",
+    image:'/assets/blog-ai.jpg',
+  },
+  {
+    title: "Why Sustainable Tech Matters More Than Ever",
+    excerpt: "Exploring the intersection of environmental responsibility and cutting-edge technology solutions.",
+    category: "Sustainability",
+    date: "Jan 28, 2026",
+    readTime: "4 min read",
+    slug: "sustainable-tech-matters",
+    image: "/assets/blog-sustainability.jpg",
+  },
+  {
+    title: "Scaling Startups: From MVP to Market Leader",
+    excerpt: "A proven framework for transforming minimum viable products into industry-defining platforms.",
+    category: "Strategy",
+    date: "Jan 15, 2026",
+    readTime: "6 min read",
+    slug: "scaling-startups-mvp",
+    image: '/assets/blog-scaling.jpg',
+  },
+];

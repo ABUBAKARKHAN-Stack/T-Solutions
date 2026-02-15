@@ -9,6 +9,7 @@ import ContactDrawer from "./ContactDrawer";
 import { StaggerChildren,itemVariants } from "./StaggerChildren";
 import AnimatedSection from "./AnimatedSection";
 import CTASection from "./CTASection";
+import BlogCard from "./BlogCard";
 
 export {
     HighlightedBrandName,
@@ -22,5 +23,6 @@ export {
     StaggerChildren,
     itemVariants,
     AnimatedSection,
-    CTASection
+    CTASection,
+    BlogCard
 }
