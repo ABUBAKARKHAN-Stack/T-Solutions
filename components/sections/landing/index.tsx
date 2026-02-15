@@ -3,13 +3,14 @@ import FeaturesSection from "./FeaturesSection";
 import ServicesSection from "./ServicesSection";
 import AboutPreviewSection from "./AboutPreviewSection";
 import PartnersSection from "./PartnersSection";
-import PortfolioSection from "./PortfolioSection";
+import CaseStudySection from "./CaseStudySection";
 import TestimonialsSection from "./TestimonialsSection";
 import WhyChooseUsSection from "./WhyChooseUsSection";
 import ApproachSection from "./ApproachSection";
 import FAQSection from "./FAQSection";
 import CTASection from "./CTASection";
 import BlogSection from "./BlogsSection";
+import PortfolioSection from "./PortfolioSection";
 
 export {
     HeroSection,
@@ -20,9 +21,10 @@ export {
     CTASection,
     FAQSection,
     PartnersSection,
-    PortfolioSection,
+    CaseStudySection,
     TestimonialsSection,
     WhyChooseUsSection,
-    BlogSection
+    BlogSection,
+    PortfolioSection
 
 }

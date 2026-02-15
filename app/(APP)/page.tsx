@@ -8,10 +8,11 @@ import {
   CTASection,
   FAQSection,
   PartnersSection,
-  PortfolioSection,
+  CaseStudySection,
   TestimonialsSection,
   WhyChooseUsSection,
   BlogSection,
+  PortfolioSection,
 } from "@/components/sections/landing";
 
 const HomePage = async () => {
@@ -32,14 +33,17 @@ const HomePage = async () => {
       {/* About Preview Section */}
       <AboutPreviewSection />
 
+      {/* Portfolio Section  */}
+      <PortfolioSection />
+
       {/* Testimonials Section */}
       <TestimonialsSection />
 
       {/* Blogs Section  */}
       <BlogSection />
 
-      {/* Portfolio / Case Studies */}
-      <PortfolioSection />
+      {/* Case Studies */}
+      {/* <CaseStudySection /> */}
 
       {/* Our Approach */}
       <ApproachSection />
