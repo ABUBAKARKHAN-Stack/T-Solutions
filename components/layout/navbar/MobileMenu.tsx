@@ -10,7 +10,7 @@ import { ChevronDown, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Dispatch, SetStateAction, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import ContainerLayout from '../ContainerLayout'
 
@@ -23,9 +23,19 @@ const MobileMenu = ({
     setOpen,
 }: Props) => {
 
+    const [mounted, setMounted] = useState(false)
+
+
     const pathname = usePathname()
     const [mobileServices, setMobileServices] = useState(false)
     const { servicesOverview } = useServices()
+
+    useEffect(() => {
+        if (mounted) return;
+        setMounted(true)
+    }, [])
+
+    if(!mounted) return;
     return (
         createPortal(
             <AnimatePresence>

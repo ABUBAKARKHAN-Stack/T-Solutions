@@ -42,7 +42,6 @@ const PageHero = ({ eyebrow, title, description, backgroundImage, breadcrumbs, c
             }
             alt={backgroundImage.alt}
             className="w-full h-full object-cover"
-            loading="lazy"
             priority
           />
           <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/90 to-background" />

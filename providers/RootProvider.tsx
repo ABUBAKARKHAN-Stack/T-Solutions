@@ -6,10 +6,11 @@ import { Footer, Navbar } from "@/components/layout/index"
 export const RootProvider = ({ children }: { children: ReactNode }) => {
     return (
         <ThemeProvider
-            attribute={"class"}
+            attribute="class"
             enableColorScheme
             defaultTheme="dark"
             storageKey="t-solutions-theme"
+            disableTransitionOnChange
         >
             <Toaster />
             <Navbar />

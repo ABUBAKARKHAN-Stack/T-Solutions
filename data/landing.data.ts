@@ -108,5 +108,4 @@ export const portfolioProjects = [
     results: ["2M+ daily transactions processed", "99.99% platform uptime", "60% faster onboarding flow", "85% reduction in fraud incidents"],
     testimonial: { quote: "T-Solutions delivered a banking platform that exceeded every benchmark we set.", name: "David Park", role: "CTO, FinEdge Corp" },
   },
-  
 ];

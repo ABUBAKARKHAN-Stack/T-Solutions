@@ -7,11 +7,11 @@ import { IServiceOverview } from "@/types/service.types";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import { getIconByName } from "@/lib/icon-mapper";
+import { getPreviewImageUrl } from "@/lib/transformed-img-urls";
 
 interface ServiceCardProps {
   service: IServiceOverview
   num: number;
-
 }
 
 const ServiceCard = ({
@@ -73,16 +73,12 @@ const ServiceCard = ({
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src={
-              urlFor(image.source)
-                .quality(80)
-                .url()
-            }
+            src={getPreviewImageUrl(image.source)}
             alt={image.alt}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-linear-to-t from-foreground/95 via-foreground/60 to-foreground/10 dark:from-background/95 dark:via-background/65 dark:to-background/15" />
+          <div className="absolute inset-0 bg-linear-to-t from-foreground/95 via-foreground/60 to-foreground/10" />
         </div>
 
         {/* Hover gradient */}

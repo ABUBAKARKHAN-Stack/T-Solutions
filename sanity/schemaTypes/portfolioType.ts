@@ -30,14 +30,6 @@ export const portfolioType = defineType({
       type: 'string',
       validation: (R) => R.required(),
     }),
-
-    defineField({
-      name: 'client',
-      title: 'Client Name',
-      type: 'string',
-      validation: (R) => R.required(),
-    }),
-
     defineField({
       name: 'year',
       title: 'Year',
@@ -56,14 +48,6 @@ export const portfolioType = defineType({
       type: 'image',
       options: { hotspot: true },
       validation: (R) => R.required(),
-      fields: [
-        defineField({
-          name: 'alt',
-          title: 'Alt Text',
-          type: 'string',
-          validation: (R) => R.required(),
-        }),
-      ],
     }),
 
     //* Descriptions
@@ -124,14 +108,7 @@ export const portfolioType = defineType({
           validation: (R) => R.required(),
         }),
       ],
-    }),
-
-    //* Optional Featured Toggle
-    defineField({
-      name: 'featured',
-      title: 'Featured Project',
-      type: 'boolean',
-      initialValue: false,
+      validation: (R) => R.required()
     }),
   ],
 

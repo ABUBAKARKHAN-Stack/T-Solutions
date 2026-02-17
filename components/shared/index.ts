@@ -10,6 +10,7 @@ import { StaggerChildren,itemVariants } from "./StaggerChildren";
 import AnimatedSection from "./AnimatedSection";
 import CTASection from "./CTASection";
 import BlogCard from "./BlogCard";
+import PortfolioCard from "./PortfolioCard";
 
 export {
     HighlightedBrandName,
@@ -24,5 +25,6 @@ export {
     itemVariants,
     AnimatedSection,
     CTASection,
-    BlogCard
+    BlogCard,
+    PortfolioCard
 }

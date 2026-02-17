@@ -64,7 +64,7 @@ const Footer = () => {
             <h4 className="font-semibold text-xs uppercase tracking-[0.2em] text-foreground/40 mb-6">Contact</h4>
             <ul className="space-y-4">
               {contactInfo.map((item) => (
-                <li >
+                <li key={item.link} >
                   <a
                     href={item.link}
                     className="text-sm text-foreground/60 hover:text-accent transition-colors duration-300 flex items-center gap-3 group"

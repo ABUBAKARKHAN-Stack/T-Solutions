@@ -3,6 +3,7 @@ import { motion } from "motion/react"
 import { itemVariants } from "./StaggerChildren"
 import { ArrowUpRight, Clock } from "lucide-react"
 import Image from "next/image"
+import CardCategoryBadge from "./CardsTopBadge"
 type Props = {
     post: {
         title: string;
@@ -33,9 +34,10 @@ const BlogCard = ({ post }: Props) => {
                     <div className="absolute inset-0 bg-linear-to-t from-card/80 via-card/20 to-transparent" />
 
                     {/* Category badge on image */}
-                    <span className="absolute top-4 left-4 text-[10px] font-semibold text-accent uppercase tracking-[0.25em] px-2.5 py-1 rounded-full border border-accent/20 bg-accent-foreground/70 backdrop-blur-md">
-                        {post.category}
-                    </span>
+                    <CardCategoryBadge
+                        className="absolute top-4 left-4"
+                        label={post.category}
+                    />
                 </div>
 
                 <div className="p-7 flex flex-col flex-1">
