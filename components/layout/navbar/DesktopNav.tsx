@@ -1,7 +1,7 @@
 import { navLinks } from '@/constants/navigation.constants'
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react';
-import { ChevronDown, Menu} from 'lucide-react';
+import { ChevronDown, Menu } from 'lucide-react';
 import Link from 'next/link';
 import ServicesDropdown from './ServicesDropdown';
 import { usePathname } from 'next/navigation';
@@ -59,50 +59,53 @@ const DesktopNav = ({ setOpen, open }: Props) => {
                 </Link>
                 <nav className="hidden lg:flex items-center gap-1">
 
-                    {navLinks.map((link) => (
-                        <div
-                            key={link.to}
-                            ref={link.hasDropdown ? servicesRef : null}
-                            className="relative"
-                            onMouseEnter={() => link.hasDropdown && setShowServices(true)}
-                            onMouseLeave={() => link.hasDropdown && setShowServices(false)}
-                        >
-                            <Link
-                                href={link.to}
-                                className={cn(
-                                    "relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full flex items-center gap-1",
-                                    pathname === link.to
-                                        ? "text-foreground"
-                                        : "text-muted-foreground hover:text-foreground"
-                                )}
+                    {navLinks.map((link) => {
+                        const isActive = pathname === link.to;
+                        return (
+                            <div
+                                key={link.to}
+                                ref={link.hasDropdown ? servicesRef : null}
+                                className="relative"
+                                onMouseEnter={() => link.hasDropdown && setShowServices(true)}
+                                onMouseLeave={() => link.hasDropdown && setShowServices(false)}
                             >
-                                {pathname === link.to && (
-                                    <motion.div
-                                        className="absolute inset-0 bg-accent/10 rounded-full"
-                                        layoutId="nav-pill"
-                                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                                    />
-                                )}
-                                <span className="relative z-10">{link.label}</span>
-                                {link.hasDropdown && (
-                                    <motion.span
-                                        className="relative z-10"
-                                        animate={{ rotate: showServices ? 180 : 0 }}
-                                        transition={{ duration: 0.2 }}
-                                    >
-                                        <ChevronDown className="h-3.5 w-3.5" />
-                                    </motion.span>
-                                )}
-                            </Link>
+                                <Link
+                                    href={link.to}
+                                    className={cn(
+                                        "relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full flex items-center gap-1",
+                                        isActive
+                                            ? "text-foreground"
+                                            : "text-muted-foreground hover:text-foreground"
+                                    )}
+                                >
+                                    {isActive && (
+                                        <motion.div
+                                            className="absolute inset-0 bg-accent/10 rounded-full"
+                                            layoutId="nav-pill"
+                                            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{link.label}</span>
+                                    {link.hasDropdown && (
+                                        <motion.span
+                                            className="relative z-10"
+                                            animate={{ rotate: showServices ? 180 : 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            <ChevronDown className="h-3.5 w-3.5" />
+                                        </motion.span>
+                                    )}
+                                </Link>
 
-                            {/* Services Dropdown */}
-                            <ServicesDropdown
-                                hasDropdown={link.hasDropdown}
-                                showServices={showServices}
-                                anchorRef={servicesRef}
-                            />
-                        </div>
-                    ))}
+                                {/* Services Dropdown */}
+                                <ServicesDropdown
+                                    hasDropdown={link.hasDropdown}
+                                    showServices={showServices}
+                                    anchorRef={servicesRef}
+                                />
+                            </div>
+                        )
+                    })}
 
                     <div className="w-px h-6 bg-border mx-2" />
                     <ThemeToggle />

@@ -71,8 +71,8 @@ const Footer = () => {
                   > <div className="w-8 h-8 rounded-full bg-foreground/10 group-hover:bg-accent/10 flex items-center justify-center shrink-0 transition-colors duration-300">
                       <item.icon className="h-3.5 w-3.5" />
                     </div>
-                    {item.label}
-                    <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />
+                    {item.value}
+                    <ArrowUpRight className="h-3 w-3 -translate-x-2 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />
                   </a>
                 </li>
               ))}
