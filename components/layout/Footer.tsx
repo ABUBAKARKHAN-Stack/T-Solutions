@@ -5,6 +5,7 @@ import { contactInfo, navLinks } from "@/constants/navigation.constants";
 import Link from "next/link";
 import ContainerLayout from "./ContainerLayout";
 import { useServices } from "@/context/ServiceContext";
+import { APP_NAME } from "@/constants/app.constants";
 
 const Footer = () => {
   const { servicesOverview } = useServices()
@@ -15,8 +16,8 @@ const Footer = () => {
 
           {/* Brand */}
           <div className="lg:col-span-4">
-            <span className="text-3xl font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
-              T<span className="text-accent">-</span>Solutions
+            <span className="text-3xl font-bold font-playfair" >
+              {APP_NAME}
             </span>
             <p className="text-foreground/50 mt-4 leading-relaxed max-w-sm text-sm">
               Building high-performance digital products with full stack development, cloud solutions, DevOps, and AI. We turn your ideas into scalable reality.

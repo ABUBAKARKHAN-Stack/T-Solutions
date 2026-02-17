@@ -12,6 +12,7 @@ import {
     ThemeToggle
 } from '@/components/shared';
 import { Button } from '@/components/ui/button';
+import Logo from '@/components/shared/Logo';
 
 type Props = {
     setOpen: Dispatch<SetStateAction<boolean>>;
@@ -50,12 +51,13 @@ const DesktopNav = ({ setOpen, open }: Props) => {
             <ContainerLayout className="flex h-20 items-center justify-between ">
 
                 <Link href="/" className="flex items-center gap-2 group">
-                    <span
+                    {/* <span
                         className="text-2xl font-bold tracking-tight text-foreground"
                         style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                         T<span className="text-accent">-</span>Solutionz
-                    </span>
+                    </span> */}
+                    <Logo className="h-12" />
                 </Link>
                 <nav className="hidden lg:flex items-center gap-1">
 
