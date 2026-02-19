@@ -1,10 +1,9 @@
 "use client"
 
 import {
-     ThemeToggle,
+    // ThemeToggle,
     Logo
-
- } from '@/components/shared'
+} from '@/components/shared'
 import { Button } from '@/components/ui/button'
 import { navLinks } from '@/constants/navigation.constants'
 import { useServices } from '@/context/ServiceContext'
@@ -67,7 +66,7 @@ const MobileMenu = ({
                                 />
 
                                 <div className="flex items-center gap-2 lg:hidden">
-                                    <ThemeToggle />
+                                    {/* <ThemeToggle /> */}
                                     <Button
                                         onClick={() => setOpen(false)}
                                         className="w-10 h-10 flex items-center justify-center text-foreground rounded-full bg-transparent hover:bg-accent/10 transition-colors"

@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import ContainerLayout from '../ContainerLayout';
 import {
     ContactDrawer,
-    ThemeToggle,
+    // ThemeToggle,
     Logo
 } from '@/components/shared';
 import { Button } from '@/components/ui/button';
@@ -104,7 +104,7 @@ const DesktopNav = ({ setOpen, open }: Props) => {
                     })}
 
                     <div className="w-px h-6 bg-border mx-2" />
-                    <ThemeToggle />
+                    {/* <ThemeToggle /> */}
                     <ContactDrawer>
                         <Button
                             size="default"
@@ -117,7 +117,7 @@ const DesktopNav = ({ setOpen, open }: Props) => {
 
                 {/* Mobile toggle */}
                 <div className="flex items-center gap-2 lg:hidden">
-                    <ThemeToggle />
+                    {/* <ThemeToggle /> */}
                     <Button
                         onClick={() => setOpen(true)}
                         className="w-10 h-10 flex items-center justify-center text-foreground rounded-full bg-transparent hover:bg-accent/10 transition-colors"

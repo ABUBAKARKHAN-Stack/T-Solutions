@@ -19,14 +19,16 @@ const LogoImage = ({
     className = "",
 }) => {
     return <Image
-        src={'/assets/ts-logo.svg'}
+        src={'/assets/brand/logo.png'}
         className={cn(
             className,
-            "w-auto "
+            "w-auto object-contain resize "
         )}
         height={50}
         width={50}
-        alt={`${APP_NAME} Logo`}
+        priority
+        unoptimized
+        alt={`${APP_NAME} - Logo`}
     />
 }
 
