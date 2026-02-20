@@ -1,11 +1,12 @@
-import { Brain, Cloud, Code2, Container, Mail, MapPin, Phone, Smartphone } from "lucide-react";
+import { TwitterIcon } from "@sanity/icons";
+import { Brain, Cloud, Code2, Container, FacebookIcon, InstagramIcon, LinkedinIcon, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 
 export const navLinks = [
-    { label: "Home", to: "/" },
-    { label: "About", to: "/about" },
-    { label: "Services", to: "/services", hasDropdown: true },
-    { label: "Portfolio", to: "/portfolio" },
-    { label: "Contact", to: "/contact" },
+  { label: "Home", to: "/" },
+  { label: "About", to: "/about" },
+  { label: "Services", to: "/services", hasDropdown: true },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Contact", to: "/contact" },
 ];
 
 
@@ -23,7 +24,7 @@ export const contactInfo = [
     link: "mailto:info@t-solutionz.com",
     icon: Mail
   },
-   {
+  {
     label: "Phone",
     value: "+92-3257030523",
     link: "tel:+923257030523",
@@ -31,3 +32,8 @@ export const contactInfo = [
   },
 ]
 
+export const socials = [
+  { label: "Facebook", icon: FacebookIcon, url: "https://facebook.com" },
+  { label: "Instagram", icon: InstagramIcon, url: "https://instagram.com" },
+  { label: "LinkedIn", icon: LinkedinIcon, url: "https://linkedin.com" },
+]

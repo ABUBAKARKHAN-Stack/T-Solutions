@@ -1,6 +1,6 @@
 import { navLinks } from '@/constants/navigation.constants'
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
-import { motion } from 'motion/react';
+import { LayoutGroup, motion } from 'motion/react';
 import { ChevronDown, Menu } from 'lucide-react';
 import Link from 'next/link';
 import ServicesDropdown from './ServicesDropdown';
@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
 import ContainerLayout from '../ContainerLayout';
 import {
     ContactDrawer,
-    // ThemeToggle,
     Logo
 } from '@/components/shared';
 import { Button } from '@/components/ui/button';
@@ -22,6 +21,8 @@ type Props = {
 const DesktopNav = ({ setOpen, open }: Props) => {
     const [showServices, setShowServices] = useState(false);
     const servicesRef = useRef<HTMLDivElement | null>(null);
+    const [hoveredPath, setHoveredPath] = useState<string | null>(null);
+
     const [scrolled, setScrolled] = useState(false);
 
     const pathname = usePathname()
@@ -50,61 +51,77 @@ const DesktopNav = ({ setOpen, open }: Props) => {
         >
             <ContainerLayout className="flex h-20 items-center justify-between ">
                 <Logo
-                    className="sm:h-12 h-10"
+                    className="sm:h-11 h-9"
                     link
                 />
-                <nav className="hidden lg:flex items-center gap-1">
+                <nav
+                    className="hidden lg:flex items-center gap-1"
+                    onMouseLeave={() => setHoveredPath(null)}
+                >
+                    <LayoutGroup id='nav-pills'>
 
-                    {navLinks.map((link) => {
-                        const isActive = pathname === link.to;
-                        return (
-                            <div
-                                key={link.to}
-                                ref={link.hasDropdown ? servicesRef : null}
-                                className="relative"
-                                onMouseEnter={() => link.hasDropdown && setShowServices(true)}
-                                onMouseLeave={() => link.hasDropdown && setShowServices(false)}
-                            >
-                                <Link
-                                    href={link.to}
-                                    className={cn(
-                                        "relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full flex items-center gap-1",
-                                        isActive
-                                            ? "text-foreground"
-                                            : "text-muted-foreground hover:text-foreground"
-                                    )}
+                        {navLinks.map((link) => {
+                            const isActive = pathname === link.to;
+                            return (
+                                <div
+                                    key={link.to}
+                                    ref={link.hasDropdown ? servicesRef : null}
+                                    className="relative"
+                                    onMouseEnter={() => {
+                                        setHoveredPath(link.to);
+                                        link.hasDropdown && setShowServices(true)
+                                    }}
+                                    onMouseLeave={() => link.hasDropdown && setShowServices(false)}
                                 >
-                                    {isActive && (
-                                        <motion.div
-                                            className="absolute inset-0 bg-accent/10 rounded-full"
-                                            layoutId="nav-pill"
-                                            transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                                        />
-                                    )}
-                                    <span className="relative z-10">{link.label}</span>
-                                    {link.hasDropdown && (
-                                        <motion.span
-                                            className="relative z-10"
-                                            animate={{ rotate: showServices ? 180 : 0 }}
-                                            transition={{ duration: 0.2 }}
-                                        >
-                                            <ChevronDown className="h-3.5 w-3.5" />
-                                        </motion.span>
-                                    )}
-                                </Link>
+                                    <Link
+                                        href={link.to}
+                                        className={cn(
+                                            "relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-full flex items-center gap-1",
+                                            isActive
+                                                ? "text-foreground"
+                                                : "text-muted-foreground hover:text-foreground"
+                                        )}
+                                    >
 
-                                {/* Services Dropdown */}
-                                <ServicesDropdown
-                                    hasDropdown={link.hasDropdown}
-                                    showServices={showServices}
-                                    anchorRef={servicesRef}
-                                />
-                            </div>
-                        )
-                    })}
+                                        {hoveredPath === link.to && hoveredPath !== pathname && (
+                                            <motion.div
+                                                className="absolute scale-95 -inset-x-1 -inset-y-0.5 bg-accent/5 rounded-full"
+                                                layoutId="nav-hover-pill"
+                                                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                                            />
+                                        )}
 
+                                        {isActive && (
+                                            <motion.div
+                                                className="absolute inset-0 bg-accent/10 rounded-full"
+                                                layoutId="nav-pill"
+                                                transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                                            />
+                                        )}
+                                        <span className="relative z-10">{link.label}</span>
+                                        {link.hasDropdown && (
+                                            <motion.span
+                                                className="relative z-10"
+                                                animate={{ rotate: showServices ? 180 : 0 }}
+                                                transition={{ duration: 0.2 }}
+                                            >
+                                                <ChevronDown className="h-3.5 w-3.5" />
+                                            </motion.span>
+                                        )}
+                                    </Link>
+
+                                    {/* Services Dropdown */}
+                                    <ServicesDropdown
+                                        hasDropdown={link.hasDropdown}
+                                        showServices={showServices}
+                                        anchorRef={servicesRef}
+                                    />
+                                </div>
+                            )
+                        })}
+
+                    </LayoutGroup>
                     <div className="w-px h-6 bg-border mx-2" />
-                    {/* <ThemeToggle /> */}
                     <ContactDrawer>
                         <Button
                             size="default"
@@ -117,7 +134,6 @@ const DesktopNav = ({ setOpen, open }: Props) => {
 
                 {/* Mobile toggle */}
                 <div className="flex items-center gap-2 lg:hidden">
-                    {/* <ThemeToggle /> */}
                     <Button
                         onClick={() => setOpen(true)}
                         className="w-10 h-10 flex items-center justify-center text-foreground rounded-full bg-transparent hover:bg-accent/10 transition-colors"
