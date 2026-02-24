@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { AnimatedSection } from '@/components/shared'
-import { contactInfo } from '@/constants/navigation.constants'
+import { contactInfo, socials } from '@/constants/navigation.constants'
 
 const ContactInfo = () => {
     return (
@@ -36,6 +36,29 @@ const ContactInfo = () => {
                         </a>
                     </motion.div>
                 ))}
+
+                <div className="mt-10">
+                    <p className="text-xs font-medium text-accent uppercase tracking-[0.3em] mb-4">Follow Us</p>
+                    <div className="flex gap-3">
+                        {socials.map((social, i) => (
+                            <motion.a
+                                key={social.label}
+                                href={social.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={social.label}
+                                className="w-10 h-10 rounded-xl bg-accent/10 border border-border/30 flex items-center justify-center text-muted-foreground hover:text-accent hover:border-accent/30 hover:bg-accent/15 transition-all duration-300"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.5 + i * 0.08 }}
+                                whileHover={{ y: -2 }}
+                            >
+                                <social.icon className="h-4 w-4" />
+                            </motion.a>
+                        ))}
+                    </div>
+                </div>
             </div>
         </AnimatedSection>
     )

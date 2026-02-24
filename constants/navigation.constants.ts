@@ -1,5 +1,5 @@
 import { TwitterIcon } from "@sanity/icons";
-import { Brain, Cloud, Code2, Container, FacebookIcon, InstagramIcon, LinkedinIcon, Mail, MapPin, Phone, Smartphone } from "lucide-react";
+import { Brain, Cloud, Code2, Container, FacebookIcon, Headphones, InstagramIcon, LinkedinIcon, Mail, MapPin, Phone, Smartphone } from "lucide-react";
 
 export const navLinks = [
   { label: "Home", to: "/" },
@@ -23,6 +23,12 @@ export const contactInfo = [
     value: "info@t-solutionz.com",
     link: "mailto:info@t-solutionz.com",
     icon: Mail
+  },
+  {
+    label: "Help & Support",
+    value: "contact@t-solutionz.com",
+    link: "mailto:contact@t-solutionz.com",
+    icon: Headphones
   },
   {
     label: "Phone",
