@@ -12,6 +12,7 @@ import CTASection from "./CTASection";
 import BlogCard from "./BlogCard";
 import PortfolioCard from "./PortfolioCard";
 import Logo from "./Logo";
+import { NumberTicker } from "./NumberTicker";
 
 export {
     HighlightedBrandName,
@@ -28,5 +29,6 @@ export {
     CTASection,
     BlogCard,
     PortfolioCard,
-    Logo
+    Logo,
+    NumberTicker
 }

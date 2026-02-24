@@ -71,8 +71,9 @@ const MaskedBrandName = () => {
                     {/* Masked Accent Color Fill*/}
 
                     <motion.h2
-                        className="absolute inset-0 text-center  tracking-wider  text-[clamp(4rem,14vw,12rem)] font-semibold leading-[0.85] bg-clip-text text-transparent bg-linear-90 from-accent/50 to-accent/50 via-[hsl(110_22%_62%)] whitespace-nowrap font-playfair pointer-events-none"
+                        className="absolute inset-0 text-center  tracking-wider  text-[clamp(4rem,14vw,12rem)] font-semibold leading-[0.85] bg-clip-text text-transparent  whitespace-nowrap font-playfair pointer-events-none"
                         style={{
+                            backgroundImage: "linear-gradient(180deg, #ABC7A3 0%, rgba(144, 179, 137, 0.4) 100%)",
                             WebkitMaskImage: maskImage,
                             maskImage: maskImage,
                         }}

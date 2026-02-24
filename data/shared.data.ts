@@ -1,6 +1,6 @@
 export const stats = [
-  { val: 200, suffix: "+", label: "Clients Served" },
-  { val: 95, suffix: "%", label: "Client Retention" },
-  { val: 30, suffix: "+", label: "Industries" },
-  { val: 10, suffix: "+", label: "Years Experience" },
+  { val: 8, suffix: "+", label: "Projects Delivered" },
+  { val: 95, suffix: "%", label: "Client Satisfaction" },
+  { val: 100, suffix: "%", label: "On-Time Delivery" },
+  { val: 24, suffix: "/7", label: "Technical Support" },
 ];

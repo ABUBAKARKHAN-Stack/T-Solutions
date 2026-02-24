@@ -7,40 +7,15 @@ import AnimatedSection from "@/components/shared/AnimatedSection";
 import MagneticButton from "@/components/shared/MagneticButton";
 import { Button } from "@/components/ui/button";
 import { aboutHighlights } from "@/constants";
-import { stats,} from '@/data/shared.data'
+import { stats, } from '@/data/shared.data'
 import Link from "next/link";
 import Image from "next/image";
 import { ContainerLayout } from "../../layout";
-import { HighlightedBrandName } from "@/components/shared";
+import {
+  HighlightedBrandName,
+  NumberTicker
+} from "@/components/shared";
 
-const TickerNumber = ({ value, suffix, delay }: { value: number; suffix: string; delay: number }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (!inView) return;
-    const timeout = setTimeout(() => {
-      const duration = 1500;
-      const steps = 60;
-      let step = 0;
-      const interval = setInterval(() => {
-        step++;
-        const progress = 1 - Math.pow(1 - step / steps, 3);
-        if (step >= steps) {
-          setCount(value);
-          clearInterval(interval);
-        } else {
-          setCount(Math.floor(value * progress));
-        }
-      }, duration / steps);
-      return () => clearInterval(interval);
-    }, delay * 1000);
-    return () => clearTimeout(timeout);
-  }, [inView, value, delay]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-};
 
 const AboutPreviewSection = () => {
   return (
@@ -124,7 +99,7 @@ const AboutPreviewSection = () => {
                     transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
                   >
                     <p className="text-xl md:text-2xl font-bold text-foreground group-hover:text-accent transition-colors duration-500 tabular-nums">
-                      <TickerNumber value={stat.val} suffix={stat.suffix} delay={0.3 + i * 0.1} />
+                      <NumberTicker value={stat.val} suffix={stat.suffix} delay={0.3 + i * 0.1} />
                     </p>
                     <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{stat.label}</p>
                   </motion.div>

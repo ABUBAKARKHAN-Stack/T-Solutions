@@ -6,7 +6,7 @@ const AboutPageHero = () => {
         <PageHero
             eyebrow="About Us"
             title={<>About <span className="text-accent italic">{APP_NAME}</span></>}
-            description="Founded with a vision to redefine corporate consulting, T-Solutions combines strategic expertise with a deep commitment to sustainability."
+            description={`${APP_NAME} was founded in 2026 with a clear purpose, to build digital systems that are not only functional, but scalable, intelligent, and future-ready.`}
             breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
         />
     )
