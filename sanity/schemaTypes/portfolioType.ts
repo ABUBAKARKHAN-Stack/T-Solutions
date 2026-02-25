@@ -50,6 +50,14 @@ export const portfolioType = defineType({
       validation: (R) => R.required(),
     }),
 
+    defineField({
+      name: 'displayImage',
+      title: 'Project Display Image',
+      type: 'image',
+      options: { hotspot: true },
+      validation: (R) => R.required(),
+    }),
+
     //* Descriptions
     defineField({
       name: 'description',

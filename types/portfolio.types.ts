@@ -7,6 +7,7 @@ export interface IPortfolio {
     category: string
     year: string
     image: IImage
+    displayImage: IImage
     description: string
     longDescription: string
     tags: string[]

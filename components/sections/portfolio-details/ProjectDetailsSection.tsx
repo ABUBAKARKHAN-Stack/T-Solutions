@@ -44,12 +44,14 @@ const ProjectDetailsSection: FC<Props> = ({
                             <Image
                                 src={
                                     urlFor(image.source)
+                                        .width(1920)
+                                        .height(1080)
                                         .quality(85)
                                         .url()
                                 }
                                 alt={image.alt}
-                                height={500}
-                                width={500}
+                                height={1920}
+                                width={1080}
                                 loading='lazy'
                                 className=" w-full h-auto object-cover"
                             />

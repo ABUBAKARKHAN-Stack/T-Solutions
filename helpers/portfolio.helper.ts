@@ -23,6 +23,7 @@ const PORTFOLIO_DATA_QUERY = defineQuery(`
   category,
   year,
   "image": {"source": image.asset._ref},
+"displayImage": {"source": displayImage.asset._ref},
   description,
   longDescription,
   tags,
