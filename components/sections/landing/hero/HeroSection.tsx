@@ -13,7 +13,6 @@ import DecorativeVerticalLine from "./DecorativeVerticalLine";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { heroContent } from "@/data/landing.data";
 import {
-    HighlightedBrandName,
     ContactDrawer
 } from "@/components/shared/";
 import { useServices } from "@/context/ServiceContext";
@@ -47,10 +46,10 @@ const HeroSection = () => {
             <ContainerLayout className="relative z-10">
                 <motion.div style={{ opacity: heroOpacity }}>
 
-                    <div className="pt-28 lg:pt-32 mb-16 lg:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start pb-16 lg:pb-24">
+                    <div className="pt-28 lgx:pt-32 mb-16 lgx:mb-20 grid grid-cols-1 lgx:grid-cols-12 gap-8 lgx:gap-16 items-start pb-16 lgx:pb-24">
 
                         {/* Left column — main content */}
-                        <div className="lg:col-span-6">
+                        <div className="lgx:col-span-6">
 
                             {/* Eyebrow */}
                             <motion.div
@@ -71,7 +70,7 @@ const HeroSection = () => {
                             </motion.div>
 
                             {/* Headline */}
-                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-foreground leading-[0.92] tracking-[-0.01em] mb-8">
+                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] font-bold text-foreground leading-[0.92] tracking-[-0.01em] mb-8">
                                 {heroContent.headline.map((word, i) => (
                                     <span key={word} className="block">
                                         <motion.span
@@ -84,9 +83,9 @@ const HeroSection = () => {
                                                 delay: 0.15 + i * 0.1,
                                             }}
                                         >
-                                            {word.toLowerCase().trim().includes("solutions") ? (
+                                            {word.toLowerCase().trim().includes("future-ready") ? (
                                                 <motion.span
-                                                    className="text-accent italic"
+                                                    className="text-accent text-nowrap  italic"
                                                     initial={{ opacity: 0, filter: "blur(8px)" }}
                                                     animate={{ opacity: 1, filter: "blur(0px)" }}
                                                     transition={{ duration: 0.8, delay: 0.55 }}
@@ -102,27 +101,22 @@ const HeroSection = () => {
                             </h1>
 
                             {/* Subtext Paragraphs */}
-                            <motion.p
-                                className="text-base md:text-lg text-muted-foreground max-w-lg leading-[1.8] font-light mb-4"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.5 }}
-                            >
-                                {heroContent.subtext}
-                            </motion.p>
 
-                            <motion.p
-                                className="text-base md:text-lg text-muted-foreground max-w-lg leading-[1.8] font-light mb-10"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: 0.6 }}
-                            >
-                                <HighlightedBrandName
-                                    animate
-                                    once
-                                /> is a digital solutions agency focused on building reliable and scalable technology.
-                            </motion.p>
+                            {
+                                heroContent.subtexts.map((p, i) => (
+                                    <motion.p
+                                        key={i}
+                                        className="text-base md:text-lg text-muted-foreground max-w-xl leading-[1.8] font-light mb-4 "
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: 0.5 }}
+                                    >
+                                        {p}
+                                    </motion.p>
+                                ))
+                            }
 
+                            <div className="mb-10" />
 
 
                             {/* CTAs */}
@@ -152,7 +146,7 @@ const HeroSection = () => {
 
                         {/* Right column — services preview + mission */}
                         <motion.div
-                            className="lg:col-span-6"
+                            className="lgx:col-span-6"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.7 }}
@@ -172,7 +166,7 @@ const HeroSection = () => {
                                     </p>
 
                                     <div className="space-y-4 relative z-10">
-                                        {servicesOverview.filter(s => s.featured ).map((service, i) => {
+                                        {servicesOverview.filter(s => s.featured).map((service, i) => {
                                             const Icon = getIconByName(service.icon)
                                             return (
                                                 <Link key={service._id} href={`/services/${service.slug}`}>

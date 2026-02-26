@@ -1,14 +1,13 @@
 import { Logo, MagneticButton } from '@/components/shared'
 import { socials } from '@/constants/navigation.constants'
 import { cn } from '@/lib/utils'
-import React from 'react'
 
 const BrandInfo = () => {
     return (
         <div className="lg:col-span-4">
             <Logo className="lg:h-15 xsm:h-13 h-11" />
             <p className="text-foreground/50 mt-4 leading-relaxed max-w-sm text-sm">
-                Building high-performance digital products with full stack development, cloud solutions, DevOps, and AI. We turn your ideas into scalable reality.
+                Modern software solutions built to scale with your business. We create reliable, high-performance systems that deliver measurable impact.
             </p>
 
             <div className="mt-6 flex gap-2.5">

@@ -3,8 +3,8 @@
 import { motion } from "framer-motion";
 import {SectionHeader} from "@/components/shared";
 import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
-import { approachSteps } from "@/constants";
 import { ContainerLayout } from "@/components/layout";
+import { approachSteps } from "@/data/landing.data";
 
 const ApproachSection = () => {
   return (

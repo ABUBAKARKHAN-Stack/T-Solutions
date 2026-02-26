@@ -6,8 +6,6 @@ import QuickLinks from "./QuickLinks";
 import ServicesLinks from "./ServicesLinks";
 import ContactLinks from "./ContactLinks";
 import CopyRight from "./CopyRight";
-import { motion } from "motion/react";
-import { APP_NAME } from "@/constants/app.constants";
 import MaskedBrandName from "./MaskedBrandName";
 
 const Footer = () => {

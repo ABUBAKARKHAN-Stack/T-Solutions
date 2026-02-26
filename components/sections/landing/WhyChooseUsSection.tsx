@@ -3,8 +3,8 @@ import { motion } from "motion/react";
 import { SectionHeader } from "@/components/shared";
 import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
 import ParallaxSection from "@/components/shared/ParallaxSection";
-import { whyChooseUsReasons } from "@/constants";
 import { ContainerLayout } from "@/components/layout";
+import { whyChooseUsReasons } from "@/data/landing.data";
 
 const WhyChooseUsSection = () => {
   return (
@@ -14,8 +14,8 @@ const WhyChooseUsSection = () => {
         <ContainerLayout className="relative z-10">
           <SectionHeader
             eyebrow="Why Choose Us"
-            title={<>Built on <span className="text-accent italic">trust</span> & expertise</>}
-            description="We don't just consult — we become an extension of your team, committed to delivering excellence at every step."
+            title={<>Built on <span className="text-accent italic">trust</span> and results</>}
+            description="We partner with your team to deliver scalable, high-performance solutions that drive measurable impact."
           />
 
           <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>

@@ -22,7 +22,7 @@ const ApproachSection = ({ approach }: Props) => {
                                     {step.step}
                                 </span>
                                 <div className="relative z-10">
-                                    <h3 className="text-base font-semibold text-foreground mb-3 mt-4">{step.title}</h3>
+                                    <h3 className="text-base font-semibold text-foreground mb-3 mt-4 max-w-[80%] text-wrap text-start">{step.title}</h3>
                                     <p className="text-sm text-muted-foreground leading-relaxed font-light">{step.description}</p>
                                 </div>
                             </div>

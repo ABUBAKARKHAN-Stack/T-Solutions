@@ -18,7 +18,7 @@ interface CTASectionProps {
   extraActions?: ReactNode;
 }
 
-const CTASection = ({ title, description, buttonText = "Book a Consultation", extraActions }: CTASectionProps) => {
+const CTASection = ({ title, description, buttonText = "Send a Message", extraActions }: CTASectionProps) => {
   return (
     <section className="section-padding relative overflow-hidden">
 

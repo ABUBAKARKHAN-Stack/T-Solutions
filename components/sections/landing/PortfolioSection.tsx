@@ -118,8 +118,8 @@ const PortfolioSection = () => {
 
                 <SectionHeader
                     eyebrow="Portfolio"
-                    title={<>Projects we're <span className="text-accent italic">proud of</span></>}
-                    description="A curated selection of our recent work — each project a partnership built on trust, ambition, and measurable outcomes."
+                    title={<>Projects that <span className="text-accent italic">deliver impact</span></>}
+                    description="A curated selection of our recent work showcasing scalable systems, high-performance solutions, and measurable business results."
                     action={
                         <MagneticButton>
                             <Button asChild variant="outline" className="rounded-full border-border text-foreground hover:bg-accent/10 text-sm px-6 h-10 font-medium">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { APP_NAME, BASE_URL } from "@/constants/app.constants";
+import { APP_NAME, BASE_URL, BRAND_DESCRIPTION, TAGLINE } from "@/constants/app.constants";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -20,11 +20,10 @@ export const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: `${APP_NAME} | Software Development Company`,
+    default: `${APP_NAME} | ${TAGLINE}`,
     template: `%s | ${APP_NAME}`,
   },
-  description:
-    "We are a forward-thinking tech startup creating modern, scalable web and software solutions that combine creativity, technology, and strategy for success.",
+  description: BRAND_DESCRIPTION,
   icons: {
     icon: [
       { url: "/assets/brand/favicons/favicon.ico", type: "image/png" },
@@ -49,12 +48,18 @@ export const metadata: Metadata = {
     ],
   },
   keywords: [
-    "t-solutionz"
+    "Scalable Software Development Agency",
+    "Custom Software Development",
+    "Web Application Development",
+    "Enterprise Software Solutions",
+    "Scalable Web Applications",
+    "Business Software Development",
+    "Digital Transformation Services",
+    "Full-Stack Development Agency",
+    "Enterprise Software Development",
+    "Software Solutions for Growing Businesses"
   ],
-  // authors: [
-  //   { name: "Abubakar Aijaz", url: foundersSocials.abubakar.linkedin },
-  //   { name: "Sardar Ubaid", url: foundersSocials.ubaid.linkedin },
-  // ],
+  authors: [{ name: APP_NAME, url: BASE_URL }],
   creator: APP_NAME,
   publisher: APP_NAME,
   robots: "index, follow",

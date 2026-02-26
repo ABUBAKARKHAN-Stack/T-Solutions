@@ -24,22 +24,10 @@ export const team = [
 ];
 
 // ── Approach ────────────────────────────────────────────────
-export const approachSteps = [
-  { num: "01", icon: Search, title: "Discover", description: "We analyze your requirements, tech stack, and business goals to define the perfect solution." },
-  { num: "02", icon: Lightbulb, title: "Architect", description: "Our engineers design scalable architectures with clear milestones and technology choices." },
-  { num: "03", icon: Rocket, title: "Build & Ship", description: "We develop iteratively with CI/CD, keeping you in the loop with demos every sprint." },
-  { num: "04", icon: Zap, title: "Scale & Optimize", description: "Continuous monitoring, performance tuning, and feature iteration ensure long-term success." },
-];
+
 
 // ── Why Choose Us ───────────────────────────────────────────
-export const whyChooseUsReasons = [
-  { icon: Award, title: "Industry Experts", description: "Our team brings decades of combined experience across multiple industries." },
-  { icon: Target, title: "Results-Driven", description: "Every engagement is designed around measurable outcomes and KPIs." },
-  { icon: HeartHandshake, title: "True Partnership", description: "We work alongside your team, not in isolation — your success is ours." },
-  { icon: Clock, title: "Agile Delivery", description: "Fast, iterative execution so you see value from day one." },
-  { icon: Shield, title: "Trusted & Transparent", description: "No hidden agendas. Full visibility into progress, costs, and decisions." },
-  { icon: Sparkles, title: "Innovation-First", description: "We leverage the latest tools and methodologies to keep you ahead." },
-];
+
 
 // ── Testimonials ────────────────────────────────────────────
 export const testimonials = [
@@ -51,14 +39,6 @@ export const testimonials = [
 ];
 
 // ── FAQ ─────────────────────────────────────────────────────
-export const faqs = [
-  { q: "What industries do you specialize in?", a: "We work across technology, finance, healthcare, energy, and consumer goods. Our frameworks are adaptable to any sector, and we tailor every engagement to your specific market dynamics." },
-  { q: "How long does a typical engagement last?", a: "Most projects range from 4 to 16 weeks depending on scope. We start with a discovery phase and provide a clear timeline before any commitment." },
-  { q: "Do you work with startups or only enterprises?", a: "Both. We've helped early-stage startups define their go-to-market strategy and guided Fortune 500 companies through digital transformation. Our approach scales to fit your stage." },
-  { q: "What makes your sustainability audits different?", a: "We go beyond compliance checklists. Our audits combine environmental impact data with actionable business strategies, ensuring sustainability efforts also drive profitability." },
-  { q: "How do you measure success?", a: "Every project begins with defined KPIs. We track progress through regular check-ins, dashboards, and a final impact report so results are always transparent and measurable." },
-  { q: "Can we start with a small pilot project?", a: "Absolutely. Many clients start with a focused engagement to experience our approach firsthand before expanding into larger initiatives." },
-];
 
 // ── Case Studies (Portfolio) ────────────────────────────────
 export const caseStudies = [
@@ -81,11 +61,7 @@ export const heroMissionServices = [
 ];
 
 // ── About Preview highlights ────────────────────────────────
-export const aboutHighlights = [
-  { icon: Target, label: "Purpose-Driven" },
-  { icon: Users, label: "Dedicated Team" },
-  { icon: Globe, label: "Global Impact" },
-];
+
 
 // ── Contact info ────────────────────────────────────────────
 export const contactInfo = [

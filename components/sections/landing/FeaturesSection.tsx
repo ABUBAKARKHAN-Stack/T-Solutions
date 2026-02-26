@@ -18,7 +18,7 @@ const FeaturesSection = () => {
 
                     <SectionHeader
                         eyebrow="What We Offer"
-                        title="Solutions built for the future"
+                        title="Core Capabilities That Scale"
                         className="mb-16"
                     />
 

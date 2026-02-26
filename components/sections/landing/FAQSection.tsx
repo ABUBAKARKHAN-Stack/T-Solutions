@@ -1,10 +1,8 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SectionHeader, AnimatedSection, MagneticButton, ContactDrawer } from "@/components/shared";
-import { faqs } from "@/constants";
 import { ContainerLayout } from "@/components/layout";
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { faqs } from "@/data/landing.data";
 
 const FAQSection = () => {
   return (
@@ -23,14 +21,14 @@ const FAQSection = () => {
               description="Everything you need to know about working with us. Can't find what you're looking for? Feel free to reach out."
             />
             <ContactDrawer>
-              <MagneticButton strength={0.1} className="hover:cursor-pointer bg-transparent flex items-center hover:bg-transparent text-accent">
+              <MagneticButton strength={0.1} className="hover:cursor-pointer w-fit bg-transparent flex items-center hover:bg-transparent text-accent">
                 Start a Conversation <ArrowRight className="ml-2 size-4" />
               </MagneticButton>
             </ContactDrawer>
           </div>
 
           <AnimatedSection delay={0.2}>
-            <Accordion type="single" collapsible className="space-y-3">
+            <Accordion type="single" collapsible defaultValue="faq-0" className="space-y-3">
               {faqs.map((faq, i) => (
                 <AccordionItem
                   key={i}

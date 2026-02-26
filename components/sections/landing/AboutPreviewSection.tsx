@@ -1,20 +1,18 @@
 "use client"
 
 import { ArrowRight } from "lucide-react";
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion } from "motion/react";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import MagneticButton from "@/components/shared/MagneticButton";
 import { Button } from "@/components/ui/button";
-import { aboutHighlights } from "@/constants";
 import { stats, } from '@/data/shared.data'
 import Link from "next/link";
 import Image from "next/image";
 import { ContainerLayout } from "../../layout";
 import {
-  HighlightedBrandName,
   NumberTicker
 } from "@/components/shared";
+import { aboutPreviewData } from "@/data/landing.data";
 
 
 const AboutPreviewSection = () => {
@@ -33,21 +31,15 @@ const AboutPreviewSection = () => {
               Strategy meets <span className="text-accent italic">purpose</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed font-light mb-4">
-              Founded with a vision to build meaningful digital experiences, <HighlightedBrandName animate={false} /> {" "}
-              combines strategic thinking with modern technology. We help startups and
-              growing businesses scale through smart, reliable, and performance-driven
-              solutions.
+              {aboutPreviewData.para1}
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed font-light mb-8">
-              Our multidisciplinary team blends strategy, design,
-              and development to create systems that are scalable, efficient, and built
-              for long-term growth. We focus on delivering real-world impact, not just
-              ideas.
+              {aboutPreviewData.para2}
             </p>
 
             {/* Highlights row */}
             <div className="flex items-center gap-6 mb-8">
-              {aboutHighlights.map((item) => (
+              {aboutPreviewData.highlights.map((item) => (
                 <div key={item.label} className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
                     <item.icon className="h-3.5 w-3.5 text-accent" />

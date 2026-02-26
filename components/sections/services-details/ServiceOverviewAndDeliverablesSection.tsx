@@ -23,7 +23,15 @@ const ServiceOverviewAndDeliverablesSection = ({
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
                     <AnimatedSection className="lg:col-span-3">
                         <h2 className="text-2xl font-bold text-foreground mb-6">Overview</h2>
-                        <p className="text-muted-foreground leading-relaxed font-light text-base">{serviceLongDescription}</p>
+
+                        <div className="space-y-4">
+                            {
+                                serviceLongDescription.split("\n\n").map(p => (
+                                    <p className="text-muted-foreground leading-relaxed font-light text-base">{p}
+                                    </p>)
+                                )
+                            }
+                        </div>
 
                         {tags && (
                             <div className="flex flex-wrap gap-2 mt-8">
