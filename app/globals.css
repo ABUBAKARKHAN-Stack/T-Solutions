@@ -192,4 +192,8 @@
   .hover-lift {
     @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
   }
+
+  .custom-scrollbar {
+    @apply [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-accent/40 hover:[&::-webkit-scrollbar-thumb]:bg-accent/60
+  }
 }

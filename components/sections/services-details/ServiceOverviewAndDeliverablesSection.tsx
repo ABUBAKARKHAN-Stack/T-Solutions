@@ -6,16 +6,16 @@ import { Button } from '@/components/ui/button'
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react'
 
 type Props = {
-    serviceLongDescription:string;
-    tags:string[];
+    serviceLongDescription: string;
+    tags: string[];
     deliverables: string[]
 }
 
 const ServiceOverviewAndDeliverablesSection = ({
-deliverables,
-serviceLongDescription,
-tags
-}:Props) => {
+    deliverables,
+    serviceLongDescription,
+    tags
+}: Props) => {
     return (
         <section className="section-padding bg-background">
 

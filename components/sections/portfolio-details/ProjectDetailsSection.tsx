@@ -74,9 +74,9 @@ const ProjectDetailsSection: FC<Props> = ({
                     </AnimatedSection>
 
                     {/* Results And Testmonials */}
-                    <AnimatedSection delay={0.2} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <AnimatedSection delay={0.2} className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* Key Results */}
-                        <div className="glass-card rounded-2xl p-8 border border-border/40">
+                        <div className="glass-card rounded-2xl p-8 border md:col-span-2 border-border/40">
                             <h3 className="text-lg font-semibold text-foreground mb-6">Key Results</h3>
                             <ul className="space-y-4">
                                 {results.map((r, i) => (
@@ -97,18 +97,26 @@ const ProjectDetailsSection: FC<Props> = ({
 
                         {/* Testimonial */}
                         {testimonial && (
-                            <div className="glass-card h-fit rounded-2xl p-8 border border-accent/20 relative overflow-hidden">
+                            <div className="glass-card col-span-1 rounded-2xl p-8 border border-accent/20 flex justify-between gap-4 md:gap-0 flex-col relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-accent/10 rounded-full blur-[60px]" />
-                                <Quote className="h-8 w-8 text-accent/30 mb-4" />
-                                <p
-                                    className="text-base text-foreground leading-relaxed mb-5 italic"
-                                    style={{ fontFamily: "'Playfair Display', serif" }}
-                                >
-                                    "{testimonial.quote}"
-                                </p>
                                 <div>
-                                    <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
-                                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                                    <Quote className="h-8 w-8 text-accent/30 mb-4" />
+                                    <p
+                                        className="text-base text-foreground leading-relaxed mb-5 italic"
+                                        style={{ fontFamily: "'Playfair Display', serif" }}
+                                    >
+                                        "{testimonial.quote}"
+                                    </p>
+                                </div>
+                                <div className="border-t" />
+                                <div className="flex items-center gap-3">
+                                    <div className="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold text-sm">
+                                        {testimonial.name.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-semibold text-foreground">{testimonial.name}</p>
+                                        <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                                    </div>
                                 </div>
                             </div>
                         )}

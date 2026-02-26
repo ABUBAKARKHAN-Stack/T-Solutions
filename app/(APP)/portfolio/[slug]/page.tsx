@@ -35,7 +35,7 @@ const PortfolioDetailsPage = async ({ params }: Props) => {
             <ProjectDetailsSection
                 image={{
                     ...project.displayImage,
-                    alt: `${project.title} – Screenshot of the project created by ${APP_NAME}`
+                    alt: `${project.title} – Responsive web application interface displayed across multiple devices`
                 }}
                 longDescription={project.longDescription}
                 results={project.results}

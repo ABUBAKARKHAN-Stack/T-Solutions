@@ -69,7 +69,7 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
   return (
     <Sheet open={open} onOpenChange={(v) => { setOpen(v); if (!v) { setTimeout(() => setSubmitted(false), 300); form.reset(); } }}>
       <SheetTrigger asChild>{children}</SheetTrigger>
-      <SheetContent side="right" className="w-full sm:max-w-md bg-background border-border/50 p-0 overflow-y-auto">
+      <SheetContent side="right" className="w-full custom-scrollbar sm:max-w-md bg-background border-border/50 p-0 overflow-y-auto">
         <div className="p-6 pb-0">
           <SheetHeader className="text-left mb-1">
             <div className="flex items-center gap-2 mb-3">
