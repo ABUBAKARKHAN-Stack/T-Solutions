@@ -39,7 +39,7 @@ const ProjectDetailsSection: FC<Props> = ({
                             ))}
                         </div>
 
-                        {/* Project Screenshot */}
+                        {/* Project Display Mockup Screenshot */}
                         <div className="rounded-2xl mt-6 overflow-hidden border border-border/40 shadow-lg shadow-accent/10">
                             <Image
                                 src={
@@ -73,8 +73,8 @@ const ProjectDetailsSection: FC<Props> = ({
                         </div>
                     </AnimatedSection>
 
-                    {/* Sidebar */}
-                    <AnimatedSection delay={0.2} className="lg:col-span-2 space-y-8">
+                    {/* Results And Testmonials */}
+                    <AnimatedSection delay={0.2} className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Key Results */}
                         <div className="glass-card rounded-2xl p-8 border border-border/40">
                             <h3 className="text-lg font-semibold text-foreground mb-6">Key Results</h3>
@@ -97,7 +97,7 @@ const ProjectDetailsSection: FC<Props> = ({
 
                         {/* Testimonial */}
                         {testimonial && (
-                            <div className="glass-card rounded-2xl p-8 border border-accent/20 relative overflow-hidden">
+                            <div className="glass-card h-fit rounded-2xl p-8 border border-accent/20 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-accent/10 rounded-full blur-[60px]" />
                                 <Quote className="h-8 w-8 text-accent/30 mb-4" />
                                 <p
