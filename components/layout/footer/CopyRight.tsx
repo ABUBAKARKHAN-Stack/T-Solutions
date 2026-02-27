@@ -1,11 +1,9 @@
 import { APP_NAME } from '@/constants/app.constants'
-import Link from 'next/link'
-import React from 'react'
 
 const CopyRight = () => {
   return (
     <div className="border-t border-foreground/10 mt-16 pt-8 flex justify-center items-center gap-4">
-      <p className="text-sm text-foreground/30">© {new Date().getFullYear()} {" "}
+      <p className="text-xs text-foreground/30">© {new Date().getFullYear()} {" "}
         <span className="font-bold font-playfair text-accent">
           {APP_NAME}
         </span>. All rights reserved.</p>

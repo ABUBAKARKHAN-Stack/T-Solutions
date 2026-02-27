@@ -10,9 +10,9 @@ export const stats = [
 export const team = [
   {
     name: "Usama Aijaz",
-    role: "CEO",
+    role: "CEO & Co-Founder",
     initials: "UA",
-    image: "/assets/brand/favicons/favicon.svg",
+    image: "/assets/team/usama.jpeg",
     bio: "DevOps and Cloud Engineer specializing in designing and managing scalable, production-grade infrastructure across AWS and Azure. Strong background in Linux system administration, automation, and building reliable, high-performance environments.",
     expertise: [
       "AWS",
@@ -29,13 +29,22 @@ export const team = [
   },
   {
     name: "Abubakar Aijaz",
-    role: "CTO",
+    role: "CTO & Co-Founder",
     initials: "AA",
-    image: "/assets/brand/favicons/favicon.svg",
-    bio: "Previously led product strategy at a Fortune 500 technology company. Marcus brings structured thinking and commercial acuity to every client engagement.",
-    expertise: ["Product Strategy", "Market Analysis", "Growth Planning"],
-    linkedin: "#",
+    image: "/assets/team/abubakar.jpg",
+    bio: "Full-stack engineer and tech leader, building scalable web apps, microservices, and AI-powered solutions.",
+    expertise: [
+      "JavaScript / TypeScript",
+      "MERN Stack",
+      "Next.js",
+      "Python / Django / FastAPI",
+      "Microservices",
+      "Docker & Containerization",
+      "Cloud Architecture & Distributed Systems",
+      "Gen AI & Agentic AI"
+    ],
+    linkedin: "https://www.linkedin.com/in/abubakar-aijaz-dev",
     twitter: "#",
-    email: "abubakar@t-solutionz.com"
-  },
+    email: "abubakar@codeperia.com"
+  }
 ];

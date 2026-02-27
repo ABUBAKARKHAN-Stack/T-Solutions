@@ -62,6 +62,8 @@ const DesktopNav = ({ setOpen, open }: Props) => {
 
                         {navLinks.map((link) => {
                             const isActive = pathname === link.to || (link.to !== "/" && pathname.startsWith(link.to));
+                            console.log(pathname, hoveredPath);
+
                             return (
                                 <div
                                     key={link.to}
@@ -83,7 +85,7 @@ const DesktopNav = ({ setOpen, open }: Props) => {
                                         )}
                                     >
 
-                                        {hoveredPath === link.to && hoveredPath !== pathname && (
+                                        {hoveredPath === link.to && (hoveredPath === "/" || !pathname.includes(hoveredPath)) && (
                                             <motion.div
                                                 className="absolute scale-95 -inset-x-1 -inset-y-0.5 bg-accent/5 rounded-full"
                                                 layoutId="nav-hover-pill"
