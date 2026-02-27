@@ -36,7 +36,7 @@ export async function generateMetadata(
     const title = `${project.title} | ${APP_NAME}`;
     const description =
         project.description || `Read ${title} on ${APP_NAME}`;
-    const imageUrl = urlFor(project.image.source)
+    const imageUrl = urlFor(project.displayImage.source)
         .quality(85)
         .width(1200)
         .fit("clip")
