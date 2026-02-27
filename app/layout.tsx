@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
     default: `${APP_NAME} | ${TAGLINE}`,
-    template: `%s | ${APP_NAME}`,
+    template: `%s | ${TAGLINE}`,
   },
   description: BRAND_DESCRIPTION,
   icons: {
@@ -51,6 +51,7 @@ export const metadata: Metadata = {
     "Scalable Software Development Agency",
     "Custom Software Development",
     "Web Application Development",
+    "Web Application Development Agency",
     "Enterprise Software Solutions",
     "Scalable Web Applications",
     "Business Software Development",
@@ -68,9 +69,12 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   openGraph: {
+    title: `${APP_NAME} | ${TAGLINE}`,
     siteName: APP_NAME,
+    description: BRAND_DESCRIPTION,
     url: BASE_URL,
     images: { url: "opengraph-image" },
+    type: "website"
   },
 };
 

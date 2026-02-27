@@ -1,7 +1,8 @@
 "use client"
 
 import { ContainerLayout } from '@/components/layout'
-import { AnimatedSection, HighlightedBrandName, NumberTicker } from '@/components/shared'
+import { AnimatedSection, NumberTicker } from '@/components/shared'
+import { ourMission } from '@/data/about.data'
 import { stats } from '@/data/shared.data'
 import { motion } from 'motion/react'
 
@@ -13,13 +14,13 @@ const MissionSection = () => {
           <AnimatedSection direction="left">
             <p className="text-xs font-medium text-accent uppercase tracking-[0.3em] mb-4">Our Mission</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
-              Empowering Sustainable Digital Growth
+              Engineering Growth With Purpose
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6 font-light">
-              Our mission is to enable businesses to grow with clarity and confidence through technology built for resilience, scalability, and measurable performance.
+              {ourMission.para1}
             </p>
             <p className="text-muted-foreground leading-relaxed relative font-light text-sm">
-              We architect systems that evolve with demand, infrastructure that adapts to complexity, and solutions designed to deliver long-term value, not temporary momentum. At <HighlightedBrandName />, growth is intentional. It is engineered.
+             {ourMission.para2}
             </p>
           </AnimatedSection>
           <AnimatedSection direction="right" delay={0.2}>

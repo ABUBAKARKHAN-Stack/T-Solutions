@@ -9,19 +9,7 @@ import {
 
 
 // ── About Page ──────────────────────────────────────────────
-export const values = [
-  { icon: Target, title: "Purpose-Driven", description: "Every decision we make is guided by our commitment to sustainable growth and positive impact." },
-  { icon: Eye, title: "Transparency", description: "We believe in open communication and honest partnerships with every client we serve." },
-  { icon: Heart, title: "Integrity", description: "We hold ourselves to the highest ethical standards in everything we do." },
-  { icon: Award, title: "Excellence", description: "We strive for exceptional results through innovation, expertise, and dedication." },
-];
 
-export const team = [
-  { name: "Alexandra Reed", role: "Founder & CEO", initials: "AR" },
-  { name: "Marcus Johnson", role: "Head of Strategy", initials: "MJ" },
-  { name: "Priya Sharma", role: "Director of Operations", initials: "PS" },
-  { name: "David Kim", role: "Lead Consultant", initials: "DK" },
-];
 
 // ── Approach ────────────────────────────────────────────────
 
