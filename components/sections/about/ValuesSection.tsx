@@ -29,7 +29,7 @@ const ValuesSection = () => {
                 <h3 className="text-base font-semibold text-foreground mb-3" style={{ fontFamily: "'Inter', sans-serif" }}>
                   {v.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{v.description}</p>
+                <p className="text-sm text-muted-foreground  max-w-sm mx-auto leading-relaxed">{v.description}</p>
               </div>
             </motion.div>
           ))}

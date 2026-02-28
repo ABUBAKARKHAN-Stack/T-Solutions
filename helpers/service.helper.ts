@@ -2,7 +2,8 @@ import { sanityFetch } from "@/sanity/lib/live"
 import { IService, IServiceOverview } from "@/types/service.types"
 import { defineQuery } from "next-sanity"
 
-const SERVICES_OVERVIEW_QUERY = defineQuery(`*[_type == "service"]{
+const SERVICES_OVERVIEW_QUERY = defineQuery(`*[_type == "service"] | order(featured desc)
+{
   _id,
   icon,
   title,

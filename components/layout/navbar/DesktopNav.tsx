@@ -62,7 +62,6 @@ const DesktopNav = ({ setOpen, open }: Props) => {
 
                         {navLinks.map((link) => {
                             const isActive = pathname === link.to || (link.to !== "/" && pathname.startsWith(link.to));
-                            console.log(pathname, hoveredPath);
 
                             return (
                                 <div

@@ -18,7 +18,7 @@ const ApproachSection = () => {
             centered
           />
 
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
+        <StaggerChildren className="grid grid-cols-1 xsm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
           {approachSteps.map((step, i) => (
             <motion.div key={step.title} variants={itemVariants} className="relative">
               {i < approachSteps.length - 1 && (
@@ -32,7 +32,7 @@ const ApproachSection = () => {
                   </span>
                 </div>
                 <h3 className="text-base font-semibold text-foreground mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                <p className="text-sm text-muted-foreground max-w-sm mx-auto leading-relaxed">{step.description}</p>
               </div>
             </motion.div>
           ))}

@@ -58,6 +58,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
             {/* Dialog */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogContent className="p-0 gap-0 overflow-hidden max-w-md border-border/30 bg-card/95 backdrop-blur-xl shadow-2xl shadow-accent/5 rounded-2xl">
+
                     <DialogTitle className="sr-only">{member.name}</DialogTitle>
 
                     {/* Image Header */}
@@ -66,7 +67,7 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
                             src={member.image}
                             fill
                             alt={`${member.name}, ${member.role}`}
-                            className="w-full h-full object-cover object-top scale-105"
+                            className="w-full h-full object-cover object-top"
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-card via-card/60 to-transparent" />
                     </div>

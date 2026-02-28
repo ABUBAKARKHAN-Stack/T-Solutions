@@ -22,7 +22,7 @@ const FeaturesSection = () => {
                         className="mb-16"
                     />
 
-                    <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <StaggerChildren className="grid grid-cols-1 xsm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {featuresContent.map((feature) => (
                             <motion.div key={feature.title} variants={itemVariants}>
                                 <div className="group glass-card rounded-2xl p-8 h-full cursor-default">

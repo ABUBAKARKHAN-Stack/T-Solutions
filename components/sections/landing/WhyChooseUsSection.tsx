@@ -18,7 +18,7 @@ const WhyChooseUsSection = () => {
             description="We partner with your team to deliver scalable, high-performance solutions that drive measurable impact."
           />
 
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
+          <StaggerChildren className="grid grid-cols-1 xsm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
             {whyChooseUsReasons.map((r) => (
               <motion.div key={r.title} variants={itemVariants}>
                 <div className="group glass-card rounded-2xl p-8 h-full">
@@ -26,7 +26,7 @@ const WhyChooseUsSection = () => {
                     <r.icon className="h-5 w-5 text-accent" />
                   </div>
                   <h3 className="text-base font-semibold text-foreground mb-2">{r.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{r.description}</p>
+                  <p className="text-sm text-muted-foreground  leading-relaxed">{r.description}</p>
                 </div>
               </motion.div>
             ))}

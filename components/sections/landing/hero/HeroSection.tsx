@@ -133,13 +133,13 @@ const HeroSection = () => {
                                         </Link>
                                     </Button>
                                 </MagneticButton>
-                                <MagneticButton>
                                     <ContactDrawer>
+                                <MagneticButton>
                                         <Button variant="outline" size="lg" className="rounded-full text-foreground hover:bg-accent/10 text-sm px-6 h-12 font-medium">
                                             {heroContent.cta.secondary} <ArrowRight className="ml-2 h-4 w-4" />
                                         </Button>
-                                    </ContactDrawer>
                                 </MagneticButton>
+                                    </ContactDrawer>
                             </motion.div>
 
                         </div>
@@ -182,7 +182,7 @@ const HeroSection = () => {
                                                         </div>
                                                         <div>
                                                             <p className="text-sm font-medium text-foreground">{service.title}</p>
-                                                            <p className="text-xs text-muted-foreground ">{service.description}</p>
+                                                            <p className="text-xs text-muted-foreground line-clamp-3 ">{service.description}</p>
                                                         </div>
                                                         <ArrowUpRight className="size-3.5 text-muted-foreground/30 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 shrink-0" />
                                                     </motion.div>
