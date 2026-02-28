@@ -37,7 +37,7 @@ const TechnologiesSection = ({
                                         </span>
                                     </div>
                                     <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60 block mb-2">{tech.category}</span>
-                                    <p className="text-sm text-muted-foreground leading-relaxed font-light">{tech.description}</p>
+                                    {tech.description.split("\n").map(d => <p className="text-sm text-muted-foreground leading-relaxed font-light mb-1">{d}</p>)}
                                 </div>
                             ))}
                         </div>
@@ -47,15 +47,16 @@ const TechnologiesSection = ({
                 {/* Other Technologies */}
                 {technologies.some((t) => !t.featured) && (
                     <AnimatedSection>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4  gap-4 max-w-5xl mx-auto">
                             {technologies.filter((t) => !t.featured).map((tech) => (
                                 <div
                                     key={tech.name}
                                     className="group relative flex flex-col items-center gap-1 p-5 rounded-2xl border border-border/40 bg-background hover:border-accent/40 transition-all duration-300"
                                     title={tech.description}
                                 >
-                                    <span className="text-sm font-semibold text-foreground">{tech.name}</span>
-                                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60">{tech.category}</span>
+                                    <span className="text-sm text-wrap text-center font-semibold text-foreground mb-2">{tech.name}</span>
+                                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60 mb-2">{tech.category}</span>
+                                    <p className="text-sm max-w-sm mx-auto text-center text-muted-foreground leading-relaxed font-light">{tech.description}</p>
                                 </div>
                             ))}
                         </div>

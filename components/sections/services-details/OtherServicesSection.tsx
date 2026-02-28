@@ -4,7 +4,6 @@ import { AnimatedSection, SectionHeader } from '@/components/shared';
 import { useServices } from '@/context/ServiceContext';
 import { getIconByName } from '@/lib/icon-mapper';
 import { getPreviewImageUrl } from '@/lib/transformed-img-urls';
-import { urlFor } from '@/sanity/lib/image';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
@@ -12,7 +11,7 @@ import { useParams } from 'next/navigation';
 const OtherServicesSection = () => {
     const { servicesOverview } = useServices()
     const { slug } = useParams()
-    const otherServices = servicesOverview.filter(s => s.slug !== slug).slice(0,3);
+    const otherServices = servicesOverview.filter(s => s.slug !== slug && s.featured).slice(0,3);
 
     return (
         <section className="section-padding bg-card/30">
