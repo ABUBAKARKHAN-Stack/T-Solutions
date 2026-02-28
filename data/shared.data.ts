@@ -14,15 +14,6 @@ export const team = [
     initials: "UA",
     image: "/assets/team/usama.jpeg",
     bio: "DevOps and Cloud Engineer specializing in designing and managing scalable, production-grade infrastructure across AWS and Azure. Strong background in Linux system administration, automation, and building reliable, high-performance environments.",
-    expertise: [
-      "AWS",
-      "Microsoft Azure",
-      "Linux System Administration",
-      "CI/CD Pipelines",
-      "Infrastructure as Code (IaC)",
-      "Kubernetes",
-      "Virtualization (KVM & VMware ESXi)"
-    ],
     linkedin: "https://www.linkedin.com/in/usama-aijaz-712b361b0/",
     twitter: "#",
     email: "usama@t-solutionz.com"
@@ -32,19 +23,9 @@ export const team = [
     role: "CTO & Co-Founder",
     initials: "AA",
     image: "/assets/team/abubakar.jpg",
-    bio: "Full-stack engineer and tech leader, building scalable web apps, microservices, and AI-powered solutions.",
-    expertise: [
-      "JavaScript / TypeScript",
-      "MERN Stack",
-      "Next.js",
-      "Python / Django / FastAPI",
-      "Microservices",
-      "Docker & Containerization",
-      "Cloud Architecture & Distributed Systems",
-      "Gen AI & Agentic AI"
-    ],
+    bio: "Full-Stack Engineer and technology leader specializing in scalable software architecture, distributed systems, and modern web platforms. Experienced in building enterprise-grade applications using JavaScript/TypeScript and Python ecosystems, with strong expertise in microservices, Kafka, and cloud-ready system design.",
     linkedin: "https://www.linkedin.com/in/abubakar-aijaz-dev",
-    twitter: "#",
-    email: "abubakar@codeperia.com"
+    twitter: "https://x.com/abubakar_stacky",
+    email: "abubakar@t-solutionz.com"
   }
 ];

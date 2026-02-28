@@ -19,7 +19,9 @@ import {
     Search,
     Rocket,
     LucideIcon,
-    CheckCheck
+    CheckCheck,
+    Bot,
+    ShoppingCart
 } from "lucide-react";
 
 
@@ -42,7 +44,9 @@ export const iconsMap: Record<string, LucideIcon> = {
     HeartHandshake,
     Sparkles,
     Search,
-    Rocket
+    Rocket,
+    Bot,
+    ShoppingCart
 }
 
 export const getIconByName = (iconName:string) => iconsMap[iconName] || CheckCheck;
