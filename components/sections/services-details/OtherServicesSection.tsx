@@ -11,7 +11,7 @@ import { useParams } from 'next/navigation';
 const OtherServicesSection = () => {
     const { servicesOverview } = useServices()
     const { slug } = useParams()
-    const otherServices = servicesOverview.filter(s => s.slug !== slug && s.featured).slice(0,3);
+    const otherServices = servicesOverview.filter(s => s.slug !== slug).slice(0,3);
 
     return (
         <section className="section-padding bg-card/30">
