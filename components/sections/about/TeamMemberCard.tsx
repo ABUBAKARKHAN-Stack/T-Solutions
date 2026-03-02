@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import Image from "next/image";
+import { APP_NAME } from "@/constants/app.constants";
 
 interface TeamMember {
     name: string;
@@ -57,46 +58,47 @@ const TeamMemberCard = ({ member, index }: { member: TeamMember; index: number }
 
             {/* Dialog */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                <DialogContent className="p-0 gap-0 overflow-hidden max-w-md border-border/30 bg-card/95 backdrop-blur-xl shadow-2xl shadow-accent/5 rounded-2xl">
-
+                <DialogContent className="p-0 gap-0 overflow-hidden max-w-md border-0 shadow-2xl rounded-2xl h-[80vh] max-h-150">
                     <DialogTitle className="sr-only">{member.name}</DialogTitle>
 
-                    {/* Image Header */}
-                    <div className="relative h-56 overflow-hidden">
-                        <Image
-                            src={member.image}
-                            fill
-                            alt={`${member.name}, ${member.role}`}
-                            className="w-full h-full object-cover object-top"
-                        />
-                        <div className="absolute inset-0 bg-linear-to-t from-card via-card/60 to-transparent" />
-                    </div>
+                    {/* Image fills entire modal */}
+                    <Image
+                        fill
+                        src={member.image}
+                        alt={`Portrait of ${member.name}, ${member.role} at ${APP_NAME}`} className="absolute inset-0 w-full h-full object-cover object-top"
+                    />
 
-                    {/* Content */}
-                    <div className="px-8 pb-8 -mt-12 relative">
-                        <h3 className="text-lg font-semibold text-foreground mb-0.5">{member.name}</h3>
-                        <p className="text-[11px] text-accent font-medium uppercase tracking-[0.2em] mb-5">{member.role}</p>
+                    {/* Accent overlay */}
+                    <div className="absolute inset-0 bg-linear-to-t from-background/95 via-background/40 to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-t from-background/95 via-background/40 to-transparent" />
 
-                        {/* Bio */}
-                        <p className="text-sm text-muted-foreground leading-relaxed font-light mb-6">
+                    {/* Content at bottom over image */}
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                        <h3 className="text-xl font-semibold text-foreground mb-0.5 font-playfair">
+                            {member.name}
+                        </h3>
+                        <p className="text-[11px] text-foreground/80 font-medium uppercase tracking-[0.2em] mb-4">
+                            {member.role}
+                        </p>
+
+                        <p className="text-sm text-foreground/75 leading-relaxed font-light mb-5">
                             {member.bio}
                         </p>
 
-                        {/* Social Links */}
-                        <div className="flex items-center gap-2 pt-5 border-t border-border/30">
+                        <div className="flex items-center gap-2 pt-4 border-t border-foreground/15">
                             {member.linkedin && (
-                                <a href={member.linkedin} onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-border/40 hover:border-accent/50 hover:bg-accent/5 flex items-center justify-center transition-all duration-300">
-                                    <Linkedin className="w-3.5 h-3.5 text-muted-foreground hover:text-accent transition-colors" />
+                                <a href={member.linkedin} onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-foreground/20 hover:border-foreground/50 hover:bg-foreground/10 flex items-center justify-center transition-all duration-300">
+                                    <Linkedin className="w-3.5 h-3.5 text-foreground/70 hover:text-foreground transition-colors" />
                                 </a>
                             )}
                             {member.twitter && (
-                                <a href={member.twitter} onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-border/40 hover:border-accent/50 hover:bg-accent/5 flex items-center justify-center transition-all duration-300">
-                                    <Twitter className="w-3.5 h-3.5 text-muted-foreground hover:text-accent transition-colors" />
+                                <a href={member.twitter} onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-foreground/20 hover:border-foreground/50 hover:bg-foreground/10 flex items-center justify-center transition-all duration-300">
+                                    <Twitter className="w-3.5 h-3.5 text-foreground/70 hover:text-foreground transition-colors" />
                                 </a>
                             )}
                             {member.email && (
-                                <a href={`mailto:${member.email}`} onClick={(e) => e.stopPropagation()} className="w-8 h-8 rounded-full border border-border/40 hover:border-accent/50 hover:bg-accent/5 flex items-center justify-center transition-all duration-300">
-                                    <Mail className="w-3.5 h-3.5 text-muted-foreground hover:text-accent transition-colors" />
+                                <a href={`mailto:${member.email}`} onClick={(e) => e.stopPropagation()} className="w-8 h-8 rounded-full border border-foreground/20 hover:border-foreground/50 hover:bg-foreground/10 flex items-center justify-center transition-all duration-300">
+                                    <Mail className="w-3.5 h-3.5 text-foreground/70 hover:text-foreground transition-colors" />
                                 </a>
                             )}
                         </div>
