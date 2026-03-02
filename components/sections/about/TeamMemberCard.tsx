@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowUpRight, Linkedin, Twitter, Mail } from "lucide-react";
 import {
     Dialog,
@@ -15,7 +15,6 @@ interface TeamMember {
     initials: string;
     image: string;
     bio: string;
-    expertise?: string[];
     linkedin?: string;
     twitter?: string;
     email?: string;

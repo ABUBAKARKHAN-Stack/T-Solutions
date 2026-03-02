@@ -116,7 +116,6 @@ export const portfolioType = defineType({
           validation: (R) => R.required(),
         }),
       ],
-      validation: (R) => R.required()
     }),
   ],
 
