@@ -8,6 +8,7 @@ import { APP_NAME } from "@/constants/app.constants"
 import { ArrowUpRight } from "lucide-react"
 import { getPreviewImageUrl } from "@/lib/transformed-img-urls"
 import CardTopBadge from "./CardsTopBadge"
+import { urlFor } from "@/sanity/lib/image"
 
 type Props = {
     project: IPortfolioOverview
@@ -25,7 +26,7 @@ const PortfolioCard = ({
                     <div className="h-px bg-linear-to-r from-transparent via-accent/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
 
                     {/* Image */}
-                    <div className="relative h-52 md:h-56 overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden">
                         <Image
                             src={getPreviewImageUrl(project.image.source)}
                             alt={`Screenshot of ${project.title} project created by ${APP_NAME}`}
@@ -34,7 +35,7 @@ const PortfolioCard = ({
                             loading="lazy"
                         />
 
-                        <div className="absolute bottom-0 left-0 right-0 h-16 bg-linear-to-t from-card/60 to-transparent" />
+                        <div className="absolute inset-0 bg-linear-to-t from-card/60 to-transparent" />
 
                         {/* Category badge */}
                         <CardTopBadge
