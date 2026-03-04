@@ -11,15 +11,19 @@ export const metadata: Metadata = {
     title: { absolute: `Software Development Services | ${APP_NAME}` },
 
     description:
-        "T-Solutionz provides full stack development, Agentic-AI & LLM integrations, app development, and DevOps & cloud infrastructure services engineered for scalability, performance, and long-term business growth.",
-
+        "T-Solutionz delivers full-stack and mobile application development, AI systems and intelligent automation, scalable e-commerce platforms, DevOps & cloud infrastructure, and SEO-driven digital growth solutions engineered for performance and long-term business impact.",
+        
     keywords: [
         "Software Development Services",
-        "Full Stack Development Services",
-        "Agentic-AI & LLM Integration",
-        "App Development Services",
+        "Full-Stack Application Development",
+        "Mobile Application Development",
+        "AI Systems and Intelligent Automation",
+        "E-Commerce Solutions Development",
         "DevOps and Cloud Infrastructure",
-        "Scalable Software Development Agency"
+        "SEO and Digital Visibility Services",
+        "Scalable Web and Mobile Applications",
+        "Enterprise Software Engineering",
+        "High-Performance Digital Systems"
     ],
 
     alternates: {
@@ -30,7 +34,7 @@ export const metadata: Metadata = {
         siteName: APP_NAME,
         title: `Software Development Services | ${APP_NAME}`,
         description:
-            "T-Solutionz delivers full-stack development, Agentic-AI & LLM integrations, app development, and DevOps cloud solutions engineered for scalability, high performance, and measurable business impact.",
+            "T-Solutionz delivers full-stack and mobile application development, AI systems and intelligent automation, scalable e-commerce platforms, DevOps & cloud infrastructure, and SEO-driven digital growth solutions engineered for performance and long-term business impact.",
         url: `${BASE_URL}/services`,
         images: { url: "opengraph-image" },
         type: "website"

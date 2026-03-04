@@ -13,10 +13,10 @@ const ServicesLinks = () => {
                     <li key={link.slug}>
                         <Link
                             href={`/services${link.slug}`}
-                            className="text-sm text-foreground/60 hover:text-accent transition-colors duration-300 flex items-center gap-1 group"
+                            className="text-sm text-wrap text-foreground/60 hover:text-accent transition-colors duration-300 flex items-center gap-1 group"
                         >
                             {link.title}
-                            <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />
+                            <ArrowUpRight className="h-3 w-3 shrink-0 opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300" />
                         </Link>
                     </li>
                 ))}
