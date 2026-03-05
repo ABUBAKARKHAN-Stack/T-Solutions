@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description: BRAND_DESCRIPTION,
   icons: {
     icon: [
-      { url: "/assets/brand/favicons/favicon.ico", type: "image/png" },
+      { url: "/assets/brand/favicons/favicon.ico", type: "image/x-icon" },
       { url: "/assets/brand/favicons/favicon.svg", type: "image/svg+xml" },
       {
         url: "/assets/brand/favicons/android-chrome-512x512.png",
