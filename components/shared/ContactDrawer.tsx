@@ -36,7 +36,6 @@ import {
   SelectTrigger,
   SelectValue
 } from "../ui/select";
-import { resendClient } from "@/lib/resend-client";
 import { ErrorResponse } from "resend";
 import { sendEmail } from "@/app/actions/email.actions";
 import { Spinner } from "../ui/spinner";

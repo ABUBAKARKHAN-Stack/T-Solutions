@@ -26,6 +26,14 @@ import { Activity } from 'react';
 import { useForm } from 'react-hook-form';
 import { ErrorResponse } from 'resend';
 import { toast } from 'sonner';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue
+} from "@/components/ui/select";
+import { useServices } from '@/context/ServiceContext';
 
 const ContactForm = () => {
 
@@ -34,6 +42,10 @@ const ContactForm = () => {
         resolver: zodResolver(contactSchema),
         defaultValues: { name: "", email: "", subject: "", message: "" },
     });
+
+    const {
+        servicesOverview
+    } = useServices()
 
     const isSubmitting = form.formState.isSubmitting;
 
@@ -121,6 +133,35 @@ const ContactForm = () => {
                                 )}
                             />
                         </div>
+
+                        <FormField
+                            control={form.control}
+                            name="service"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel className="text-xs uppercase tracking-wider text-muted-foreground font-medium">Service Interested In</FormLabel>
+                                    <Select onValueChange={field.onChange} value={field.value}>
+                                        <FormControl>
+                                            <SelectTrigger className="rounded-xl bg-background/50 border-border/50 h-12 focus:border-accent transition-colors">
+                                                <SelectValue placeholder="Select a service" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent className="bg-popover border-border z-200">
+                                            {servicesOverview.map((s) => (
+                                                <SelectItem key={s.slug} value={s.title} className="text-sm focus:bg-accent/10">
+                                                    {s.title}
+                                                </SelectItem>
+                                            ))}
+                                            <SelectItem value={"Other"} className="text-sm focus:bg-accent/10">
+                                                Other
+                                            </SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                    <FormMessage className="text-xs" />
+                                </FormItem>
+                            )}
+                        />
+
                         <FormField
                             control={form.control}
                             name="subject"
@@ -158,11 +199,11 @@ const ContactForm = () => {
                         />
                         <MagneticButton strength={0.1}>
                             <Button
-                            disabled={isSubmitting}
-                             type="submit"
-                              size="lg" 
-                              className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-12 font-medium text-sm"
-                              >
+                                disabled={isSubmitting}
+                                type="submit"
+                                size="lg"
+                                className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-12 font-medium text-sm"
+                            >
 
                                 {/* Rest State  */}
                                 <Activity mode={!isSubmitting ? "visible" : "hidden"}>

@@ -4,8 +4,8 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { SectionHeader } from "@/components/shared";
-import { testimonials } from "@/constants";
 import { ContainerLayout } from "@/components/layout";
+import { testimonials } from "@/data/landing.data";
 
 const TestimonialsSection = () => {
   const [active, setActive] = useState(2);

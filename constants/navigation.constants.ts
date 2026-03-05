@@ -1,5 +1,4 @@
-import { TwitterIcon } from "@sanity/icons";
-import { Brain, Cloud, Code2, Container, FacebookIcon, Headphones, InstagramIcon, LinkedinIcon, Mail, MapPin, Phone, Smartphone } from "lucide-react";
+import { FacebookIcon, Headphones, InstagramIcon, LinkedinIcon, Mail, Phone } from "lucide-react";
 
 export const navLinks = [
   { label: "Home", to: "/" },
@@ -10,13 +9,6 @@ export const navLinks = [
 ];
 
 
-export const serviceItems = [
-  { icon: Code2, label: "Full Stack Development", description: "End-to-end web applications" },
-  { icon: Smartphone, label: "App Development", description: "iOS, Android & cross-platform" },
-  { icon: Cloud, label: "Cloud Solutions", description: "Scalable cloud infrastructure" },
-  { icon: Container, label: "DevOps & Automation", description: "CI/CD & infrastructure as code" },
-  { icon: Brain, label: "AI & Machine Learning", description: "Intelligent automation & insights" },
-];
 export const contactInfo = [
   {
     label: "Mail",

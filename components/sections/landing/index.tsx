@@ -3,7 +3,6 @@ import FeaturesSection from "./FeaturesSection";
 import ServicesSection from "./ServicesSection";
 import AboutPreviewSection from "./AboutPreviewSection";
 import PartnersSection from "./PartnersSection";
-import CaseStudySection from "./CaseStudySection";
 import TestimonialsSection from "./TestimonialsSection";
 import WhyChooseUsSection from "./WhyChooseUsSection";
 import ApproachSection from "./ApproachSection";
@@ -21,7 +20,6 @@ export {
     CTASection,
     FAQSection,
     PartnersSection,
-    CaseStudySection,
     TestimonialsSection,
     WhyChooseUsSection,
     BlogSection,

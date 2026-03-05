@@ -195,3 +195,12 @@ export const faqs = [
     a: "We build scalable, high-performance systems with a full lifecycle approach. Every solution is designed for reliability, growth, and measurable results."
   },
 ];
+
+
+export const testimonials = [
+  { quote: "T-Solutions brought a fresh perspective to our sustainability roadmap. Their energy and dedication were exactly what our team needed.", name: "Sarah Mitchell", role: "Founder, EcoSphere" },
+  { quote: "Working with a young, hungry team made all the difference. They treated our project like their own and delivered beyond expectations.", name: "James Chen", role: "CTO, TechVault" },
+  { quote: "Their strategic framework helped us find clarity during a pivotal growth phase. Highly recommend for any startup or scaling business.", name: "Elena Rodriguez", role: "Director, NovaBridge" },
+  { quote: "What they lack in decades, they make up for in insight and hustle. T-Solutions is the real deal.", name: "Marcus Liu", role: "Co-founder, PeakPoint" },
+  { quote: "They challenged our assumptions in the best way possible. A truly collaborative experience from start to finish.", name: "Aisha Patel", role: "CEO, Horizon Inc" },
+];
