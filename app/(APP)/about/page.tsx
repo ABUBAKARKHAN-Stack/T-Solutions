@@ -2,7 +2,7 @@ import { PageTransition } from '@/components/layout'
 import {
     AboutCTASection,
     AboutPageHero,
-    FounderQuoteSection,
+    FounderQuoteSection as _,
     MissionSection,
     OurJourneySection,
     OurTeamSection,
@@ -58,7 +58,7 @@ const AboutPage = () => {
             <OurTeamSection />
 
             {/* Founder Quote Section  */}
-            <FounderQuoteSection />
+            {/* <FounderQuoteSection /> */}
 
             {/* About CTA Section  */}
             <AboutCTASection />

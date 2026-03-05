@@ -60,23 +60,40 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
-      const resp = await sendEmail(data)
+      const resp = await sendEmail(data);
+
       if (resp.data) {
         form.reset();
         setSubmitted(true);
+
         setTimeout(() => {
           setOpen(false);
           setTimeout(() => setSubmitted(false), 300);
         }, 2000);
       }
 
+      if (resp.error) {
+        const errMsg =
+          resp.error.message ||
+          "We couldn't deliver your message at the moment. Please try again later.";
+
+        toast.error("Message Delivery Failed", {
+          description: errMsg,
+          richColors: true,
+          position: "top-left",
+        });
+      }
     } catch (error) {
       const err = error as ErrorResponse;
-      const errMsg = err.message || "Failed to send message. Try Again!"
-      toast.error("Message Sent Failed", {
+
+      const errMsg =
+        err?.message ||
+        "Something went wrong while sending your message. Please try again.";
+
+      toast.error("Unable to Send Message", {
         description: errMsg,
         richColors: true,
-        position: "top-left"
+        position: "top-left",
       });
     }
   };

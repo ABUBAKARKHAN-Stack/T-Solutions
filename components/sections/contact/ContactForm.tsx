@@ -1,4 +1,5 @@
 "use client"
+import { sendEmail } from '@/app/actions/email.actions';
 import {
     AnimatedSection,
     MagneticButton,
@@ -13,6 +14,7 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from '@/components/ui/input';
+import { Spinner } from '@/components/ui/spinner';
 import { Textarea } from '@/components/ui/textarea';
 import {
     ContactFormValues,
@@ -20,7 +22,9 @@ import {
 } from '@/schemas/contact.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Send } from 'lucide-react';
+import { Activity } from 'react';
 import { useForm } from 'react-hook-form';
+import { ErrorResponse } from 'resend';
 import { toast } from 'sonner';
 
 const ContactForm = () => {
@@ -31,11 +35,45 @@ const ContactForm = () => {
         defaultValues: { name: "", email: "", subject: "", message: "" },
     });
 
-    const onSubmit = (data: ContactFormValues) => {
-        toast("Message Sent", {
-            description: "Thank you for reaching out! We'll get back to you soon.",
-        });
-        form.reset();
+    const isSubmitting = form.formState.isSubmitting;
+
+    const onSubmit = async (data: ContactFormValues) => {
+        try {
+            const resp = await sendEmail(data);
+
+            if (resp.error) {
+                const errMsg =
+                    resp.error.message ||
+                    "We couldn't deliver your message at the moment. Please try again later.";
+
+                toast.error("Message Delivery Failed", {
+                    description: errMsg,
+                    richColors: true,
+                    position: "top-left",
+                });
+                return;
+            }
+            form.reset();
+            toast.success("Message Sent Successfully", {
+                description:
+                    "Thank you for contacting us. We've received your message and will get back to you shortly.",
+                richColors: true,
+                position: "bottom-right",
+            });
+
+        } catch (error) {
+            const err = error as ErrorResponse;
+
+            const errMsg =
+                err?.message ||
+                "Something went wrong while sending your message. Please try again.";
+
+            toast.error("Unable to Send Message", {
+                description: errMsg,
+                richColors: true,
+                position: "top-left",
+            });
+        }
     };
 
     return (
@@ -119,8 +157,24 @@ const ContactForm = () => {
                             )}
                         />
                         <MagneticButton strength={0.1}>
-                            <Button type="submit" size="lg" className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-12 font-medium text-sm">
-                                <Send className="mr-2 h-4 w-4" /> Send Message
+                            <Button
+                            disabled={isSubmitting}
+                             type="submit"
+                              size="lg" 
+                              className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-12 font-medium text-sm"
+                              >
+
+                                {/* Rest State  */}
+                                <Activity mode={!isSubmitting ? "visible" : "hidden"}>
+                                    <Send /> Send Message
+                                </Activity>
+
+                                {/* Loader State  */}
+                                <Activity mode={isSubmitting ? "visible" : "hidden"}>
+                                    <Spinner data-icon="inline-start" />
+                                    Sending Message
+                                </Activity>
+
                             </Button>
                         </MagneticButton>
                     </form>
