@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { Activity, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -36,6 +36,10 @@ import {
   SelectTrigger,
   SelectValue
 } from "../ui/select";
+import { resendClient } from "@/lib/resend-client";
+import { ErrorResponse } from "resend";
+import { sendEmail } from "@/app/actions/email.actions";
+import { Spinner } from "../ui/spinner";
 
 
 interface ContactDrawerProps {
@@ -52,16 +56,29 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
     defaultValues: { name: "", email: "", subject: "", message: "", service: "" },
   });
 
-  const onSubmit = (data: ContactFormValues) => {
-    toast("Message Sent", {
-      description: "Thank you for reaching out! We'll get back to you soon.",
-    });
-    form.reset();
-    setSubmitted(true);
-    setTimeout(() => {
-      setOpen(false);
-      setTimeout(() => setSubmitted(false), 300);
-    }, 2000);
+  const isSubmitting = form.formState.isSubmitting
+
+  const onSubmit = async (data: ContactFormValues) => {
+    try {
+      const resp = await sendEmail(data)
+      if (resp.data) {
+        form.reset();
+        setSubmitted(true);
+        setTimeout(() => {
+          setOpen(false);
+          setTimeout(() => setSubmitted(false), 300);
+        }, 2000);
+      }
+
+    } catch (error) {
+      const err = error as ErrorResponse;
+      const errMsg = err.message || "Failed to send message. Try Again!"
+      toast.error("Message Sent Failed", {
+        description: errMsg,
+        richColors: true,
+        position: "top-left"
+      });
+    }
   };
 
   const mailInfo = contactInfo.filter((info) => info.label.toLowerCase().trim() === "mail")[0]
@@ -89,7 +106,7 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
           {submitted ? (
             <motion.div
               key="success"
-              className="flex flex-col items-center justify-center p-10 text-center"
+              className="flex flex-col items-center justify-center p-10 text-center min-h-[60vh]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
@@ -112,6 +129,7 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
             >
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
@@ -198,10 +216,27 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
                     )}
                   />
 
-                  <Button type="submit" size="lg" className="w-full rounded-full bg-foreground text-background hover:bg-foreground/90 h-12 font-medium text-sm">
-                    <Send className="mr-2 h-4 w-4" /> Send Message
+                  <Button
+                    disabled={isSubmitting}
+                    type="submit"
+                    size="lg"
+                    className="w-full rounded-full bg-foreground text-background hover:bg-foreground/90 h-12 font-medium text-sm"
+                  >
+
+                    {/* Rest State  */}
+                    <Activity mode={!isSubmitting ? "visible" : "hidden"}>
+                      <Send /> Send Message
+                    </Activity>
+
+                    {/* Loader State  */}
+                    <Activity mode={isSubmitting ? "visible" : "hidden"}>
+                      <Spinner data-icon="inline-start" />
+                      Sending Message
+                    </Activity>
+
                   </Button>
 
+                  {/* Direct Email Section  */}
                   <div className="flex items-center gap-3 pt-2">
                     <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
                       <Mail className="h-3.5 w-3.5 text-accent" />
@@ -212,6 +247,7 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
                     </div>
                     <ArrowUpRight className="h-3 w-3 text-muted-foreground/40 ml-auto" />
                   </div>
+
                 </form>
               </Form>
             </motion.div>

@@ -26,8 +26,8 @@ export const contactInfo = [
   },
   {
     label: "Help & Support",
-    value: "contact@t-solutionz.com",
-    link: "mailto:contact@t-solutionz.com",
+    value: "support@t-solutionz.com",
+    link: "mailto:support@t-solutionz.com",
     icon: Headphones
   },
   {
