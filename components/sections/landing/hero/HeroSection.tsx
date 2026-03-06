@@ -49,7 +49,7 @@ const HeroSection = () => {
                     <div className="pt-28 lgx:pt-32 mb-16 lgx:mb-20 grid grid-cols-1 lgx:grid-cols-12 gap-8 lgx:gap-16 items-start pb-16 lgx:pb-24">
 
                         {/* Left column — main content */}
-                        <div className="lgx:col-span-6">
+                        <div className="lgx:col-span-6 col-span-full">
 
                             {/* Eyebrow */}
                             <motion.div
@@ -146,7 +146,7 @@ const HeroSection = () => {
 
                         {/* Right column — services preview + mission */}
                         <motion.div
-                            className="lgx:col-span-6"
+                            className="lgx:col-span-6 lgx:block hidden"
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, delay: 0.7 }}

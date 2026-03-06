@@ -23,7 +23,7 @@ export const heroContent = {
     mission: {
         title: "Our Mission",
         quote:
-            "To transform ideas into scalable, high-performance systems that enable sustainable growth, operational excellence, and measurable impact.",
+            "Transforming ideas into scalable systems that drive growth and measurable impact.",
     },
 
     accentCards: [
@@ -170,37 +170,37 @@ export const whyChooseUsReasons = [
 ];
 
 export const faqs = [
-  {
-    q: "What industries do you serve?",
-    a: "We work across technology, finance, healthcare, energy, and consumer goods. Every solution is tailored to your market and designed to scale."
-  },
-  {
-    q: "How long does a typical project take?",
-    a: "Projects usually range from 4 to 16 weeks depending on scope. We start with discovery and provide a clear timeline upfront."
-  },
-  {
-    q: "Do you work with startups or enterprises?",
-    a: "Both. We help startups launch scalable solutions and guide enterprises through digital transformation. Our approach adapts to any stage."
-  },
-  {
-    q: "How do you ensure long-term impact?",
-    a: "We define KPIs from day one and track performance throughout the project. Regular check-ins and dashboards keep results measurable and transparent."
-  },
-  {
-    q: "Can we start with a small pilot?",
-    a: "Absolutely. Many clients begin with a focused pilot to experience our methodology before expanding into larger initiatives."
-  },
-  {
-    q: "What sets your solutions apart?",
-    a: "We build scalable, high-performance systems with a full lifecycle approach. Every solution is designed for reliability, growth, and measurable results."
-  },
+    {
+        q: "What industries do you serve?",
+        a: "We work across technology, finance, healthcare, energy, and consumer goods. Every solution is tailored to your market and designed to scale."
+    },
+    {
+        q: "How long does a typical project take?",
+        a: "Projects usually range from 4 to 16 weeks depending on scope. We start with discovery and provide a clear timeline upfront."
+    },
+    {
+        q: "Do you work with startups or enterprises?",
+        a: "Both. We help startups launch scalable solutions and guide enterprises through digital transformation. Our approach adapts to any stage."
+    },
+    {
+        q: "How do you ensure long-term impact?",
+        a: "We define KPIs from day one and track performance throughout the project. Regular check-ins and dashboards keep results measurable and transparent."
+    },
+    {
+        q: "Can we start with a small pilot?",
+        a: "Absolutely. Many clients begin with a focused pilot to experience our methodology before expanding into larger initiatives."
+    },
+    {
+        q: "What sets your solutions apart?",
+        a: "We build scalable, high-performance systems with a full lifecycle approach. Every solution is designed for reliability, growth, and measurable results."
+    },
 ];
 
 
 export const testimonials = [
-  { quote: "T-Solutions brought a fresh perspective to our sustainability roadmap. Their energy and dedication were exactly what our team needed.", name: "Sarah Mitchell", role: "Founder, EcoSphere" },
-  { quote: "Working with a young, hungry team made all the difference. They treated our project like their own and delivered beyond expectations.", name: "James Chen", role: "CTO, TechVault" },
-  { quote: "Their strategic framework helped us find clarity during a pivotal growth phase. Highly recommend for any startup or scaling business.", name: "Elena Rodriguez", role: "Director, NovaBridge" },
-  { quote: "What they lack in decades, they make up for in insight and hustle. T-Solutions is the real deal.", name: "Marcus Liu", role: "Co-founder, PeakPoint" },
-  { quote: "They challenged our assumptions in the best way possible. A truly collaborative experience from start to finish.", name: "Aisha Patel", role: "CEO, Horizon Inc" },
+    { quote: "T-Solutions brought a fresh perspective to our sustainability roadmap. Their energy and dedication were exactly what our team needed.", name: "Sarah Mitchell", role: "Founder, EcoSphere" },
+    { quote: "Working with a young, hungry team made all the difference. They treated our project like their own and delivered beyond expectations.", name: "James Chen", role: "CTO, TechVault" },
+    { quote: "Their strategic framework helped us find clarity during a pivotal growth phase. Highly recommend for any startup or scaling business.", name: "Elena Rodriguez", role: "Director, NovaBridge" },
+    { quote: "What they lack in decades, they make up for in insight and hustle. T-Solutions is the real deal.", name: "Marcus Liu", role: "Co-founder, PeakPoint" },
+    { quote: "They challenged our assumptions in the best way possible. A truly collaborative experience from start to finish.", name: "Aisha Patel", role: "CEO, Horizon Inc" },
 ];

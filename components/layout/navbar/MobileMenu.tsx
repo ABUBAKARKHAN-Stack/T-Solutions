@@ -95,7 +95,7 @@ const MobileMenu = ({
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.25 + i * 0.05 }}
-                                        className="flex flex-col items-center w-full max-w-xs"
+                                        className="flex flex-col items-center w-full max-w-96 min-[400px]:px-0 px-2"
                                     >
                                         {link.hasDropdown ? (
                                             <>
