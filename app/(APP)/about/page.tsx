@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "About T-Solutionz",
 
     description:
-        "Learn about T-Solutionz, a scalable software development agency transforming ideas into high-performance web applications and enterprise systems engineered for long-term growth.",
+        "Learn about T-Solutionz, a scalable software development agency building high-performance web applications and enterprise systems.",
 
     keywords: [
         "About T-Solutionz",

@@ -9,7 +9,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Contact T-Solutionz",
   description:
-    "Get in touch with T-Solutionz, a scalable software development agency. Discuss your project, explore solutions, and start building high-performance systems.",
+    "Get in touch with T-Solutionz, a scalable software agency. Discuss your project, explore solutions, and build high-performance systems.",
   keywords: [
     "Contact T-Solutionz",
     "Software Development Inquiry",

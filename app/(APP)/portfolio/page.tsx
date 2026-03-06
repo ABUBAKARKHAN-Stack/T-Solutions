@@ -11,7 +11,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "T-Solutionz Portfolio",
   description:
-    "Explore T-Solutionz’s portfolio of high-performance web applications, AI-powered systems, and enterprise software projects designed for scalability and measurable impact.",
+    "Explore T-Solutionz’s portfolio of high-performance web apps, AI systems, and enterprise software designed for scalability and impact.",
   keywords: [
     "T-Solutionz Portfolio",
     "Software Development Case Studies",
