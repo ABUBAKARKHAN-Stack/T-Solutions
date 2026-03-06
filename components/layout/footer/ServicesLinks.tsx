@@ -12,7 +12,7 @@ const ServicesLinks = () => {
                 {servicesOverview.map((link) => (
                     <li key={link.slug}>
                         <Link
-                            href={`/services${link.slug}`}
+                            href={`/services/${link.slug}`}
                             className="text-sm text-wrap text-foreground/60 hover:text-accent transition-colors duration-300 flex items-center gap-1 group"
                         >
                             {link.title}
