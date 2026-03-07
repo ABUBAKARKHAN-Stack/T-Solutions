@@ -1,10 +1,10 @@
 "use client"
 
 import {
-  SectionHeader,
   StaggerChildren,
   itemVariants
-} from '@/components/shared'
+} from '@/components/shared/StaggerChildren'
+import SectionHeader from '@/components/shared/SectionHeader'
 import { motion } from 'motion/react'
 import { ContainerLayout } from '@/components/layout'
 import { values } from '@/data/about.data'

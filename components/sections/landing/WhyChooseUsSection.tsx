@@ -1,8 +1,12 @@
 "use client"
+
 import { motion } from "motion/react";
-import { SectionHeader } from "@/components/shared";
-import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
+import {
+  StaggerChildren,
+  itemVariants
+} from "@/components/shared/StaggerChildren";
 import ParallaxSection from "@/components/shared/ParallaxSection";
+import SectionHeader from "@/components/shared/SectionHeader";
 import { ContainerLayout } from "@/components/layout";
 import { whyChooseUsReasons } from "@/data/landing.data";
 

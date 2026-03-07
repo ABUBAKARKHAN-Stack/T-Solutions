@@ -1,7 +1,8 @@
 "use client"
 
 import { ContainerLayout } from '@/components/layout'
-import { itemVariants, ServiceCard, StaggerChildren } from '@/components/shared'
+import { itemVariants, StaggerChildren } from '@/components/shared/StaggerChildren'
+import ServiceCard from '@/components/shared/ServiceCard'
 import { useServices } from '@/context/ServiceContext'
 import { motion } from 'motion/react'
 

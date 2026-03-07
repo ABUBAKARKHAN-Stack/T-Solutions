@@ -7,10 +7,8 @@ import ServicesDropdown from './ServicesDropdown';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import ContainerLayout from '../ContainerLayout';
-import {
-    ContactDrawer,
-    Logo
-} from '@/components/shared';
+import ContactDrawer from '@/components/shared/ContactDrawer';
+import Logo from '@/components/shared/Logo';
 import { Button } from '@/components/ui/button';
 
 type Props = {

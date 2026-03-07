@@ -1,12 +1,8 @@
-"use client"
-
 import { ArrowRight } from "lucide-react";
-import {
-    SectionHeader,
-    MagneticButton,
-    StaggerChildren,
-    BlogCard
-} from "@/components/shared";
+import { StaggerChildren } from "@/components/shared/StaggerChildren";
+import BlogCard from "@/components/shared/BlogCard";
+import SectionHeader from "@/components/shared/SectionHeader";
+import MagneticButton from "@/components/shared/MagneticButton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { blogPosts } from "@/data/landing.data";

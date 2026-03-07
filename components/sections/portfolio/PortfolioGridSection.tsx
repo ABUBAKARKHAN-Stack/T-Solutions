@@ -1,9 +1,10 @@
 "use client"
+
 import { ContainerLayout } from '@/components/layout'
 import {
-  PortfolioCard,
   StaggerChildren,
-} from '@/components/shared'
+} from '@/components/shared/StaggerChildren'
+import PortfolioCard from '@/components/shared/PortfolioCard'
 import { usePortfolio } from '@/context/PortfolioContext'
 
 const PortfolioGridSection = () => {
@@ -21,7 +22,7 @@ const PortfolioGridSection = () => {
           ))}
         </StaggerChildren>
       </ContainerLayout>
-      
+
     </section>
 
   )

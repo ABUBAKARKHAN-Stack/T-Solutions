@@ -1,12 +1,12 @@
 "use client"
 
 import {
-    MagneticButton,
-    SectionHeader,
-    ServiceCard,
     StaggerChildren,
     itemVariants
-} from '@/components/shared'
+} from '@/components/shared/StaggerChildren'
+import MagneticButton from '@/components/shared/MagneticButton'
+import SectionHeader from '@/components/shared/SectionHeader'
+import ServiceCard from '@/components/shared/ServiceCard'
 import { motion } from 'motion/react'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'

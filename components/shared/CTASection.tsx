@@ -1,13 +1,9 @@
-"use client"
-
 import { ReactNode } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  AnimatedSection,
-  ContactDrawer,
-  MagneticButton
-} from "@/components/shared";
+import AnimatedSection from "./AnimatedSection";
+import ContactDrawer from "./ContactDrawer";
+import MagneticButton from "./MagneticButton";
 import { ContainerLayout } from "../layout";
 
 interface CTASectionProps {

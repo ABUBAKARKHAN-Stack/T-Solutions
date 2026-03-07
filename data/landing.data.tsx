@@ -1,5 +1,26 @@
-import { HighlightedBrandName } from "@/components/shared";
-import { ShieldCheck, Layers, Code2, Smartphone, Cloud, Container, Brain, Globe, Target, Users, Search, Lightbulb, Rocket, Zap, Monitor, Award, HeartHandshake, Shield, Sparkles, Clock } from "lucide-react";
+import HighlightedBrandName from "@/components/shared/HighlightedBrandName";
+import {
+    ShieldCheck,
+    Layers,
+    Code2,
+    Smartphone,
+    Cloud,
+    Container,
+    Brain,
+    Globe,
+    Target,
+    Users,
+    Search,
+    Lightbulb,
+    Rocket,
+    Zap,
+    Monitor,
+    Award,
+    HeartHandshake,
+    Shield,
+    Sparkles,
+    Clock
+} from "lucide-react";
 
 export const heroContent = {
     eyebrow: "Idea · Code · Deploy · Scale · Monitor",

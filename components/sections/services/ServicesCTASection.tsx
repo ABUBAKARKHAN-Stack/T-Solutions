@@ -1,4 +1,4 @@
-import { CTASection } from '@/components/shared'
+import CTASection from '@/components/shared/CTASection'
 
 const ServicesCTASection = () => {
     return (

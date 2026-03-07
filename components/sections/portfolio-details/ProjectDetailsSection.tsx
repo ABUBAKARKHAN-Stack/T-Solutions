@@ -1,6 +1,6 @@
-"use client"
 import { ContainerLayout } from '@/components/layout';
-import { AnimatedSection, ContactDrawer } from '@/components/shared'
+import ContactDrawer  from '@/components/shared/ContactDrawer'
+import AnimatedSection from '@/components/shared/AnimatedSection';
 import { Button } from '@/components/ui/button';
 import { urlFor } from '@/sanity/lib/image';
 import { IImage, ITestimonial } from '@/types/shared.types';

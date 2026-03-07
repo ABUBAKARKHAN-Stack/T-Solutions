@@ -1,6 +1,8 @@
 "use client"
+
 import { ContainerLayout } from '@/components/layout'
-import { AnimatedSection, SectionHeader } from '@/components/shared'
+import SectionHeader from '@/components/shared/SectionHeader'
+import AnimatedSection from '@/components/shared/AnimatedSection'
 import { APP_NAME } from '@/constants/app.constants'
 import { usePortfolio } from '@/context/PortfolioContext'
 import { getPreviewImageUrl } from '@/lib/transformed-img-urls'

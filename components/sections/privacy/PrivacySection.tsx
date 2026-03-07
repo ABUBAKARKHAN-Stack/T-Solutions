@@ -1,6 +1,5 @@
 import { ContainerLayout } from '@/components/layout'
-import { AnimatedSection } from '@/components/shared'
-import React from 'react'
+import  AnimatedSection  from '@/components/shared/AnimatedSection'
 
 const PrivacySection = () => {
     return (

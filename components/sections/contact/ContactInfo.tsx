@@ -1,5 +1,7 @@
+"use client"
+
 import { motion } from 'motion/react'
-import { AnimatedSection } from '@/components/shared'
+import AnimatedSection from '@/components/shared/AnimatedSection'
 import { contactInfo, socials } from '@/constants/navigation.constants'
 
 const ContactInfo = () => {

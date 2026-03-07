@@ -1,6 +1,6 @@
-"use client"
 import { ContainerLayout } from '@/components/layout'
-import { AnimatedSection, SectionHeader } from '@/components/shared'
+import SectionHeader from '@/components/shared/SectionHeader'
+import AnimatedSection from '@/components/shared/AnimatedSection'
 import { ServiceDifferentiator } from '@/types/service.types'
 import { CheckCircle2 } from 'lucide-react'
 

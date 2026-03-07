@@ -1,4 +1,3 @@
-"use client"
 import ContactForm from './ContactForm'
 import { ContainerLayout } from '@/components/layout'
 import ContactInfo from './ContactInfo'

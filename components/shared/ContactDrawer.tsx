@@ -36,7 +36,6 @@ import {
   SelectTrigger,
   SelectValue
 } from "../ui/select";
-import { ErrorResponse } from "resend";
 import { sendEmail } from "@/app/actions/email.actions";
 import { Spinner } from "../ui/spinner";
 
@@ -83,7 +82,7 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
         });
       }
     } catch (error) {
-      const err = error as ErrorResponse;
+      const err = error as any;
 
       const errMsg =
         err?.message ||

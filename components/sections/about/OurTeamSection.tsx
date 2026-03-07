@@ -1,6 +1,5 @@
-"use client"
 
-import { SectionHeader } from '@/components/shared'
+import SectionHeader from '@/components/shared/SectionHeader'
 import { team } from '@/data/shared.data'
 import TeamMemberCard from './TeamMemberCard'
 import { ContainerLayout } from '@/components/layout'

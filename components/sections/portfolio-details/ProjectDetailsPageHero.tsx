@@ -1,6 +1,6 @@
-import { PageHero } from '@/components/shared'
+import PageHero from '@/components/shared/PageHero'
 import { IImage } from '@/types/shared.types';
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 type Props = {
     category: string;

@@ -2,16 +2,14 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
-import AnimatedSection from "@/components/shared/AnimatedSection";
-import MagneticButton from "@/components/shared/MagneticButton";
 import { Button } from "@/components/ui/button";
 import { stats, } from '@/data/shared.data'
 import Link from "next/link";
 import Image from "next/image";
 import { ContainerLayout } from "../../layout";
-import {
-  NumberTicker
-} from "@/components/shared";
+import { NumberTicker } from "@/components/shared/NumberTicker";
+import AnimatedSection from "@/components/shared/AnimatedSection";
+import MagneticButton from "@/components/shared/MagneticButton";
 import { aboutPreviewData } from "@/data/landing.data";
 
 
@@ -69,7 +67,7 @@ const AboutPreviewSection = () => {
               <div className="rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src={'/assets/about-preview.jpg'}
-                  alt="T-Solutions team collaborating in a modern office"
+                  alt="T-Solutionz team collaborating in a modern office"
                   className="w-full h-125 object-cover"
                   width={500}
                   height={500}

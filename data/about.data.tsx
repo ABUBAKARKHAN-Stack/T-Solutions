@@ -1,4 +1,4 @@
-import { HighlightedBrandName } from "@/components/shared";
+import HighlightedBrandName from "@/components/shared/HighlightedBrandName";
 import { Award, Eye, Heart, Target } from "lucide-react";
 
 export const milestones = [

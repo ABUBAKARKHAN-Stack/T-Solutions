@@ -98,12 +98,10 @@
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-    StaggerChildren,
-    SectionHeader,
-    MagneticButton,
-    PortfolioCard
-} from "@/components/shared";
+import { StaggerChildren } from "@/components/shared/StaggerChildren";
+import SectionHeader from "@/components/shared/SectionHeader";
+import MagneticButton from "@/components/shared/MagneticButton";
+import PortfolioCard from "@/components/shared/PortfolioCard";
 import Link from "next/link";
 import { ContainerLayout } from "@/components/layout";
 import { usePortfolio } from "@/context/PortfolioContext";

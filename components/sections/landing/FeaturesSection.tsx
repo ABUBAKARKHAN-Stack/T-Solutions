@@ -1,11 +1,12 @@
 "use client"
+
 import { ContainerLayout } from '@/components/layout'
+import ParallaxSection from '@/components/shared/ParallaxSection'
+import SectionHeader from '@/components/shared/SectionHeader'
 import {
-    ParallaxSection,
-    SectionHeader,
     StaggerChildren,
     itemVariants
-} from '@/components/shared/'
+} from '@/components/shared/StaggerChildren'
 import { featuresContent } from '@/data/landing.data'
 import { motion } from 'motion/react'
 

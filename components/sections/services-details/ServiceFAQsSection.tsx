@@ -1,6 +1,11 @@
-"use client"
-import { AnimatedSection, SectionHeader } from '@/components/shared'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+import SectionHeader from '@/components/shared/SectionHeader'
+import AnimatedSection from '@/components/shared/AnimatedSection'
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger
+} from '@/components/ui/accordion'
 import { ServiceFAQ } from '@/types/service.types'
 
 type Props = {

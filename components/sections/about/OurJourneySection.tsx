@@ -1,6 +1,7 @@
 "use client"
+
 import { ContainerLayout } from '@/components/layout';
-import { SectionHeader } from '@/components/shared';
+import SectionHeader from '@/components/shared/SectionHeader';
 import { milestones } from '@/data/about.data';
 import { motion } from 'motion/react';
 
@@ -8,7 +9,7 @@ const OurJourneySection = () => {
     return (
         <section className="section-padding border-y border-border/50 bg-muted/20">
             <ContainerLayout>
-                
+
                 <SectionHeader
                     eyebrow="Our Journey"
                     title="From Vision to Scalable Systems"

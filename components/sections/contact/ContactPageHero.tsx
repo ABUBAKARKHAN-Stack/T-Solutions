@@ -1,5 +1,4 @@
-import { PageHero } from '@/components/shared'
-import React from 'react'
+import PageHero from '@/components/shared/PageHero'
 
 const ContactPageHero = () => {
     return (

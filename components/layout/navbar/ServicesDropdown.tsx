@@ -1,4 +1,5 @@
 "use client"
+
 import { useServices } from '@/context/ServiceContext';
 import { getIconByName } from '@/lib/icon-mapper';
 import { AnimatePresence, motion } from 'motion/react';
