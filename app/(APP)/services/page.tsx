@@ -1,4 +1,3 @@
-import { PageTransition } from '@/components/layout'
 import {
     ServicesCTASection,
     ServicesGridSection,
@@ -43,11 +42,11 @@ export const metadata: Metadata = {
 
 const ServicesPage = () => {
     return (
-        <PageTransition>
+        <>
             <ServicesPageHero />
             <ServicesGridSection />
             <ServicesCTASection />
-        </PageTransition>
+        </>
     )
 }
 

@@ -1,11 +1,5 @@
-import ContainerLayout from "./ContainerLayout";
-import Navbar from "./navbar/Navbar";
-import Footer from "./footer/Footer";
-import PageTransition from "./PageTransition";
 
-export {
-    ContainerLayout,
-    Footer,
-    Navbar,
-    PageTransition
-}
+export {default as PageTransition} from "./PageTransition";
+export {default as Navbar} from "./navbar/Navbar";
+export {default as Footer} from "./footer/Footer";
+export {default as ContainerLayout} from "./ContainerLayout";

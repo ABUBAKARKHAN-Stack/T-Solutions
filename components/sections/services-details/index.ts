@@ -1,21 +1,9 @@
-import ServiceNotFoundSection from "./ServiceNotFoundSection";
-import ServicePageHero from "./ServicePageHero";
-import ServiceOverviewAndDeliverablesSection from "./ServiceOverviewAndDeliverablesSection";
-import TechnologiesSection from "./TechnologiesSection";
-import ApproachSection from "./ApproachSection";
-import DifferentiatorsSection from "./DifferentiatorsSection";
-import ServiceFAQsSection from "./ServiceFAQsSection";
-import OtherServicesSection from "./OtherServicesSection";
-import ServiceCTASection from "./ServiceCTASection";
-
-export {
-    ServiceNotFoundSection,
-    ServicePageHero,
-    ServiceOverviewAndDeliverablesSection,
-    TechnologiesSection,
-    ApproachSection,
-    DifferentiatorsSection,
-    ServiceFAQsSection,
-    OtherServicesSection,
-    ServiceCTASection
-}
+export { default as ServiceNotFoundSection } from "./ServiceNotFoundSection";
+export { default as ServicePageHero } from "./ServicePageHero";
+export { default as ServiceOverviewAndDeliverablesSection } from "./ServiceOverviewAndDeliverablesSection";
+export { default as TechnologiesSection } from "./TechnologiesSection";
+export { default as ApproachSection } from "./ApproachSection";
+export { default as DifferentiatorsSection } from "./DifferentiatorsSection";
+export { default as ServiceFAQsSection } from "./ServiceFAQsSection";
+export { default as OtherServicesSection } from "./OtherServicesSection";
+export { default as ServiceCTASection } from "./ServiceCTASection";

@@ -1,4 +1,3 @@
-import { PageTransition } from "@/components/layout/";
 import {
   HeroSection,
   FeaturesSection,
@@ -9,13 +8,12 @@ import {
   FAQSection,
   TestimonialsSection,
   WhyChooseUsSection,
-  BlogSection as _,
   PortfolioSection,
 } from "@/components/sections/landing";
 
 const HomePage = async () => {
   return (
-    <PageTransition>
+    <>
       {/* Hero Section */}
       <HeroSection />
 
@@ -49,7 +47,7 @@ const HomePage = async () => {
       {/* CTA Section  */}
       <CTASection />
 
-    </PageTransition>
+    </>
   );
 };
 

@@ -1,17 +1,6 @@
-import AboutPageHero from "./AboutPageHero";
-import MissionSection from "./MissionSection";
-import OurTeamSection from "./OurTeamSection";
-import ValuesSection from "./ValuesSection";
-import OurJourneySection from "./OurJourneySection";
-import FounderQuoteSection from "./FounderQuoteSection";
-import AboutCTASection from "./AboutCTASection";
-
-export {
-    AboutPageHero,
-    MissionSection,
-    OurTeamSection,
-    ValuesSection,
-    OurJourneySection,
-    FounderQuoteSection,
-    AboutCTASection
-}
+export { default as AboutPageHero } from "./AboutPageHero";
+export { default as MissionSection } from "./MissionSection";
+export { default as OurTeamSection } from "./OurTeamSection";
+export { default as ValuesSection } from "./ValuesSection";
+export { default as OurJourneySection } from "./OurJourneySection";
+export { default as AboutCTASection } from "./AboutCTASection";
