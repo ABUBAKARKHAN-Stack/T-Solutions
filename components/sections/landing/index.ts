@@ -1,26 +1,10 @@
-import HeroSection from "./hero/HeroSection";
-import FeaturesSection from "./FeaturesSection";
-import ServicesSection from "./ServicesSection";
-import AboutPreviewSection from "./AboutPreviewSection";
-import TestimonialsSection from "./TestimonialsSection";
-import WhyChooseUsSection from "./WhyChooseUsSection";
-import ApproachSection from "./ApproachSection";
-import FAQSection from "./FAQSection";
-import CTASection from "./CTASection";
-import BlogSection from "./BlogsSection";
-import PortfolioSection from "./PortfolioSection";
-
-export {
-    HeroSection,
-    FeaturesSection,
-    ServicesSection,
-    AboutPreviewSection,
-    ApproachSection,
-    CTASection,
-    FAQSection,
-    TestimonialsSection,
-    WhyChooseUsSection,
-    BlogSection,
-    PortfolioSection
-
-}
+export { default as HeroSection } from "./hero/HeroSection";
+export { default as FeaturesSection } from "./FeaturesSection";
+export { default as ServicesSection } from "./ServicesSection";
+export { default as AboutPreviewSection } from "./AboutPreviewSection";
+export { default as TestimonialsSection } from "./TestimonialsSection";
+export { default as WhyChooseUsSection } from "./WhyChooseUsSection";
+export { default as ApproachSection } from "./ApproachSection";
+export { default as FAQSection } from "./FAQSection";
+export { default as CTASection } from "./CTASection";
+export { default as PortfolioSection } from "./PortfolioSection";

@@ -23,7 +23,7 @@ const OurJourneySection = () => {
                         const isLeft = i % 2 === 0;
                         return (
                             <motion.div
-                                key={m.year}
+                                key={m.title}
                                 className={`relative flex items-start gap-6 mb-12 last:mb-0 md:w-1/2 ${isLeft ? "md:pr-12 md:ml-0" : "md:pl-12 md:ml-auto"}`}
                                 initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
                                 whileInView={{ opacity: 1, x: 0 }}

@@ -1,4 +1,3 @@
-import { PageTransition } from "@/components/layout";
 import { OtherProjectsSection, ProjectCTA, ProjectDetailsPageHero, ProjectDetailsSection } from "@/components/sections/portfolio-details";
 import { APP_NAME, BASE_URL } from "@/constants/app.constants";
 import { getPortfolioOverview, getProjectDetails } from "@/helpers/portfolio.helper";
@@ -97,7 +96,7 @@ const PortfolioDetailsPage = async ({ params }: Params) => {
     if (!project) return notFound()
 
     return (
-        <PageTransition>
+        <>
 
             {/* Project Page Hero  */}
             <ProjectDetailsPageHero
@@ -130,7 +129,7 @@ const PortfolioDetailsPage = async ({ params }: Params) => {
             {/* Project CTA  */}
             <ProjectCTA />
 
-        </PageTransition>
+        </>
     );
 };
 

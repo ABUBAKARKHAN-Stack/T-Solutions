@@ -1,4 +1,3 @@
-import { PageTransition } from '@/components/layout'
 import {
   PortfolioCTASection,
   PortfolioGridSection,
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
 
 const PortfolioPage = () => {
   return (
-    <PageTransition>
+    <>
 
       {/* Page Hero  */}
       <PortfolioPageHero />
@@ -50,7 +49,7 @@ const PortfolioPage = () => {
       <PortfolioCTASection />
 
 
-    </PageTransition>
+    </>
   )
 }
 

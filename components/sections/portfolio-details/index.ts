@@ -1,10 +1,4 @@
-import ProjectDetailsPageHero from "./ProjectDetailsPageHero";
-import ProjectDetailsSection from "./ProjectDetailsSection";
-import ProjectCTA from "./ProjectCTA";
-import OtherProjectsSection from "./OtherProjectsSection";
-export {
-    ProjectDetailsPageHero,
-    ProjectDetailsSection,
-    OtherProjectsSection,
-    ProjectCTA
-}
+export { default as ProjectDetailsPageHero } from "./ProjectDetailsPageHero";
+export { default as ProjectDetailsSection } from "./ProjectDetailsSection";
+export { default as ProjectCTA } from "./ProjectCTA";
+export { default as OtherProjectsSection } from "./OtherProjectsSection";

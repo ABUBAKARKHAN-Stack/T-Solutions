@@ -1,4 +1,3 @@
-import { PageTransition } from "@/components/layout";
 import {
     ApproachSection,
     DifferentiatorsSection,
@@ -106,7 +105,7 @@ const ServiceDetail = async ({ params }: Params) => {
     }
 
     return (
-        <PageTransition>
+        <>
 
             {/* Service Page Hero  */}
             <ServicePageHero
@@ -157,7 +156,7 @@ const ServiceDetail = async ({ params }: Params) => {
             />
 
 
-        </PageTransition>
+        </>
     );
 };
 

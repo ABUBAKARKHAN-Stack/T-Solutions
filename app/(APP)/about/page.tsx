@@ -1,8 +1,6 @@
-import { PageTransition } from '@/components/layout'
 import {
     AboutCTASection,
     AboutPageHero,
-    FounderQuoteSection as _,
     MissionSection,
     OurJourneySection,
     OurTeamSection,
@@ -40,7 +38,7 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
     return (
-        <PageTransition>
+        <>
 
             {/* About Page Hero  */}
             <AboutPageHero />
@@ -62,7 +60,7 @@ const AboutPage = () => {
 
             {/* About CTA Section  */}
             <AboutCTASection />
-        </PageTransition>
+        </>
     )
 }
 

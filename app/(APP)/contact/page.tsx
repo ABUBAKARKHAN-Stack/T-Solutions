@@ -1,4 +1,3 @@
-import { PageTransition } from '@/components/layout'
 import {
   ContactFormAndInfo,
   ContactPageHero,
@@ -34,13 +33,15 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <PageTransition>
+    <>
 
+      {/* Contact Page Hero  */}
       <ContactPageHero />
 
+      {/* Contact Form and Info Section  */}
       <ContactFormAndInfo />
 
-    </PageTransition>
+    </>
   )
 }
 

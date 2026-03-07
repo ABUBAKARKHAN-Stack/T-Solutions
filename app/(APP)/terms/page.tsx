@@ -1,4 +1,3 @@
-import { PageTransition } from "@/components/layout";
 import TermsSection from "@/components/sections/terms/TermsSection";
 import { Metadata } from "next";
 
@@ -8,9 +7,9 @@ export const metadata: Metadata = {
 
 const Terms = () => {
     return (
-        <PageTransition>
+        <>
             <TermsSection />
-        </PageTransition>
+        </>
     );
 };
 
