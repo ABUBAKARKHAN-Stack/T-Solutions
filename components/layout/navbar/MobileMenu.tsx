@@ -1,9 +1,6 @@
 "use client"
 
-import {
-    // ThemeToggle,
-    Logo
-} from '@/components/shared'
+import Logo from '@/components/shared/Logo'
 import { Button } from '@/components/ui/button'
 import { navLinks } from '@/constants/navigation.constants'
 import { useServices } from '@/context/ServiceContext'

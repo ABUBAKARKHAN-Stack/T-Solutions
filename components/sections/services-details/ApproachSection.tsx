@@ -1,5 +1,6 @@
 import { ContainerLayout } from '@/components/layout'
-import { AnimatedSection, SectionHeader } from '@/components/shared'
+import SectionHeader from '@/components/shared/SectionHeader'
+import AnimatedSection from '@/components/shared/AnimatedSection'
 import { ServiceApproachStep } from '@/types/service.types'
 
 type Props = {

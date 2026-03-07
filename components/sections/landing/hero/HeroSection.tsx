@@ -12,9 +12,7 @@ import AnimatedGradientMesh from "./AnimatedGradientMesh";
 import DecorativeVerticalLine from "./DecorativeVerticalLine";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { heroContent } from "@/data/landing.data";
-import {
-    ContactDrawer
-} from "@/components/shared/";
+import ContactDrawer from "@/components/shared/ContactDrawer";
 import { useServices } from "@/context/ServiceContext";
 import { getIconByName } from "@/lib/icon-mapper";
 
@@ -133,13 +131,13 @@ const HeroSection = () => {
                                         </Link>
                                     </Button>
                                 </MagneticButton>
-                                    <ContactDrawer>
-                                <MagneticButton>
+                                <ContactDrawer>
+                                    <MagneticButton>
                                         <Button variant="outline" size="lg" className="rounded-full text-foreground hover:bg-accent/10 text-sm px-6 h-12 font-medium">
                                             {heroContent.cta.secondary} <ArrowRight className="ml-2 h-4 w-4" />
                                         </Button>
-                                </MagneticButton>
-                                    </ContactDrawer>
+                                    </MagneticButton>
+                                </ContactDrawer>
                             </motion.div>
 
                         </div>

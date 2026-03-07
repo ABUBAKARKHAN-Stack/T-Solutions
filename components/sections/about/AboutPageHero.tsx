@@ -1,4 +1,4 @@
-import { PageHero } from '@/components/shared'
+import PageHero from '@/components/shared/PageHero'
 import { APP_NAME } from '@/constants/app.constants'
 
 const AboutPageHero = () => {

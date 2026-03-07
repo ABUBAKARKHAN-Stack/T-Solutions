@@ -1,4 +1,5 @@
-import { Logo, MagneticButton } from '@/components/shared'
+import Logo from '@/components/shared/Logo'
+import MagneticButton  from '@/components/shared/MagneticButton'
 import { socials } from '@/constants/navigation.constants'
 import { cn } from '@/lib/utils'
 

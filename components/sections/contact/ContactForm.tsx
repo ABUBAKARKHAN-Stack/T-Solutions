@@ -1,9 +1,8 @@
 "use client"
+
 import { sendEmail } from '@/app/actions/email.actions';
-import {
-    AnimatedSection,
-    MagneticButton,
-} from '@/components/shared'
+import MagneticButton from '@/components/shared/MagneticButton'
+import AnimatedSection from '@/components/shared/AnimatedSection';
 import { Button } from '@/components/ui/button';
 import {
     Form,
@@ -24,7 +23,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Send } from 'lucide-react';
 import { Activity } from 'react';
 import { useForm } from 'react-hook-form';
-import { ErrorResponse } from 'resend';
 import { toast } from 'sonner';
 import {
     Select,
@@ -74,7 +72,7 @@ const ContactForm = () => {
             });
 
         } catch (error) {
-            const err = error as ErrorResponse;
+            const err = error as any;
 
             const errMsg =
                 err?.message ||

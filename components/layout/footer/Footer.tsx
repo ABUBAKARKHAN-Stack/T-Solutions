@@ -1,5 +1,3 @@
-"use client"
-
 import ContainerLayout from "../ContainerLayout";
 import BrandInfo from "./BrandInfo";
 import QuickLinks from "./QuickLinks";

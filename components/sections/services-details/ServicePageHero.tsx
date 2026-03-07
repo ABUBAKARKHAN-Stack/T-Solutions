@@ -1,4 +1,4 @@
-import { PageHero } from '@/components/shared'
+import PageHero from '@/components/shared/PageHero'
 import { APP_NAME } from '@/constants/app.constants'
 import { getIconByName } from '@/lib/icon-mapper';
 import { IImage } from '@/types/shared.types';

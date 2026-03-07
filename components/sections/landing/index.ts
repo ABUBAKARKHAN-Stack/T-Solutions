@@ -2,7 +2,6 @@ import HeroSection from "./hero/HeroSection";
 import FeaturesSection from "./FeaturesSection";
 import ServicesSection from "./ServicesSection";
 import AboutPreviewSection from "./AboutPreviewSection";
-import PartnersSection from "./PartnersSection";
 import TestimonialsSection from "./TestimonialsSection";
 import WhyChooseUsSection from "./WhyChooseUsSection";
 import ApproachSection from "./ApproachSection";
@@ -19,7 +18,6 @@ export {
     ApproachSection,
     CTASection,
     FAQSection,
-    PartnersSection,
     TestimonialsSection,
     WhyChooseUsSection,
     BlogSection,

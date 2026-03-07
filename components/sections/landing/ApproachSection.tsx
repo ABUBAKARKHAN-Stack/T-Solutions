@@ -1,8 +1,11 @@
 "use client"
 
-import { motion } from "framer-motion";
-import {SectionHeader} from "@/components/shared";
-import { StaggerChildren, itemVariants } from "@/components/shared/StaggerChildren";
+import { motion } from "motion/react";
+import {
+  StaggerChildren,
+  itemVariants
+} from "@/components/shared/StaggerChildren";
+import SectionHeader from "@/components/shared/SectionHeader";
 import { ContainerLayout } from "@/components/layout";
 import { approachSteps } from "@/data/landing.data";
 
@@ -12,11 +15,11 @@ const ApproachSection = () => {
       <div className="absolute bottom-0 left-0 w-125 h-125 bg-accent/5 rounded-full blur-[150px]" />
       <ContainerLayout className="relative z-10">
 
-          <SectionHeader
-            eyebrow="Our Approach"
-            title={<>A proven path to <span className="text-accent italic">results</span></>}
-            centered
-          />
+        <SectionHeader
+          eyebrow="Our Approach"
+          title={<>A proven path to <span className="text-accent italic">results</span></>}
+          centered
+        />
 
         <StaggerChildren className="grid grid-cols-1 xsm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
           {approachSteps.map((step, i) => (

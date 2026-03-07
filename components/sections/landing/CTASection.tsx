@@ -1,4 +1,5 @@
-import { MagneticButton, CTASection as SharedCTASection } from "@/components/shared"
+import SharedCTASection from "@/components/shared/CTASection"
+import MagneticButton from "@/components/shared/MagneticButton"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"

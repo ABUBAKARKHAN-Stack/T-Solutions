@@ -1,7 +1,8 @@
 "use client"
 
 import { ContainerLayout } from '@/components/layout'
-import { AnimatedSection, NumberTicker } from '@/components/shared'
+import AnimatedSection from '@/components/shared/AnimatedSection'
+import { NumberTicker } from '@/components/shared/NumberTicker'
 import { ourMission } from '@/data/about.data'
 import { stats } from '@/data/shared.data'
 import { motion } from 'motion/react'
@@ -20,7 +21,7 @@ const MissionSection = () => {
               {ourMission.para1}
             </p>
             <p className="text-muted-foreground leading-relaxed relative font-light text-sm">
-             {ourMission.para2}
+              {ourMission.para2}
             </p>
           </AnimatedSection>
           <AnimatedSection direction="right" delay={0.2}>

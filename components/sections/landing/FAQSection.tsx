@@ -1,5 +1,13 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { SectionHeader, AnimatedSection, MagneticButton, ContactDrawer } from "@/components/shared";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger
+} from "@/components/ui/accordion";
+import ContactDrawer from "@/components/shared/ContactDrawer";
+import MagneticButton from "@/components/shared/MagneticButton";
+import SectionHeader from "@/components/shared/SectionHeader";
+import AnimatedSection from "@/components/shared/AnimatedSection";
 import { ContainerLayout } from "@/components/layout";
 import { ArrowRight } from "lucide-react";
 import { faqs } from "@/data/landing.data";

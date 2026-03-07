@@ -1,6 +1,7 @@
 "use client"
 import { ContainerLayout } from '@/components/layout';
-import { AnimatedSection, SectionHeader } from '@/components/shared';
+import SectionHeader from '@/components/shared/SectionHeader'
+import AnimatedSection from '@/components/shared/AnimatedSection'
 import { useServices } from '@/context/ServiceContext';
 import { getIconByName } from '@/lib/icon-mapper';
 import { getPreviewImageUrl } from '@/lib/transformed-img-urls';

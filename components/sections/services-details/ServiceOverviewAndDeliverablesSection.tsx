@@ -1,7 +1,6 @@
-"use client"
-
 import { ContainerLayout } from '@/components/layout'
-import { AnimatedSection, ContactDrawer } from '@/components/shared'
+import AnimatedSection from '@/components/shared/AnimatedSection'
+import ContactDrawer from '@/components/shared/ContactDrawer'
 import { Button } from '@/components/ui/button'
 import { ArrowUpRight, CheckCircle2 } from 'lucide-react'
 
@@ -27,7 +26,9 @@ const ServiceOverviewAndDeliverablesSection = ({
                         <div className="space-y-4">
                             {
                                 serviceLongDescription.split("\n\n").map(p => (
-                                    <p className="text-muted-foreground leading-relaxed font-light text-base">{p}
+                                    <p
+                                        key={p.slice(0, 12)}
+                                        className="text-muted-foreground leading-relaxed font-light text-base">{p}
                                     </p>)
                                 )
                             }

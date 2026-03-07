@@ -1,7 +1,6 @@
-"use client"
-
 import { ContainerLayout } from '@/components/layout'
-import { AnimatedSection, SectionHeader } from '@/components/shared'
+import SectionHeader from '@/components/shared/SectionHeader'
+import AnimatedSection from '@/components/shared/AnimatedSection'
 import { ServiceTechnology } from '@/types/service.types'
 import { Star } from 'lucide-react'
 
@@ -37,7 +36,12 @@ const TechnologiesSection = ({
                                         </span>
                                     </div>
                                     <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60 block mb-2">{tech.category}</span>
-                                    {tech.description.split("\n").map(d => <p className="text-sm text-muted-foreground leading-relaxed font-light mb-1">{d}</p>)}
+                                    {tech.description.split("\n").map((d, i) => (
+                                        <p
+                                            key={`${d}-${i}`}
+                                            className="text-sm text-muted-foreground leading-relaxed font-light mb-1">{d}</p>
+                                    ))
+                                    }
                                 </div>
                             ))}
                         </div>

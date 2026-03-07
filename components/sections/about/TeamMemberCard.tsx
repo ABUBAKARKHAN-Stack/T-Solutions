@@ -1,3 +1,4 @@
+"use client"
 import { motion } from "motion/react";
 import { ArrowUpRight, Linkedin, Twitter, Mail } from "lucide-react";
 import {
