@@ -1,8 +1,10 @@
-import { motion, MotionValue } from "motion/react"
+'use client'
 
-const AnimatedGradientMesh = ({ heroY }: { heroY: MotionValue<number> }) => {
+import { motion } from "motion/react"
+
+const AnimatedGradientMesh = () => {
     return (
-        <motion.div className="absolute inset-0 z-1" style={{ y: heroY }}>
+        <motion.div className="absolute inset-0 z-1">
 
             <motion.div
                 className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] rounded-full bg-accent/20 dark:bg-accent/10 blur-[120px]"
