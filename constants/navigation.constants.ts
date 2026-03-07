@@ -31,7 +31,7 @@ export const contactInfo = [
 ]
 
 export const socials = [
-  { label: "Facebook", icon: FacebookIcon, url: "https://facebook.com" },
-  { label: "Instagram", icon: InstagramIcon, url: "https://instagram.com" },
-  { label: "LinkedIn", icon: LinkedinIcon, url: "https://linkedin.com" },
+  { label: "Facebook", icon: FacebookIcon, url: "https://www.facebook.com/profile.php?id=61582284143059" },
+  { label: "Instagram", icon: InstagramIcon, url: "https://www.instagram.com/official.tsolutionz" },
+  { label: "LinkedIn", icon: LinkedinIcon, url: "https://linkedin.com/company/t-solutionz" },
 ]
