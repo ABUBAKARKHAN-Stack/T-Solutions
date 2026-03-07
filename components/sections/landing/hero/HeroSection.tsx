@@ -62,7 +62,7 @@ const HeroSection = () => {
                                     colorTo="var(--color-accent)"
                                 />
 
-                                <span className="text-[10px] font-semibold text-accent uppercase tracking-[0.3em]">
+                                <span className="min-[400px]:text-[10px] text-[8px] font-semibold text-accent uppercase tracking-[0.3em]">
                                     {heroContent.eyebrow}
                                 </span>
                             </motion.div>
