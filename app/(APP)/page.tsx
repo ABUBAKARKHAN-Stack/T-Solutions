@@ -1,5 +1,5 @@
 import {
-  HeroSection,
+  // HeroSection,
   FeaturesSection,
   ServicesSection,
   AboutPreviewSection,
@@ -15,7 +15,7 @@ const HomePage = async () => {
   return (
     <>
       {/* Hero Section */}
-      <HeroSection />
+      {/* <HeroSection /> */}
 
       {/* Features Section */}
       <FeaturesSection />
