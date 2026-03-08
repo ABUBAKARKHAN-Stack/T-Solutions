@@ -114,6 +114,8 @@
 
 
 :root {
+    --radius: 0.625rem;
+
   --background: hsl(150 20% 4%);
   --foreground: hsl(120 8% 92%);
 
