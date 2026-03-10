@@ -91,6 +91,7 @@ export const metadata: Metadata = {
     images: { url: "opengraph-image" },
     type: "website"
   },
+ 
 };
 
 
