@@ -4,6 +4,7 @@ import "./globals.css";
 import { APP_NAME, BASE_URL, BRAND_DESCRIPTION, TAGLINE } from "@/constants/app.constants";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
+import JsonLd from "@/components/shared/JsonLd";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -91,7 +92,7 @@ export const metadata: Metadata = {
     images: { url: "opengraph-image" },
     type: "website"
   },
- 
+
 };
 
 
@@ -105,6 +106,7 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} antialiased`}
       >
+        <JsonLd />
         {children}
         <SpeedInsights />
         <Analytics />
