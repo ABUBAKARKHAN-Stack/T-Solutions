@@ -13,14 +13,34 @@ interface SectionHeaderProps {
   className?: string;
 }
 
-const SectionHeader = ({ eyebrow, title, description, action, centered, className }: SectionHeaderProps) => {
+const SectionHeader = ({
+  eyebrow,
+  title,
+  description,
+  action,
+  centered,
+  className,
+}: SectionHeaderProps) => {
   if (action) {
     return (
-      <AnimatedSection className={cn("mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6", className)}>
+      <AnimatedSection
+        className={cn(
+          "mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between",
+          className,
+        )}
+      >
         <div>
-          <p className="text-xs font-medium text-accent uppercase tracking-[0.3em] mb-4">{eyebrow}</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground max-w-lg leading-tight">{title}</h2>
-          {description && <p className="text-sm text-muted-foreground max-w-sm leading-relaxed font-light mt-4">{description}</p>}
+          <p className="text-accent mb-4 text-xs font-medium tracking-[0.3em] uppercase">
+            {eyebrow}
+          </p>
+          <h2 className="text-foreground max-w-lg text-4xl leading-tight font-bold md:text-5xl">
+            {title}
+          </h2>
+          {description && (
+            <p className="text-muted-foreground mt-4 max-w-sm text-sm leading-relaxed font-light">
+              {description}
+            </p>
+          )}
         </div>
         {action}
       </AnimatedSection>
@@ -28,19 +48,27 @@ const SectionHeader = ({ eyebrow, title, description, action, centered, classNam
   }
 
   return (
-    <AnimatedSection className={cn(centered ? "text-center mb-16" : "mb-16", className)}>
-      <p className="text-xs font-medium text-accent uppercase tracking-[0.3em] mb-4">{eyebrow}</p>
-      <h2 className={cn(
-        "text-3xl md:text-4xl font-bold text-foreground leading-tight",
-        centered ? "" : "max-w-md"
-      )}>
+    <AnimatedSection
+      className={cn(centered ? "mb-16 text-center" : "mb-16", className)}
+    >
+      <p className="text-accent mb-4 text-xs font-medium tracking-[0.3em] uppercase">
+        {eyebrow}
+      </p>
+      <h2
+        className={cn(
+          "text-foreground text-3xl leading-tight font-bold md:text-4xl",
+          centered ? "" : "max-w-md",
+        )}
+      >
         {title}
       </h2>
       {description && (
-        <p className={cn(
-          "text-muted-foreground font-light mt-4",
-          centered ? "max-w-lg mx-auto" : "max-w-sm"
-        )}>
+        <p
+          className={cn(
+            "text-muted-foreground mt-4 font-light",
+            centered ? "mx-auto max-w-lg" : "max-w-sm",
+          )}
+        >
           {description}
         </p>
       )}

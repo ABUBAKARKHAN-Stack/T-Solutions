@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { APP_NAME, BASE_URL, BRAND_DESCRIPTION, TAGLINE } from "@/constants/app.constants";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/next"
+import {
+  APP_NAME,
+  BASE_URL,
+  BRAND_DESCRIPTION,
+  TAGLINE,
+} from "@/constants/app.constants";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 import JsonLd from "@/components/shared/JsonLd";
 
 export const inter = Inter({
@@ -74,7 +79,7 @@ export const metadata: Metadata = {
     "Digital Transformation Services",
     "Full-Stack Development Agency",
     "Enterprise Software Development",
-    "Software Solutions for Growing Businesses"
+    "Software Solutions for Growing Businesses",
   ],
   authors: [{ name: APP_NAME, url: BASE_URL }],
   creator: APP_NAME,
@@ -90,11 +95,9 @@ export const metadata: Metadata = {
     description: BRAND_DESCRIPTION,
     url: BASE_URL,
     images: { url: "opengraph-image" },
-    type: "website"
+    type: "website",
   },
-
 };
-
 
 export default function RootLayout({
   children,
@@ -103,9 +106,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body
-        className={`${playfair.variable} ${inter.variable} antialiased`}
-      >
+      <body className={`${playfair.variable} ${inter.variable} antialiased`}>
         <JsonLd />
         {children}
         <SpeedInsights />

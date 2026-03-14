@@ -1,9 +1,9 @@
 import {
   ContactFormAndInfo,
   ContactPageHero,
-} from '@/components/sections/contact'
-import { APP_NAME, BASE_URL, TAGLINE } from '@/constants/app.constants';
-import { Metadata } from 'next';
+} from "@/components/sections/contact";
+import { APP_NAME, BASE_URL, TAGLINE } from "@/constants/app.constants";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact T-Solutionz",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Digital Solutions Contact",
     "Scalable Systems Consultation",
     "Full-Stack Development Inquiry",
-    "AI & LLM Project Contact"
+    "AI & LLM Project Contact",
   ],
   alternates: {
     canonical: `${BASE_URL}/contact`,
@@ -34,15 +34,13 @@ export const metadata: Metadata = {
 const ContactPage = () => {
   return (
     <>
-
       {/* Contact Page Hero  */}
       <ContactPageHero />
 
       {/* Contact Form and Info Section  */}
       <ContactFormAndInfo />
-
     </>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;

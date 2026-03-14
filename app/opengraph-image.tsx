@@ -22,27 +22,25 @@ export default async function OpengraphImage() {
   const base64Image = `data:image/png;base64,${imageBuffer.toString("base64")}`;
 
   return new ImageResponse(
-    (
-      <div
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <img
+        src={base64Image}
+        alt={`${APP_NAME} - Cover`}
+        width={1200}
+        height={630}
         style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          objectFit: "cover",
         }}
-      >
-        <img
-          src={base64Image}
-          alt={`${APP_NAME} - Cover`}
-          width={1200}
-          height={630}
-          style={{
-            objectFit: "cover",
-          }}
-        />
-      </div>
-    ),
+      />
+    </div>,
     { ...size },
   );
 }

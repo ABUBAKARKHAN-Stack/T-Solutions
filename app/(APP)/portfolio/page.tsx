@@ -2,10 +2,9 @@ import {
   PortfolioCTASection,
   PortfolioGridSection,
   PortfolioPageHero,
-
-} from '@/components/sections/portfolio'
-import { APP_NAME, BASE_URL, TAGLINE } from '@/constants/app.constants';
-import { Metadata } from 'next';
+} from "@/components/sections/portfolio";
+import { APP_NAME, BASE_URL, TAGLINE } from "@/constants/app.constants";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "T-Solutionz Portfolio",
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
     "Full-Stack Applications Portfolio",
     "Enterprise Software Examples",
     "Scalable Systems Showcase",
-    "Web Application Development Projects"
+    "Web Application Development Projects",
   ],
   alternates: {
     canonical: `${BASE_URL}/portfolio`,
@@ -37,20 +36,16 @@ export const metadata: Metadata = {
 const PortfolioPage = () => {
   return (
     <>
-
       {/* Page Hero  */}
       <PortfolioPageHero />
 
       {/* Portfolio Grid Section  */}
       <PortfolioGridSection />
 
-
       {/* Portfolio Cta Section  */}
       <PortfolioCTASection />
-
-
     </>
-  )
-}
+  );
+};
 
-export default PortfolioPage
+export default PortfolioPage;

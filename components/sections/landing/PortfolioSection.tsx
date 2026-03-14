@@ -30,7 +30,6 @@
 
 // export default PortfolioSection;
 
-
 // const PortfolioImageCard = () => {
 //     const cardRef = useRef<HTMLImageElement | null>(null);
 //     const containerRef = useRef<HTMLDivElement | null>(null);
@@ -94,7 +93,7 @@
 //     );
 // };
 
-"use client"
+"use client";
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -107,39 +106,47 @@ import { ContainerLayout } from "@/components/layout";
 import { usePortfolio } from "@/context/PortfolioContext";
 
 const PortfolioSection = () => {
-    const { portfolioOverview } = usePortfolio();
+  const { portfolioOverview } = usePortfolio();
 
-    return (
-        <section className="section-padding bg-card/30 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-125 h-125 bg-accent/5 rounded-full blur-[150px]" />
-            <ContainerLayout className="relative z-10">
+  return (
+    <section className="section-padding bg-card/30 relative overflow-hidden">
+      <div className="bg-accent/5 absolute top-0 left-0 h-125 w-125 rounded-full blur-[150px]" />
+      <ContainerLayout className="relative z-10">
+        <SectionHeader
+          eyebrow="Portfolio"
+          title={
+            <>
+              Projects that{" "}
+              <span className="text-accent italic">deliver impact</span>
+            </>
+          }
+          description="A curated selection of our recent work showcasing scalable systems, high-performance solutions, and measurable business results."
+          action={
+            <MagneticButton>
+              <Button
+                asChild
+                variant="outline"
+                className="border-border text-foreground hover:bg-accent/10 h-10 rounded-full px-6 text-sm font-medium"
+              >
+                <Link href="/portfolio">
+                  View All Projects <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </MagneticButton>
+          }
+        />
 
-                <SectionHeader
-                    eyebrow="Portfolio"
-                    title={<>Projects that <span className="text-accent italic">deliver impact</span></>}
-                    description="A curated selection of our recent work showcasing scalable systems, high-performance solutions, and measurable business results."
-                    action={
-                        <MagneticButton>
-                            <Button asChild variant="outline" className="rounded-full border-border text-foreground hover:bg-accent/10 text-sm px-6 h-10 font-medium">
-                                <Link href="/portfolio">
-                                    View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-                                </Link>
-                            </Button>
-                        </MagneticButton>
-                    }
-                />
-
-                <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
-                    {portfolioOverview.map((project) => (
-                        <PortfolioCard
-                            project={project}
-                            key={project.slug}
-                        />
-                    ))}
-                </StaggerChildren>
-            </ContainerLayout>
-        </section>
-    );
+        <StaggerChildren
+          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          staggerDelay={0.1}
+        >
+          {portfolioOverview.map((project) => (
+            <PortfolioCard project={project} key={project.slug} />
+          ))}
+        </StaggerChildren>
+      </ContainerLayout>
+    </section>
+  );
 };
 
 export default PortfolioSection;

@@ -5,7 +5,6 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-
   --font-inter: var(--font-inter);
   --font-playfair: var(--font-playfair);
 
@@ -46,7 +45,6 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
 
-
   --color-popover-foreground: var(--popover-foreground);
   --color-popover: var(--popover);
 
@@ -64,7 +62,6 @@
   --breakpoint-xsm: 550px;
   --breakpoint-lgx: 1100px;
 }
-
 
 /* :root {
   --radius: 0.625rem;
@@ -112,9 +109,8 @@
   --sidebar-ring: hsl(hsl(107 24% 71%));
 } */
 
-
 :root {
-    --radius: 0.625rem;
+  --radius: 0.625rem;
 
   --background: hsl(150 20% 4%);
   --foreground: hsl(120 8% 92%);
@@ -136,7 +132,6 @@
 
   --accent: hsl(107 24% 71%);
   --accent-foreground: hsl(150 20% 4%);
-
 
   --destructive: hsl(0 62% 30%);
   --destructive-foreground: hsl(0 0% 100%);
@@ -177,7 +172,6 @@
   --accent: hsl(107 24% 71%);
   --accent-foreground: hsl(150 20% 4%);
 
-
   --destructive: hsl(0 62% 30%);
   --destructive-foreground: hsl(0 0% 100%);
 
@@ -204,28 +198,27 @@
     @apply bg-background text-foreground font-inter overflow-x-hidden;
   }
 
-
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-playfair
+    @apply font-playfair;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-accent via-accent/80 to-accent;
+    @apply from-accent via-accent/80 to-accent bg-linear-to-r bg-clip-text text-transparent;
   }
 
   .glass {
-    @apply bg-background/60 backdrop-blur-xl border border-border/50;
+    @apply bg-background/60 border-border/50 border backdrop-blur-xl;
   }
 
   .glass-card {
-    @apply bg-card/50 backdrop-blur-sm border border-border/30 shadow-sm hover:shadow-xl hover:border-accent/20 transition-all duration-500;
+    @apply bg-card/50 border-border/30 hover:border-accent/20 border shadow-sm backdrop-blur-sm transition-all duration-500 hover:shadow-xl;
   }
 
   .section-padding {
@@ -237,6 +230,6 @@
   }
 
   .custom-scrollbar {
-    @apply [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-accent/40 hover:[&::-webkit-scrollbar-thumb]:bg-accent/60
+    @apply [&::-webkit-scrollbar-thumb]:bg-accent/40 hover:[&::-webkit-scrollbar-thumb]:bg-accent/60 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent;
   }
 }

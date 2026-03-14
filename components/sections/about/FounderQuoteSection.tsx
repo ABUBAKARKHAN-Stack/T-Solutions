@@ -1,29 +1,39 @@
-import { ContainerLayout } from '@/components/layout'
-import AnimatedSection from '@/components/shared/AnimatedSection'
-import { Quote } from 'lucide-react'
+import { ContainerLayout } from "@/components/layout";
+import AnimatedSection from "@/components/shared/AnimatedSection";
+import { Quote } from "lucide-react";
 
 const FounderQuoteSection = () => {
   return (
-    <section className="section-padding bg-muted/20 border-y border-border/50">
+    <section className="section-padding bg-muted/20 border-border/50 border-y">
       <ContainerLayout>
-        <AnimatedSection className="max-w-3xl mx-auto text-center">
-          <Quote className="h-8 w-8 text-accent/30 mx-auto mb-6" />
-          <blockquote className="text-xl md:text-2xl font-playfair text-foreground font-light leading-relaxed italic mb-6">
-            "We started T-Solutions because we saw a gap between strategic advice and technical execution. Too many organisations receive recommendations they can't act on. We exist to close that gap."
+        <AnimatedSection className="mx-auto max-w-3xl text-center">
+          <Quote className="text-accent/30 mx-auto mb-6 h-8 w-8" />
+          <blockquote className="font-playfair text-foreground mb-6 text-xl leading-relaxed font-light italic md:text-2xl">
+            "We started T-Solutions because we saw a gap between strategic
+            advice and technical execution. Too many organisations receive
+            recommendations they can't act on. We exist to close that gap."
           </blockquote>
           <div className="flex items-center justify-center gap-3">
-            <div className="w-10 h-10 rounded-full overflow-hidden border border-border/30">
-              <img src="/team-alexandra.jpg" alt="Alexandra Reed" className="w-full h-full object-cover" />
+            <div className="border-border/30 h-10 w-10 overflow-hidden rounded-full border">
+              <img
+                src="/team-alexandra.jpg"
+                alt="Alexandra Reed"
+                className="h-full w-full object-cover"
+              />
             </div>
             <div className="text-left">
-              <p className="text-sm font-semibold text-foreground">Alexandra Reed</p>
-              <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Managing Director</p>
+              <p className="text-foreground text-sm font-semibold">
+                Alexandra Reed
+              </p>
+              <p className="text-muted-foreground text-[10px] tracking-wider uppercase">
+                Managing Director
+              </p>
             </div>
           </div>
         </AnimatedSection>
       </ContainerLayout>
     </section>
-  )
-}
+  );
+};
 
-export default FounderQuoteSection
+export default FounderQuoteSection;

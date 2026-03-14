@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { motion } from "motion/react";
@@ -10,29 +10,35 @@ import { testimonials } from "@/data/landing.data";
 const TestimonialsSection = () => {
   const [active, setActive] = useState(2);
 
-  const prev = () => setActive((a) => (a === 0 ? testimonials.length - 1 : a - 1));
-  const next = () => setActive((a) => (a === testimonials.length - 1 ? 0 : a + 1));
+  const prev = () =>
+    setActive((a) => (a === 0 ? testimonials.length - 1 : a - 1));
+  const next = () =>
+    setActive((a) => (a === testimonials.length - 1 ? 0 : a + 1));
 
   const getOffset = (index: number) => {
     let diff = index - active;
     if (diff > Math.floor(testimonials.length / 2)) diff -= testimonials.length;
-    if (diff < -Math.floor(testimonials.length / 2)) diff += testimonials.length;
+    if (diff < -Math.floor(testimonials.length / 2))
+      diff += testimonials.length;
     return diff;
   };
 
   return (
     <section className="section-padding bg-background overflow-hidden">
       <ContainerLayout>
-
         <SectionHeader
           eyebrow="Testimonials"
-          title={<>What our clients <span className="text-accent italic">say</span></>}
+          title={
+            <>
+              What our clients <span className="text-accent italic">say</span>
+            </>
+          }
           centered
         />
 
         {/* Coverflow carousel */}
         <motion.div
-          className="relative flex items-center justify-center h-95 md:h-85 cursor-grab active:cursor-grabbing"
+          className="relative flex h-95 cursor-grab items-center justify-center active:cursor-grabbing md:h-85"
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.1}
@@ -71,17 +77,18 @@ const TestimonialsSection = () => {
                 }}
               >
                 <div
-                  className={`bg-card/50 backdrop-blur-sm border border-border/30 rounded-3xl p-8 md:p-10 flex flex-col transition-shadow duration-500 ${isActive ? "shadow-2xl border-accent/30" : ""
-                    }`}
+                  className={`bg-card/50 border-border/30 flex flex-col rounded-3xl border p-8 backdrop-blur-sm transition-shadow duration-500 md:p-10 ${
+                    isActive ? "border-accent/30 shadow-2xl" : ""
+                  }`}
                   style={{ willChange: "backdrop-filter" }}
                 >
-                  <Quote className="h-6 w-6 text-accent/30 mb-4" />
-                  <p className="text-foreground/80 leading-relaxed mb-8 flex-1 text-sm md:text-base">
+                  <Quote className="text-accent/30 mb-4 h-6 w-6" />
+                  <p className="text-foreground/80 mb-8 flex-1 text-sm leading-relaxed md:text-base">
                     {t.quote}
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
-                      <span className="text-xs font-semibold text-accent">
+                    <div className="bg-accent/15 flex h-10 w-10 items-center justify-center rounded-full">
+                      <span className="text-accent text-xs font-semibold">
                         {t.name
                           .split(" ")
                           .map((n) => n[0])
@@ -89,8 +96,10 @@ const TestimonialsSection = () => {
                       </span>
                     </div>
                     <div>
-                      <p className="font-medium text-foreground text-sm">{t.name}</p>
-                      <p className="text-xs text-muted-foreground">{t.role}</p>
+                      <p className="text-foreground text-sm font-medium">
+                        {t.name}
+                      </p>
+                      <p className="text-muted-foreground text-xs">{t.role}</p>
                     </div>
                   </div>
                 </div>
@@ -100,13 +109,13 @@ const TestimonialsSection = () => {
         </motion.div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-center gap-6 mt-8">
+        <div className="mt-8 flex items-center justify-center gap-6">
           <button
             onClick={prev}
-            className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:bg-accent/10 hover:border-accent/30 transition-all duration-300"
+            className="border-border/50 hover:bg-accent/10 hover:border-accent/30 flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="h-4 w-4 text-foreground" />
+            <ChevronLeft className="text-foreground h-4 w-4" />
           </button>
 
           <div className="flex items-center gap-2">
@@ -114,8 +123,11 @@ const TestimonialsSection = () => {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${i === active ? "w-6 bg-accent" : "w-1.5 bg-border/60 hover:bg-accent/40"
-                  }`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === active
+                    ? "bg-accent w-6"
+                    : "bg-border/60 hover:bg-accent/40 w-1.5"
+                }`}
                 aria-label={`Go to testimonial ${i + 1}`}
               />
             ))}
@@ -123,10 +135,10 @@ const TestimonialsSection = () => {
 
           <button
             onClick={next}
-            className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center hover:bg-accent/10 hover:border-accent/30 transition-all duration-300"
+            className="border-border/50 hover:bg-accent/10 hover:border-accent/30 flex h-10 w-10 items-center justify-center rounded-full border transition-all duration-300"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="h-4 w-4 text-foreground" />
+            <ChevronRight className="text-foreground h-4 w-4" />
           </button>
         </div>
       </ContainerLayout>

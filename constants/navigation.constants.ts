@@ -1,4 +1,11 @@
-import { FacebookIcon, Headphones, InstagramIcon, LinkedinIcon, Mail, Phone } from "lucide-react";
+import {
+  FacebookIcon,
+  Headphones,
+  InstagramIcon,
+  LinkedinIcon,
+  Mail,
+  Phone,
+} from "lucide-react";
 
 export const navLinks = [
   { label: "Home", to: "/" },
@@ -8,30 +15,41 @@ export const navLinks = [
   { label: "Contact", to: "/contact" },
 ];
 
-
 export const contactInfo = [
   {
     label: "Mail",
     value: "info@t-solutionz.com",
     link: "mailto:info@t-solutionz.com",
-    icon: Mail
+    icon: Mail,
   },
   {
     label: "Help & Support",
     value: "support@t-solutionz.com",
     link: "mailto:support@t-solutionz.com",
-    icon: Headphones
+    icon: Headphones,
   },
   {
     label: "Phone",
     value: "+92-3257030523",
     link: "tel:+923257030523",
-    icon: Phone
+    icon: Phone,
   },
-]
+];
 
 export const socials = [
-  { label: "Facebook", icon: FacebookIcon, url: "https://www.facebook.com/profile.php?id=61582284143059" },
-  { label: "Instagram", icon: InstagramIcon, url: "https://www.instagram.com/official.tsolutionz" },
-  { label: "LinkedIn", icon: LinkedinIcon, url: "https://linkedin.com/company/t-solutionz" },
-]
+  {
+    label: "Facebook",
+    icon: FacebookIcon,
+    url: "https://www.facebook.com/profile.php?id=61582284143059",
+  },
+  {
+    label: "Instagram",
+    icon: InstagramIcon,
+    url: "https://www.instagram.com/official.tsolutionz",
+  },
+  {
+    label: "LinkedIn",
+    icon: LinkedinIcon,
+    url: "https://linkedin.com/company/t-solutionz",
+  },
+];

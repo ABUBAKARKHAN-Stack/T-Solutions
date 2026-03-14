@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ArrowUpRight, Star } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
@@ -10,25 +10,17 @@ import { getPreviewImageUrl } from "@/lib/transformed-img-urls";
 import Image from "next/image";
 
 interface ServiceCardProps {
-  service: IServiceOverview
+  service: IServiceOverview;
   num: number;
 }
 
 const ServiceCard = ({
   num,
-  service: {
-    description,
-    featured,
-    icon,
-    image,
-    slug,
-    tags,
-    title
-  }
+  service: { description, featured, icon, image, slug, tags, title },
 }: ServiceCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
-  const Icon = getIconByName(icon)
+  const Icon = getIconByName(icon);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -68,25 +60,24 @@ const ServiceCard = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={resetTilt}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="relative  h-full rounded-2xl overflow-hidden"
+        className="relative h-full overflow-hidden rounded-2xl"
       >
-        <div className="relative h-full rounded-2xl overflow-hidden border border-border/40 group-hover:border-accent/40 transition-colors duration-500">
-
+        <div className="border-border/40 group-hover:border-accent/40 relative h-full overflow-hidden rounded-2xl border transition-colors duration-500">
           {/* Background image */}
           <div className="absolute inset-0">
             <Image
               src={getPreviewImageUrl(image.source)}
               alt={image.alt}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               fill
               loading="lazy"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-background/95 via-background/60 to-background/10" />
+            <div className="from-background/95 via-background/60 to-background/10 absolute inset-0 bg-linear-to-t" />
           </div>
 
           {/* Hover gradient */}
           <motion.div
-            className="absolute inset-0 bg-linear-to-br from-accent/15 via-transparent to-accent/10 pointer-events-none"
+            className="from-accent/15 to-accent/10 pointer-events-none absolute inset-0 bg-linear-to-br via-transparent"
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
             transition={{ duration: 0.4 }}
@@ -94,7 +85,7 @@ const ServiceCard = ({
 
           {/* Shine sweep */}
           <motion.div
-            className="absolute inset-0 pointer-events-none z-10"
+            className="pointer-events-none absolute inset-0 z-10"
             style={{
               background: `linear-gradient(105deg, transparent 40%, color-mix(in srgb, var(--accent) 7%, transparent) 45%, color-mix(in srgb, var(--accent) 12%, transparent) 50%, transparent 55%)`,
             }}
@@ -108,7 +99,7 @@ const ServiceCard = ({
 
           {/* Top accent line */}
           <motion.div
-            className="absolute top-0 left-0 right-0 h-0.5 bg-accent z-20"
+            className="bg-accent absolute top-0 right-0 left-0 z-20 h-0.5"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: isHovered ? 1 : 0 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
@@ -116,24 +107,23 @@ const ServiceCard = ({
           />
 
           {/* Content */}
-          <div className="relative z-10 p-6 lg:p-7 flex flex-col h-full min-h-90 justify-between">
-
+          <div className="relative z-10 flex h-full min-h-90 flex-col justify-between p-6 lg:p-7">
             {/* Top: Number + Arrow */}
             <div className="flex items-center justify-between">
-
               <div className="flex items-center gap-2">
-
-                <span className="text-sm font-mono font-bold text-accent/80">{num > 10 ? `${num}` : `0${num}`}</span>
+                <span className="text-accent/80 font-mono text-sm font-bold">
+                  {num > 10 ? `${num}` : `0${num}`}
+                </span>
 
                 {featured && (
-                  <span className="inline-flex items-center gap-1 text-[9px] font-semibold uppercase tracking-wider text-accent bg-accent/12 border border-accent/20 px-2 py-0.5 rounded-full backdrop-blur-md">
-                    <Star className="h-2.5 w-2.5 fill-accent" /> Featured
+                  <span className="text-accent bg-accent/12 border-accent/20 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[9px] font-semibold tracking-wider uppercase backdrop-blur-md">
+                    <Star className="fill-accent h-2.5 w-2.5" /> Featured
                   </span>
                 )}
               </div>
 
               <motion.div
-                className="w-9 h-9 rounded-lg bg-primary-foreground/10 dark:bg-foreground/10 backdrop-blur-md border border-primary-foreground/15 dark:border-border/40 flex items-center justify-center"
+                className="bg-primary-foreground/10 dark:bg-foreground/10 border-primary-foreground/15 dark:border-border/40 flex h-9 w-9 items-center justify-center rounded-lg border backdrop-blur-md"
                 animate={{
                   backgroundColor: isHovered ? "var(--accent)" : undefined,
                   borderColor: isHovered ? "var(--accent)" : undefined,
@@ -144,22 +134,22 @@ const ServiceCard = ({
                   animate={{ rotate: isHovered ? 45 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <ArrowUpRight className="h-3.5 w-3.5 text-foreground/80 group-hover:text-accent-foreground transition-colors duration-300" />
+                  <ArrowUpRight className="text-foreground/80 group-hover:text-accent-foreground h-3.5 w-3.5 transition-colors duration-300" />
                 </motion.div>
               </motion.div>
             </div>
 
             {/* Bottom: Icon, Title, Description, Tags */}
             <div className="mt-auto space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-accent/20 backdrop-blur-sm flex items-center justify-center border border-accent/25">
-                <Icon className="h-5 w-5 text-accent" />
+              <div className="bg-accent/20 border-accent/25 flex h-10 w-10 items-center justify-center rounded-xl border backdrop-blur-sm">
+                <Icon className="text-accent h-5 w-5" />
               </div>
 
-              <h3 className="text-lg lg:text-xl font-bold text-primary-foreground dark:text-foreground leading-snug tracking-tight">
+              <h3 className="text-primary-foreground dark:text-foreground text-lg leading-snug font-bold tracking-tight lg:text-xl">
                 {title}
               </h3>
 
-              <p className="text-[13px] text-primary-foreground/65 dark:text-muted-foreground leading-relaxed font-light line-clamp-3">
+              <p className="text-primary-foreground/65 dark:text-muted-foreground line-clamp-3 text-[13px] leading-relaxed font-light">
                 {description}
               </p>
 
@@ -168,13 +158,13 @@ const ServiceCard = ({
                   {tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] font-medium text-primary-foreground/55 dark:text-muted-foreground bg-primary-foreground/8 dark:bg-foreground/8 border border-primary-foreground/10 dark:border-border/30 px-2.5 py-1 rounded-md backdrop-blur-sm"
+                      className="text-primary-foreground/55 dark:text-muted-foreground bg-primary-foreground/8 dark:bg-foreground/8 border-primary-foreground/10 dark:border-border/30 rounded-md border px-2.5 py-1 text-[10px] font-medium backdrop-blur-sm"
                     >
                       {tag}
                     </span>
                   ))}
                   {tags.length > 3 && (
-                    <span className="text-[10px] font-medium text-accent bg-accent/15 border border-accent/20 px-2.5 py-1 rounded-md backdrop-blur-sm">
+                    <span className="text-accent bg-accent/15 border-accent/20 rounded-md border px-2.5 py-1 text-[10px] font-medium backdrop-blur-sm">
                       +{tags.length - 3} more
                     </span>
                   )}
@@ -185,7 +175,7 @@ const ServiceCard = ({
 
           {/* Bottom glow on hover */}
           <motion.div
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-16 bg-accent/25 blur-2xl rounded-full pointer-events-none"
+            className="bg-accent/25 pointer-events-none absolute bottom-0 left-1/2 h-16 w-2/3 -translate-x-1/2 rounded-full blur-2xl"
             animate={{ opacity: isHovered ? 0.5 : 0 }}
             transition={{ duration: 0.4 }}
           />

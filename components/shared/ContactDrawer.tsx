@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Activity, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -34,11 +34,10 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue
+  SelectValue,
 } from "../ui/select";
 import { sendEmail } from "@/app/actions/email.actions";
 import { Spinner } from "../ui/spinner";
-
 
 interface ContactDrawerProps {
   children: React.ReactNode;
@@ -47,14 +46,20 @@ interface ContactDrawerProps {
 const ContactDrawer = ({ children }: ContactDrawerProps) => {
   const [open, setOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const { servicesOverview } = useServices()
+  const { servicesOverview } = useServices();
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
-    defaultValues: { name: "", email: "", subject: "", message: "", service: "" },
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      service: "",
+    },
   });
 
-  const isSubmitting = form.formState.isSubmitting
+  const isSubmitting = form.formState.isSubmitting;
 
   const onSubmit = async (data: ContactFormValues) => {
     try {
@@ -96,22 +101,38 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
     }
   };
 
-  const mailInfo = contactInfo.filter((info) => info.label.toLowerCase().trim() === "mail")[0]
+  const mailInfo = contactInfo.filter(
+    (info) => info.label.toLowerCase().trim() === "mail",
+  )[0];
 
   return (
-    <Sheet open={open} onOpenChange={(v) => { setOpen(v); if (!v) { setTimeout(() => setSubmitted(false), 300); form.reset(); } }}>
+    <Sheet
+      open={open}
+      onOpenChange={(v) => {
+        setOpen(v);
+        if (!v) {
+          setTimeout(() => setSubmitted(false), 300);
+          form.reset();
+        }
+      }}
+    >
       <SheetTrigger asChild>{children}</SheetTrigger>
-      <SheetContent side="right" className="w-full custom-scrollbar sm:max-w-md bg-background border-border/50 p-0 overflow-y-auto">
+      <SheetContent
+        side="right"
+        className="custom-scrollbar bg-background border-border/50 w-full overflow-y-auto p-0 sm:max-w-md"
+      >
         <div className="p-6 pb-0">
-          <SheetHeader className="text-left mb-1">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-[10px] font-semibold text-accent uppercase tracking-[0.3em]">Quick Contact</span>
+          <SheetHeader className="mb-1 text-left">
+            <div className="mb-3 flex items-center gap-2">
+              <div className="bg-accent h-2 w-2 animate-pulse rounded-full" />
+              <span className="text-accent text-[10px] font-semibold tracking-[0.3em] uppercase">
+                Quick Contact
+              </span>
             </div>
-            <SheetTitle className="text-2xl font-bold text-foreground font-playfair">
+            <SheetTitle className="text-foreground font-playfair text-2xl font-bold">
               Let's <span className="text-accent italic">talk</span>
             </SheetTitle>
-            <SheetDescription className="text-sm text-muted-foreground font-light">
+            <SheetDescription className="text-muted-foreground text-sm font-light">
               Fill out the form below and we'll get back to you within 24 hours.
             </SheetDescription>
           </SheetHeader>
@@ -121,17 +142,21 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
           {submitted ? (
             <motion.div
               key="success"
-              className="flex flex-col items-center justify-center p-10 text-center min-h-[60vh]"
+              className="flex min-h-[60vh] flex-col items-center justify-center p-10 text-center"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-4">
-                <Send className="h-7 w-7 text-accent" />
+              <div className="bg-accent/10 mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+                <Send className="text-accent h-7 w-7" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">Message Sent!</h3>
-              <p className="text-sm text-muted-foreground">We'll be in touch soon.</p>
+              <h3 className="text-foreground mb-2 text-xl font-bold">
+                Message Sent!
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                We'll be in touch soon.
+              </p>
             </motion.div>
           ) : (
             <motion.div
@@ -143,17 +168,25 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
               transition={{ duration: 0.3 }}
             >
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-5"
+                >
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <FormField
                       control={form.control}
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Name</FormLabel>
+                          <FormLabel className="text-muted-foreground text-[10px] font-medium tracking-widest uppercase">
+                            Name
+                          </FormLabel>
                           <FormControl>
-                            <Input placeholder="Your name" className="rounded-xl bg-muted/30 border-border/50 h-11 focus:border-accent transition-colors text-sm" {...field} />
+                            <Input
+                              placeholder="Your name"
+                              className="bg-muted/30 border-border/50 focus:border-accent h-11 rounded-xl text-sm transition-colors"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage className="text-xs" />
                         </FormItem>
@@ -164,9 +197,16 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Email</FormLabel>
+                          <FormLabel className="text-muted-foreground text-[10px] font-medium tracking-widest uppercase">
+                            Email
+                          </FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="your@email.com" className="rounded-xl bg-muted/30 border-border/50 h-11 focus:border-accent transition-colors text-sm" {...field} />
+                            <Input
+                              type="email"
+                              placeholder="your@email.com"
+                              className="bg-muted/30 border-border/50 focus:border-accent h-11 rounded-xl text-sm transition-colors"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage className="text-xs" />
                         </FormItem>
@@ -179,20 +219,32 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
                     name="service"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Service Interested In</FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value}>
+                        <FormLabel className="text-muted-foreground text-[10px] font-medium tracking-widest uppercase">
+                          Service Interested In
+                        </FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          value={field.value}
+                        >
                           <FormControl>
-                            <SelectTrigger className="rounded-xl w-full bg-muted/30 border-border/50 h-11! focus:border-accent transition-colors text-sm">
+                            <SelectTrigger className="bg-muted/30 border-border/50 focus:border-accent h-11! w-full rounded-xl text-sm transition-colors">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="bg-popover border-border z-200">
                             {servicesOverview.map((s) => (
-                              <SelectItem key={s.slug} value={s.title} className="text-sm focus:bg-accent/10">
+                              <SelectItem
+                                key={s.slug}
+                                value={s.title}
+                                className="focus:bg-accent/10 text-sm"
+                              >
                                 {s.title}
                               </SelectItem>
                             ))}
-                            <SelectItem value={"Other"} className="text-sm focus:bg-accent/10">
+                            <SelectItem
+                              value={"Other"}
+                              className="focus:bg-accent/10 text-sm"
+                            >
                               Other
                             </SelectItem>
                           </SelectContent>
@@ -202,15 +254,20 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
                     )}
                   />
 
-
                   <FormField
                     control={form.control}
                     name="subject"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Subject</FormLabel>
+                        <FormLabel className="text-muted-foreground text-[10px] font-medium tracking-widest uppercase">
+                          Subject
+                        </FormLabel>
                         <FormControl>
-                          <Input placeholder="How can we help?" className="rounded-xl bg-muted/30 border-border/50 h-11 focus:border-accent transition-colors text-sm" {...field} />
+                          <Input
+                            placeholder="How can we help?"
+                            className="bg-muted/30 border-border/50 focus:border-accent h-11 rounded-xl text-sm transition-colors"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -222,9 +279,16 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-[10px] uppercase tracking-widest text-muted-foreground font-medium">Message</FormLabel>
+                        <FormLabel className="text-muted-foreground text-[10px] font-medium tracking-widest uppercase">
+                          Message
+                        </FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Tell us about your project..." rows={4} className="rounded-xl bg-muted/30 border-border/50 focus:border-accent transition-colors resize-none text-sm" {...field} />
+                          <Textarea
+                            placeholder="Tell us about your project..."
+                            rows={4}
+                            className="bg-muted/30 border-border/50 focus:border-accent resize-none rounded-xl text-sm transition-colors"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage className="text-xs" />
                       </FormItem>
@@ -235,9 +299,8 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
                     disabled={isSubmitting}
                     type="submit"
                     size="lg"
-                    className="w-full rounded-full bg-foreground text-background hover:bg-foreground/90 h-12 font-medium text-sm"
+                    className="bg-foreground text-background hover:bg-foreground/90 h-12 w-full rounded-full text-sm font-medium"
                   >
-
                     {/* Rest State  */}
                     <Activity mode={!isSubmitting ? "visible" : "hidden"}>
                       <Send /> Send Message
@@ -248,21 +311,26 @@ const ContactDrawer = ({ children }: ContactDrawerProps) => {
                       <Spinner data-icon="inline-start" />
                       Sending Message
                     </Activity>
-
                   </Button>
 
                   {/* Direct Email Section  */}
                   <div className="flex items-center gap-3 pt-2">
-                    <div className="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                      <Mail className="h-3.5 w-3.5 text-accent" />
+                    <div className="bg-accent/10 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg">
+                      <Mail className="text-accent h-3.5 w-3.5" />
                     </div>
                     <div>
-                      <p className="text-[10px] text-muted-foreground uppercase tracking-wider">Or email us directly</p>
-                      <Link href={mailInfo.link} className="text-xs hover:text-accent transition-colors duration-300 font-medium text-foreground">{mailInfo.value}</Link>
+                      <p className="text-muted-foreground text-[10px] tracking-wider uppercase">
+                        Or email us directly
+                      </p>
+                      <Link
+                        href={mailInfo.link}
+                        className="hover:text-accent text-foreground text-xs font-medium transition-colors duration-300"
+                      >
+                        {mailInfo.value}
+                      </Link>
                     </div>
-                    <ArrowUpRight className="h-3 w-3 text-muted-foreground/40 ml-auto" />
+                    <ArrowUpRight className="text-muted-foreground/40 ml-auto h-3 w-3" />
                   </div>
-
                 </form>
               </Form>
             </motion.div>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 
@@ -32,7 +32,9 @@ const AnimatedSection = ({
       ref={ref}
       className={className}
       initial={{ opacity: 0, ...offset }}
-      animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, ...offset }}
+      animate={
+        isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, ...offset }
+      }
       transition={{
         duration: 0.7,
         delay,

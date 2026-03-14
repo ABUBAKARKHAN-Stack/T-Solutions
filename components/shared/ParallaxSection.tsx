@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 
@@ -22,13 +22,15 @@ const ParallaxSection = ({
   });
 
   const factor = direction === "up" ? -1 : 1;
-  const y = useTransform(scrollYProgress, [0, 1], [factor * speed * 100, factor * -speed * 100]);
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [factor * speed * 100, factor * -speed * 100],
+  );
 
   return (
     <div ref={ref} className={className} style={{ overflow: "hidden" }}>
-      <motion.div style={{ y }}>
-        {children}
-      </motion.div>
+      <motion.div style={{ y }}>{children}</motion.div>
     </div>
   );
 };

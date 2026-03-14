@@ -1,8 +1,9 @@
-import { sanityFetch } from "@/sanity/lib/live"
-import { IService, IServiceOverview } from "@/types/service.types"
-import { defineQuery } from "next-sanity"
+import { sanityFetch } from "@/sanity/lib/live";
+import { IService, IServiceOverview } from "@/types/service.types";
+import { defineQuery } from "next-sanity";
 
-const SERVICES_OVERVIEW_QUERY = defineQuery(`*[_type == "service"] | order(featured desc)
+const SERVICES_OVERVIEW_QUERY =
+  defineQuery(`*[_type == "service"] | order(featured desc)
 {
   _id,
   icon,
@@ -17,7 +18,7 @@ const SERVICES_OVERVIEW_QUERY = defineQuery(`*[_type == "service"] | order(featu
   tags,
   featured
 }
-`)
+`);
 
 const SERVICE_DATA_QUERY = defineQuery(`
     *[_type == "service" && slug.current == $slug][0]{
@@ -55,36 +56,33 @@ const SERVICE_DATA_QUERY = defineQuery(`
     a
   }
 }
-`)
-
+`);
 
 export const getServicesOverview = async () => {
   try {
     const { data } = await sanityFetch({
       query: SERVICES_OVERVIEW_QUERY,
-      perspective: "published"
-    })
-    const services = data as IServiceOverview[]
-    return services ?? []
+      perspective: "published",
+    });
+    const services = data as IServiceOverview[];
+    return services ?? [];
   } catch (error) {
     console.log("Failed to fetch service overview from sanity :: ", error);
-    throw error
-
+    throw error;
   }
-}
-
+};
 
 export const getServiceDetails = async (slug: string) => {
   try {
     const { data } = await sanityFetch({
       query: SERVICE_DATA_QUERY,
       params: { slug },
-      perspective: "published"
-    })
-    const services = data as IService
-    return services ?? null
+      perspective: "published",
+    });
+    const services = data as IService;
+    return services ?? null;
   } catch (error) {
     console.log("Failed to fetch service from sanity :: ", error);
-    throw error
+    throw error;
   }
-}
+};

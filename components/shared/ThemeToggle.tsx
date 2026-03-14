@@ -6,17 +6,15 @@ import { Button, buttonVariants } from "../ui/button";
 
 type Props = {
   variant?: VariantProps<typeof buttonVariants>["variant"];
-}
-const ThemeToggle = ({
-  variant = "default"
-}: Props) => {
+};
+const ThemeToggle = ({ variant = "default" }: Props) => {
   const { theme, setTheme } = useTheme();
 
   return (
     <Button
       variant={variant}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="relative hover:cursor-pointer w-10 h-10 rounded-full flex items-center justify-center text-foreground/70 hover:text-foreground transition-colors duration-300 hover:bg-accent/10 bg-transparent"
+      className="text-foreground/70 hover:text-foreground hover:bg-accent/10 relative flex h-10 w-10 items-center justify-center rounded-full bg-transparent transition-colors duration-300 hover:cursor-pointer"
       aria-label="Toggle theme"
     >
       <AnimatePresence mode="wait">

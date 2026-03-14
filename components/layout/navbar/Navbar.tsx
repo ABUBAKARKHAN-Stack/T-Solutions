@@ -1,10 +1,8 @@
-
-"use client"
+"use client";
 
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
 import DesktopNav from "./DesktopNav";
-
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -12,16 +10,10 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <DesktopNav
-        setOpen={setOpen}
-        open={open}
-      />
+      <DesktopNav setOpen={setOpen} open={open} />
 
       {/* Mobile menu */}
-      <MobileMenu
-        open={open}
-        setOpen={setOpen}
-      />
+      <MobileMenu open={open} setOpen={setOpen} />
     </>
   );
 };

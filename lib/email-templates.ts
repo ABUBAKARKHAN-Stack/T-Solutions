@@ -3,14 +3,20 @@ import { APP_NAME, BASE_URL } from "@/constants/app.constants";
 const LOGO_URL = `https://cdn.sanity.io/images/cnqj4i28/production/714f241c352d7be81f968c4a05c0fa4b450320a2-1736x333.png?w=2000&fit=max&auto=format`;
 
 interface ContactRequest {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-    service?: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  service?: string;
 }
 
-export const buildInternalEmailHtml = ({ name, email, subject, message, service }: ContactRequest) => `
+export const buildInternalEmailHtml = ({
+  name,
+  email,
+  subject,
+  message,
+  service,
+}: ContactRequest) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,13 +69,17 @@ export const buildInternalEmailHtml = ({ name, email, subject, message, service 
           </td>
         </tr>
         <tr><td style="padding:20px 32px 0;"><div style="height:1px;background:#1f2b1f;"></div></td></tr>
-        ${service ? `
+        ${
+          service
+            ? `
         <tr>
           <td style="padding:20px 32px 0;">
             <p style="margin:0 0 8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#878e86;font-weight:600;">Service Interested In</p>
             <span style="display:inline-block;padding:6px 16px;background:rgba(161,196,150,0.1);color:#a1c496;border-radius:20px;font-size:13px;font-weight:600;border:1px solid rgba(161,196,150,0.2);">${service}</span>
           </td>
-        </tr>` : ''}
+        </tr>`
+            : ""
+        }
         <tr>
           <td style="padding:20px 32px 0;">
             <p style="margin:0 0 8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#878e86;font-weight:600;">Subject</p>
@@ -90,7 +100,7 @@ export const buildInternalEmailHtml = ({ name, email, subject, message, service 
             <table role="presentation" cellpadding="0" cellspacing="0">
               <tr>
                 <td style="border-radius:8px;background:linear-gradient(135deg,#a1c496,#6a9960);">
-                  <a href="mailto:${email}?subject=Re: ${encodeURIComponent(subject)}" style="display:inline-block;padding:14px 32px;font-size:14px;font-weight:700;color:#0a120a;text-decoration:none;letter-spacing:0.3px;">Reply to ${name.split(' ')[0]} ➜</a>
+                  <a href="mailto:${email}?subject=Re: ${encodeURIComponent(subject)}" style="display:inline-block;padding:14px 32px;font-size:14px;font-weight:700;color:#0a120a;text-decoration:none;letter-spacing:0.3px;">Reply to ${name.split(" ")[0]} ➜</a>
                 </td>
               </tr>
             </table>
@@ -119,7 +129,11 @@ export const buildInternalEmailHtml = ({ name, email, subject, message, service 
 </html>
 `;
 
-export const buildCustomerEmailHtml = ({ name, subject, service }: ContactRequest) => `
+export const buildCustomerEmailHtml = ({
+  name,
+  subject,
+  service,
+}: ContactRequest) => `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,13 +158,13 @@ export const buildCustomerEmailHtml = ({ name, subject, service }: ContactReques
         <tr>
           <td style="background:linear-gradient(135deg,#0f1a0f,#1b231b);padding:40px 32px;text-align:center;border-bottom:1px solid #1f2b1f;">
             <div style="width:52px;height:52px;border-radius:50%;background:rgba(161,196,150,0.1);border:2px solid rgba(161,196,150,0.25);text-align:center;line-height:52px;font-size:22px;margin:0 auto 14px;color:#a1c496;">✓</div>
-            <h1 style="margin:0 0 6px;font-size:22px;font-weight:700;color:#e6ebe5;font-family:Georgia,'Times New Roman',serif;">Thank You, ${name.split(' ')[0]}!</h1>
+            <h1 style="margin:0 0 6px;font-size:22px;font-weight:700;color:#e6ebe5;font-family:Georgia,'Times New Roman',serif;">Thank You, ${name.split(" ")[0]}!</h1>
             <p style="margin:0;font-size:14px;color:#878e86;line-height:1.5;">We've received your message and will be in touch shortly.</p>
           </td>
         </tr>
         <tr>
           <td style="padding:28px 32px 0;">
-            <p style="margin:0;font-size:15px;color:#878e86;line-height:1.7;">Hi <strong style="color:#e6ebe5;">${name.split(' ')[0]}</strong>, thank you for reaching out to ${APP_NAME}. Here's a summary of what you sent us:</p>
+            <p style="margin:0;font-size:15px;color:#878e86;line-height:1.7;">Hi <strong style="color:#e6ebe5;">${name.split(" ")[0]}</strong>, thank you for reaching out to ${APP_NAME}. Here's a summary of what you sent us:</p>
           </td>
         </tr>
         <tr><td style="padding:20px 32px 0;"><div style="height:1px;background:#1f2b1f;"></div></td></tr>
@@ -161,11 +175,15 @@ export const buildCustomerEmailHtml = ({ name, subject, service }: ContactReques
                 <td style="padding:20px;">
                   <p style="margin:0 0 6px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#878e86;font-weight:600;">Subject</p>
                   <p style="margin:0;font-size:15px;color:#e6ebe5;font-weight:600;font-family:Georgia,'Times New Roman',serif;">${subject}</p>
-                  ${service ? `
+                  ${
+                    service
+                      ? `
                   <div style="height:1px;background:#1f2b1f;margin:16px 0;"></div>
                   <p style="margin:0 0 6px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#878e86;font-weight:600;">Service</p>
                   <span style="display:inline-block;padding:5px 14px;background:rgba(161,196,150,0.1);color:#a1c496;border-radius:20px;font-size:12px;font-weight:600;border:1px solid rgba(161,196,150,0.2);">${service}</span>
-                  ` : ''}
+                  `
+                      : ""
+                  }
                 </td>
               </tr>
             </table>
@@ -213,9 +231,7 @@ export const buildCustomerEmailHtml = ({ name, subject, service }: ContactReques
   </tr>
   <tr>
     <td style="padding:24px 32px;text-align:center;">
-      <p style="margin:0 0 8px;font-size:12px;color:#878e86;">You're receiving this because you submitted a form on ${APP_NAME
-        .trim()
-        .toLowerCase()}.com</p>
+      <p style="margin:0 0 8px;font-size:12px;color:#878e86;">You're receiving this because you submitted a form on ${APP_NAME.trim().toLowerCase()}.com</p>
       <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto;">
         <tr>
           <td style="padding:0 8px;"><a href="${BASE_URL}" style="font-size:12px;color:#a1c496;text-decoration:none;">Website</a></td>

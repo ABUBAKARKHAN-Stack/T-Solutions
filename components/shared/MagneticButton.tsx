@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRef, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -39,7 +39,7 @@ const MagneticButton = ({
       ref={ref}
       role="button"
       aria-roledescription="Magnetic Button"
-      className={cn("inline-block has-disabled:pointer-events-none ", className)}
+      className={cn("inline-block has-disabled:pointer-events-none", className)}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}

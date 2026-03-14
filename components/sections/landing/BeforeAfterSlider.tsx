@@ -32,7 +32,7 @@ const BeforeAfterSlider = ({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden cursor-col-resize ${className}`}
+      className={`relative cursor-col-resize overflow-hidden ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       aria-label="Before and after comparison slider"
@@ -41,7 +41,7 @@ const BeforeAfterSlider = ({
       <img
         src={afterImage}
         alt="After"
-        className="w-full h-full object-cover"
+        className="h-full w-full object-cover"
         draggable={false}
       />
 
@@ -53,30 +53,48 @@ const BeforeAfterSlider = ({
         <img
           src={beforeImage}
           alt="Before"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
           draggable={false}
         />
-        <div className="absolute inset-0 bg-foreground/10" />
+        <div className="bg-foreground/10 absolute inset-0" />
       </div>
 
       {/* Slider line */}
       <div
-        className="absolute top-0 bottom-0 w-0.5 bg-background/80 backdrop-blur-sm z-10 transition-[left] duration-100 ease-out"
+        className="bg-background/80 absolute top-0 bottom-0 z-10 w-0.5 backdrop-blur-sm transition-[left] duration-100 ease-out"
         style={{ left: `${position}%`, transform: "translateX(-50%)" }}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-background/90 backdrop-blur-md border-2 border-accent shadow-lg flex items-center justify-center">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-accent">
-            <path d="M5 3L2 8L5 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M11 3L14 8L11 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <div className="bg-background/90 border-accent absolute top-1/2 left-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 shadow-lg backdrop-blur-md">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            className="text-accent"
+          >
+            <path
+              d="M5 3L2 8L5 13"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M11 3L14 8L11 13"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </div>
       </div>
 
       {/* Labels */}
-      <span className="absolute top-3 left-3 text-[10px] font-medium uppercase tracking-wider text-foreground/70 bg-background/30 backdrop-blur-md px-2.5 py-1 rounded-full border border-border/20 z-10 pointer-events-none">
+      <span className="text-foreground/70 bg-background/30 border-border/20 pointer-events-none absolute top-3 left-3 z-10 rounded-full border px-2.5 py-1 text-[10px] font-medium tracking-wider uppercase backdrop-blur-md">
         {beforeLabel}
       </span>
-      <span className="absolute top-3 right-3 text-[10px] font-medium uppercase tracking-wider text-accent bg-background/30 backdrop-blur-md px-2.5 py-1 rounded-full border border-border/20 z-10 pointer-events-none">
+      <span className="text-accent bg-background/30 border-border/20 pointer-events-none absolute top-3 right-3 z-10 rounded-full border px-2.5 py-1 text-[10px] font-medium tracking-wider uppercase backdrop-blur-md">
         {afterLabel}
       </span>
     </div>

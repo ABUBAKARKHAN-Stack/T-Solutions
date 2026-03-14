@@ -6,30 +6,28 @@ import RootProvider from "@/providers/RootProvider";
 import { SanityLive } from "@/sanity/lib/live";
 
 export default async function AppLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    const [
-        servicesOverviewResponse,
-        portfolioOverviewResponse
-    ] = await Promise.allSettled([
-        getServicesOverview(),
-        getPortfolioOverview()
-    ])
+  const [servicesOverviewResponse, portfolioOverviewResponse] =
+    await Promise.allSettled([getServicesOverview(), getPortfolioOverview()]);
 
-    const servicesOverview = servicesOverviewResponse.status === "fulfilled" ? servicesOverviewResponse.value : [];
-    const portfolioOverview = portfolioOverviewResponse.status === "fulfilled" ? portfolioOverviewResponse.value : [];
+  const servicesOverview =
+    servicesOverviewResponse.status === "fulfilled"
+      ? servicesOverviewResponse.value
+      : [];
+  const portfolioOverview =
+    portfolioOverviewResponse.status === "fulfilled"
+      ? portfolioOverviewResponse.value
+      : [];
 
-    return (
-
-        <ServiceContextProvider servicesOverview={servicesOverview}>
-            <PortfolioContextProvider portfolioOverview={portfolioOverview}>
-                <RootProvider>
-                    {children}
-                </RootProvider>
-                <SanityLive />
-            </PortfolioContextProvider>
-        </ServiceContextProvider>
-    );
+  return (
+    <ServiceContextProvider servicesOverview={servicesOverview}>
+      <PortfolioContextProvider portfolioOverview={portfolioOverview}>
+        <RootProvider>{children}</RootProvider>
+        <SanityLive />
+      </PortfolioContextProvider>
+    </ServiceContextProvider>
+  );
 }

@@ -1,59 +1,58 @@
 import { IImage } from "./shared.types";
 
 export type IService = {
-    _id: string
-    icon: string
-    title: string
-    overviewLabel: string;
-    slug: string
-    image: IImage
+  _id: string;
+  icon: string;
+  title: string;
+  overviewLabel: string;
+  slug: string;
+  image: IImage;
 
-    featured: boolean
+  featured: boolean;
 
-    description: string
-    longDescription: string
+  description: string;
+  longDescription: string;
 
-    tags: string[]
-    deliverables: string[]
+  tags: string[];
+  deliverables: string[];
 
-    technologies: ServiceTechnology[]
-    approach: ServiceApproachStep[]
-    differentiators: ServiceDifferentiator[]
-    faqs: ServiceFAQ[]
-}
+  technologies: ServiceTechnology[];
+  approach: ServiceApproachStep[];
+  differentiators: ServiceDifferentiator[];
+  faqs: ServiceFAQ[];
+};
 
 export type IServiceOverview = {
-    _id: string
-    icon: string
-    title: string
-    overviewLabel: string
-    slug: string
-    image: IImage
-    description: string
-    tags: string[]
-    featured: boolean
-}
-
+  _id: string;
+  icon: string;
+  title: string;
+  overviewLabel: string;
+  slug: string;
+  image: IImage;
+  description: string;
+  tags: string[];
+  featured: boolean;
+};
 
 export type ServiceTechnology = {
-    name: string
-    category: string
-    featured?: boolean
-    description: string
-}
+  name: string;
+  category: string;
+  featured?: boolean;
+  description: string;
+};
 
 export type ServiceApproachStep = {
-    step: string
-    title: string
-    description: string
-}
+  step: string;
+  title: string;
+  description: string;
+};
 
 export type ServiceDifferentiator = {
-    title: string
-    description: string
-}
+  title: string;
+  description: string;
+};
 
 export type ServiceFAQ = {
-    q: string
-    a: string
-}
+  q: string;
+  a: string;
+};

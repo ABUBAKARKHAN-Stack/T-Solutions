@@ -46,7 +46,6 @@ const HomePage = async () => {
 
       {/* CTA Section  */}
       <CTASection />
-
     </>
   );
 };

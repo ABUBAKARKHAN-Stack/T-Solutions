@@ -1,11 +1,11 @@
-import { type SchemaTypeDefinition } from 'sanity'
+import { type SchemaTypeDefinition } from "sanity";
 
-import { blockContentType } from './blockContentType'
-import { categoryType } from './categoryType'
-import { postType } from './postType'
-import { authorType } from './authorType'
-import { serviceType } from './serviceType'
-import { portfolioType } from './portfolioType'
+import { blockContentType } from "./blockContentType";
+import { categoryType } from "./categoryType";
+import { postType } from "./postType";
+import { authorType } from "./authorType";
+import { serviceType } from "./serviceType";
+import { portfolioType } from "./portfolioType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -14,6 +14,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     postType,
     authorType,
     serviceType,
-    portfolioType
+    portfolioType,
   ],
-}
+};

@@ -10,12 +10,10 @@ const Footer = () => {
   return (
     <footer className="bg-background text-foreground">
       <ContainerLayout className="py-20">
-
         {/* Masked Brand Name  */}
         <MaskedBrandName />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Brand Info  */}
           <BrandInfo />
 
@@ -27,12 +25,10 @@ const Footer = () => {
 
           {/* Contact Links */}
           <ContactLinks />
-
         </div>
 
         {/* Copy Right  */}
         <CopyRight />
-
       </ContainerLayout>
     </footer>
   );

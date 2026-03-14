@@ -1,9 +1,17 @@
-"use client"
+"use client";
 
 import { useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
-export const NumberTicker = ({ value, suffix, delay }: { value: number; suffix: string; delay: number }) => {
+export const NumberTicker = ({
+  value,
+  suffix,
+  delay,
+}: {
+  value: number;
+  suffix: string;
+  delay: number;
+}) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true });
@@ -29,5 +37,10 @@ export const NumberTicker = ({ value, suffix, delay }: { value: number; suffix: 
     return () => clearTimeout(timeout);
   }, [inView, value, delay]);
 
-  return <span ref={ref}>{count}{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
 };

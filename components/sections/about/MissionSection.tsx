@@ -1,26 +1,28 @@
-"use client"
+"use client";
 
-import { ContainerLayout } from '@/components/layout'
-import AnimatedSection from '@/components/shared/AnimatedSection'
-import { NumberTicker } from '@/components/shared/NumberTicker'
-import { ourMission } from '@/data/about.data'
-import { stats } from '@/data/shared.data'
-import { motion } from 'motion/react'
+import { ContainerLayout } from "@/components/layout";
+import AnimatedSection from "@/components/shared/AnimatedSection";
+import { NumberTicker } from "@/components/shared/NumberTicker";
+import { ourMission } from "@/data/about.data";
+import { stats } from "@/data/shared.data";
+import { motion } from "motion/react";
 
 const MissionSection = () => {
   return (
     <section className="section-padding bg-background">
       <ContainerLayout>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 items-center gap-20 lg:grid-cols-2">
           <AnimatedSection direction="left">
-            <p className="text-xs font-medium text-accent uppercase tracking-[0.3em] mb-4">Our Mission</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
+            <p className="text-accent mb-4 text-xs font-medium tracking-[0.3em] uppercase">
+              Our Mission
+            </p>
+            <h2 className="text-foreground mb-6 text-3xl leading-tight font-bold md:text-4xl">
               Engineering Growth With Purpose
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6 font-light">
+            <p className="text-muted-foreground mb-6 leading-relaxed font-light">
               {ourMission.para1}
             </p>
-            <p className="text-muted-foreground leading-relaxed relative font-light text-sm">
+            <p className="text-muted-foreground relative text-sm leading-relaxed font-light">
               {ourMission.para2}
             </p>
           </AnimatedSection>
@@ -35,10 +37,16 @@ const MissionSection = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
                 >
-                  <p className="text-3xl font-bold text-foreground tabular-nums">
-                    <NumberTicker value={stat.val} suffix={stat.suffix} delay={0.3 + i * 0.1} />
+                  <p className="text-foreground text-3xl font-bold tabular-nums">
+                    <NumberTicker
+                      value={stat.val}
+                      suffix={stat.suffix}
+                      delay={0.3 + i * 0.1}
+                    />
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2 uppercase tracking-wider">{stat.label}</p>
+                  <p className="text-muted-foreground mt-2 text-xs tracking-wider uppercase">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -46,8 +54,7 @@ const MissionSection = () => {
         </div>
       </ContainerLayout>
     </section>
+  );
+};
 
-  )
-}
-
-export default MissionSection
+export default MissionSection;

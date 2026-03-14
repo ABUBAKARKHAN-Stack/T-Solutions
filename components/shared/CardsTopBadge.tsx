@@ -1,14 +1,22 @@
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
-const CardsTopBadge = ({ label, className }: { label: string, className?: string }) => {
-    return (
-        <span className={cn(
-            " w-fit  text-[10px] font-semibold text-accent uppercase tracking-[0.25em] px-2.5 py-1 rounded-full border border-accent/20 bg-accent-foreground/70 backdrop-blur-md",
-            className
-        )}>
-            {label}
-        </span>
-    )
-}
+const CardsTopBadge = ({
+  label,
+  className,
+}: {
+  label: string;
+  className?: string;
+}) => {
+  return (
+    <span
+      className={cn(
+        "text-accent border-accent/20 bg-accent-foreground/70 w-fit rounded-full border px-2.5 py-1 text-[10px] font-semibold tracking-[0.25em] uppercase backdrop-blur-md",
+        className,
+      )}
+    >
+      {label}
+    </span>
+  );
+};
 
-export default CardsTopBadge
+export default CardsTopBadge;

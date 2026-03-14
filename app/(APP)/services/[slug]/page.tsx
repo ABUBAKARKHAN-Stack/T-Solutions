@@ -1,163 +1,146 @@
 import {
-    ApproachSection,
-    DifferentiatorsSection,
-    OtherServicesSection,
-    ServiceCTASection,
-    ServiceFAQsSection,
-    ServiceNotFoundSection,
-    ServiceOverviewAndDeliverablesSection,
-    ServicePageHero,
-    TechnologiesSection,
-
+  ApproachSection,
+  DifferentiatorsSection,
+  OtherServicesSection,
+  ServiceCTASection,
+  ServiceFAQsSection,
+  ServiceNotFoundSection,
+  ServiceOverviewAndDeliverablesSection,
+  ServicePageHero,
+  TechnologiesSection,
 } from "@/components/sections/services-details";
 import { APP_NAME, BASE_URL } from "@/constants/app.constants";
-import { getServiceDetails, getServicesOverview } from "@/helpers/service.helper";
+import {
+  getServiceDetails,
+  getServicesOverview,
+} from "@/helpers/service.helper";
 import { urlFor } from "@/sanity/lib/image";
 import { Metadata, ResolvingMetadata } from "next";
 
 type Params = {
-    params: Promise<{ slug: string }>
-}
+  params: Promise<{ slug: string }>;
+};
 
 //* Static Site Generation for service details page
 export async function generateStaticParams() {
-    const services = await getServicesOverview()
-    return services.map((s) => ({ slug: s.slug }))
+  const services = await getServicesOverview();
+  return services.map((s) => ({ slug: s.slug }));
 }
 
 //* Dynamic Metadata Per Page
 export async function generateMetadata(
-    { params }: Params,
-    _parent: ResolvingMetadata,
+  { params }: Params,
+  _parent: ResolvingMetadata,
 ): Promise<Metadata> {
-    const { slug } = await params;
-    const service = await getServiceDetails(slug);
+  const { slug } = await params;
+  const service = await getServiceDetails(slug);
 
-    if (!service) {
-        return {
-            title: "Service Not Found",
-            description: "The requested service does not exist.",
-            robots: { index: false },
-        };
-    }
-
-    const title = `${service.title} | ${APP_NAME}`;
-    const description =
-        service.description || `Read ${title} on ${APP_NAME}`;
-    const imageUrl = urlFor(service.image.source)
-        .quality(85)
-        .width(1200)
-        .fit("clip")
-        .format("jpg")
-        .url();
-    const imageAlt = service.image.alt;
-    const servicesBaseUrl = `/services/${slug}`;
-
+  if (!service) {
     return {
-        title: {
-            absolute: title
-        },
-        description,
-        keywords: service.tags,
-        openGraph: {
-            title,
-            description,
-            images: [
-                {
-                    url: imageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: imageAlt || title,
-                },
-            ],
-            type: "article",
-            siteName: APP_NAME,
-            url: servicesBaseUrl,
-        },
-        twitter: {
-            title,
-            description,
-            images: [
-                {
-                    url: imageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: imageAlt || title,
-                },
-            ],
-            card: "summary_large_image",
-            site: BASE_URL,
-            creator: APP_NAME,
-        },
-        alternates: {
-            canonical: servicesBaseUrl,
-        },
+      title: "Service Not Found",
+      description: "The requested service does not exist.",
+      robots: { index: false },
     };
+  }
+
+  const title = `${service.title} | ${APP_NAME}`;
+  const description = service.description || `Read ${title} on ${APP_NAME}`;
+  const imageUrl = urlFor(service.image.source)
+    .quality(85)
+    .width(1200)
+    .fit("clip")
+    .format("jpg")
+    .url();
+  const imageAlt = service.image.alt;
+  const servicesBaseUrl = `/services/${slug}`;
+
+  return {
+    title: {
+      absolute: title,
+    },
+    description,
+    keywords: service.tags,
+    openGraph: {
+      title,
+      description,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt || title,
+        },
+      ],
+      type: "article",
+      siteName: APP_NAME,
+      url: servicesBaseUrl,
+    },
+    twitter: {
+      title,
+      description,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt || title,
+        },
+      ],
+      card: "summary_large_image",
+      site: BASE_URL,
+      creator: APP_NAME,
+    },
+    alternates: {
+      canonical: servicesBaseUrl,
+    },
+  };
 }
 
-
 const ServiceDetail = async ({ params }: Params) => {
-    const { slug } = await params;
-    const service = await getServiceDetails(slug);
+  const { slug } = await params;
+  const service = await getServiceDetails(slug);
 
-    if (!service) {
-        return <ServiceNotFoundSection />
-    }
+  if (!service) {
+    return <ServiceNotFoundSection />;
+  }
 
-    return (
-        <>
+  return (
+    <>
+      {/* Service Page Hero  */}
+      <ServicePageHero
+        icon={service.icon}
+        image={service.image}
+        isFeatured={service.featured}
+        serviceDescription={service.description}
+        serviceTitle={service.title}
+      />
 
-            {/* Service Page Hero  */}
-            <ServicePageHero
-                icon={service.icon}
-                image={service.image}
-                isFeatured={service.featured}
-                serviceDescription={service.description}
-                serviceTitle={service.title}
-            />
+      {/* Overview + Deliverables Section */}
+      <ServiceOverviewAndDeliverablesSection
+        deliverables={service.deliverables}
+        tags={service.tags}
+        serviceLongDescription={service.longDescription}
+      />
 
+      {/* Technologies Section */}
+      <TechnologiesSection technologies={service.technologies} />
 
-            {/* Overview + Deliverables Section */}
-            <ServiceOverviewAndDeliverablesSection
-                deliverables={service.deliverables}
-                tags={service.tags}
-                serviceLongDescription={service.longDescription}
-            />
+      {/* Our Approach Section */}
+      <ApproachSection approach={service.approach} />
 
-            {/* Technologies Section */}
-            <TechnologiesSection
-                technologies={service.technologies}
-            />
+      {/* Why We Stand Out Section */}
+      <DifferentiatorsSection differentiators={service.differentiators} />
 
+      {/* FAQs Section */}
+      <ServiceFAQsSection faqs={service.faqs} />
 
-            {/* Our Approach Section */}
-            <ApproachSection
-                approach={service.approach}
-            />
+      {/* Other Services Section */}
+      <OtherServicesSection />
 
-            {/* Why We Stand Out Section */}
-            <DifferentiatorsSection
-                differentiators={service.differentiators}
-            />
-
-
-            {/* FAQs Section */}
-            <ServiceFAQsSection
-                faqs={service.faqs}
-            />
-
-
-            {/* Other Services Section */}
-            <OtherServicesSection />
-
-            {/* Cta Section  */}
-            <ServiceCTASection
-                serviceTitle={service.title}
-            />
-
-
-        </>
-    );
+      {/* Cta Section  */}
+      <ServiceCTASection serviceTitle={service.title} />
+    </>
+  );
 };
 
 export default ServiceDetail;
