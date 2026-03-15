@@ -3,6 +3,7 @@ import {
   Headphones,
   InstagramIcon,
   LinkedinIcon,
+  TwitterIcon,
   Mail,
   Phone,
 } from "lucide-react";
@@ -46,6 +47,11 @@ export const socials = [
     label: "Instagram",
     icon: InstagramIcon,
     url: "https://www.instagram.com/official.tsolutionz",
+  },
+  {
+    label: "Twitter (X)",
+    icon: TwitterIcon,
+    url: "https://x.com/TSolutionz21880",
   },
   {
     label: "LinkedIn",
