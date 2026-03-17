@@ -37,6 +37,7 @@ const ContactPage = () => {
   return (
     <>
 
+      {/* Json LD Bunniess Schema  */}
       <JsonLd
         schema={{
           "@context": "https://schema.org",
@@ -48,6 +49,13 @@ const ContactPage = () => {
             "telephone": "+92-3257030523",
             "email": "support@t-solutionz.com"
           },
+          "availableLanguage": ["English", "Urdu"],
+          "areaServed": "Worldwide",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": APP_NAME,
+            "url": BASE_URL
+          }
         }}
       />
 
