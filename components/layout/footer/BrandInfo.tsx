@@ -1,3 +1,4 @@
+import HighlightedBrandName from "@/components/shared/HighlightedBrandName";
 import Logo from "@/components/shared/Logo";
 import MagneticButton from "@/components/shared/MagneticButton";
 import { socials } from "@/constants/navigation.constants";
@@ -10,6 +11,9 @@ const BrandInfo = () => {
       <p className="text-foreground/50 mt-4 max-w-sm text-sm leading-relaxed">
         Modern software solutions built to scale with your business. We create
         reliable, high-performance systems that deliver measurable impact.
+        <br className="mt-1 block" />
+        <HighlightedBrandName /> is sometimes searched as T Solutions, T-Solutions, or
+        TSolutions.
       </p>
 
       <div className="mt-6 flex gap-2.5">

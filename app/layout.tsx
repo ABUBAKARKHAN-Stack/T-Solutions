@@ -26,7 +26,7 @@ export const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: `${APP_NAME} | ${TAGLINE}`,
+    default: `${APP_NAME} | T Solutions | ${TAGLINE}`,
     template: `%s | ${TAGLINE}`,
   },
   description: BRAND_DESCRIPTION,
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: `${APP_NAME} | ${TAGLINE}`,
+    title: `${APP_NAME} | T Solutions | ${TAGLINE}`,
     siteName: APP_NAME,
     description: BRAND_DESCRIPTION,
     url: BASE_URL,
