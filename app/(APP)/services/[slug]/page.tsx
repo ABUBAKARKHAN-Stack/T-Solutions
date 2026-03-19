@@ -9,6 +9,7 @@ import {
   ServicePageHero,
   TechnologiesSection,
 } from "@/components/sections/services-details";
+import JsonLd from "@/components/shared/JsonLd";
 import { APP_NAME, BASE_URL } from "@/constants/app.constants";
 import {
   getServiceDetails,
@@ -106,6 +107,23 @@ const ServiceDetail = async ({ params }: Params) => {
 
   return (
     <>
+      {/* JSON LD Service  Schema */}
+
+      <JsonLd
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "serviceType": service.title,
+          "description": service.description,
+          "provider": {
+            "@type": "Organization",
+            "name": "T-Solutionz",
+            "url": "https://t-solutionz.com"
+          },
+          "areaServed": "Worldwide"
+        }}
+      />
+
       {/* Service Page Hero  */}
       <ServicePageHero
         icon={service.icon}

@@ -2,7 +2,9 @@ import {
   ContactFormAndInfo,
   ContactPageHero,
 } from "@/components/sections/contact";
+import JsonLd from "@/components/shared/JsonLd";
 import { APP_NAME, BASE_URL, TAGLINE } from "@/constants/app.constants";
+import { contactInfo, socials } from "@/constants/navigation.constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,6 +36,29 @@ export const metadata: Metadata = {
 const ContactPage = () => {
   return (
     <>
+
+      {/* Json LD Bunniess Schema  */}
+      <JsonLd
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": APP_NAME,
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "telephone": "+92-3257030523",
+            "email": "support@t-solutionz.com"
+          },
+          "availableLanguage": ["English", "Urdu"],
+          "areaServed": "Worldwide",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": APP_NAME,
+            "url": BASE_URL
+          }
+        }}
+      />
+
       {/* Contact Page Hero  */}
       <ContactPageHero />
 
