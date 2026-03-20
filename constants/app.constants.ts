@@ -3,4 +3,4 @@ export const ALTERNATE_NAME = ["T Solutions", "T-Solutions", "TSolutions"];
 export const BASE_URL = "https://t-solutionz.com";
 export const TAGLINE = "Transforming Ideas Into Scalable Systems";
 export const BRAND_DESCRIPTION =
-  "T-Solutionz builds modern, scalable software for growing businesses, from web apps to enterprise systems delivering measurable results. Discover robust T Solutions and explore how T-Solutions can elevate your enterprise.";
+  "T-Solutionz builds scalable software. Discover robust T Solutions and how T-Solutions can deliver measurable results for your enterprise.";
