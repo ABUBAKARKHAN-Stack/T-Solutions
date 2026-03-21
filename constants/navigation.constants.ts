@@ -51,7 +51,7 @@ export const socials = [
   {
     label: "Twitter (X)",
     icon: TwitterIcon,
-    url: "https://x.com/TSolutionz21880",
+    url: "https://x.com/T_Solutionz",
   },
   {
     label: "LinkedIn",
